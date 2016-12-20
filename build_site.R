@@ -6,3 +6,7 @@ setwd("~/Dropbox/web/junruidi.github.io/")
 
 #render your sweet site. 
 rmarkdown::render_site()
+
+# git add -A 
+# git commit -m "2nd commit"
+# git push origin master

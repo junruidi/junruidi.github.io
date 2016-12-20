@@ -5,10 +5,9 @@ css: style2.css
 
 #
 
-### Course: 
 * BIST 514: Linear Modeling & Multivariate Analysis (Spring 2014)
 
-* PH 140.751/2 Advanced Methods in Biostatistics I-II (Fall 2014)
+* PH 140.751/2 Advanced Methods in Biostatistics I-II (Fall 2015)
 
 * PH 140.753/4 Advanced Methods in Biostatistics III-IV (Spring 2016)
 

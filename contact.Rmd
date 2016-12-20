@@ -14,11 +14,11 @@ css: style2.css
 
  
 ### Website
- [Personal Website](http://yzhou12.github.io/personalweb)
+ [Personal Website](http://junruidi.github.io)
  
  [Github](https://github.com/junruidi)
  
- [Linkedin](www.linkedin.com/in/junruidi) 
+ [Linkedin](https://www.linkedin.com/in/junruidi) 
 
 ### Address
  615 N Wolfe St, E3039
