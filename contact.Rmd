@@ -1,0 +1,26 @@
+---
+title: "Contact"
+css: style2.css
+---
+
+### Email
+ jdi2@jhu.edu
+
+### Work Phone
+ 410-955-4394
+ 
+### Fax
+ 410-955-0958
+
+ 
+### Website
+ [Personal Website](http://yzhou12.github.io/personalweb)
+ 
+ [Github](https://github.com/junruidi)
+ 
+ [Linkedin](www.linkedin.com/in/junruidi) 
+
+### Address
+ 615 N Wolfe St, E3039
+ 
+ Baltimore, MD, 21205

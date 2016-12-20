@@ -1,0 +1,6 @@
+---
+title: "CV"
+css: style2.css
+---
+
+<center>![](./files/Academic_Di.pdf)

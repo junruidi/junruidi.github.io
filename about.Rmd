@@ -1,4 +1,0 @@
----
-title: "Junrui Di"
----
-This is Junrui's personal website.

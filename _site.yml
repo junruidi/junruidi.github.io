@@ -3,7 +3,14 @@ output_dir: "."
 navbar:
   title: "Junrui Di"
   left:
-    - text: "Home"
-      href: index.html
     - text: "About Me"
-      href: about.html
+      href: index.html
+    - text: "Reserch"
+      href: research.html
+    - text: "CV"
+      href: cv.html
+    - text: "Teaching"
+      href: teaching.html
+    - text: "Contact"
+      href: contact.html
+ 
