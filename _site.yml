@@ -1,0 +1,9 @@
+name: "junrui-website"
+output_dir: "."
+navbar:
+  title: "Junrui Di"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About Me"
+      href: about.html
