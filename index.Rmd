@@ -9,7 +9,7 @@ css: style2.css
 <div style="float:left;margin:0px 50px 0px 0px">
 ![](./files/photo1.jpg)
 </div>
-I'm a third year PhD student at the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/) at  and my advisor is  [Vadim Zipunnikov](http://www.biostat.jhsph.edu/~vzipunni/). 
+I'm a third year PhD student at the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/) at  and my advisor is  Dr. [Vadim Zipunnikov](http://www.biostat.jhsph.edu/~vzipunni/). 
 
 I am a science enthusiastic and fan of data. I enjoy solving scientific problems with the help of statistics.  My philosophy is: data is powerful cause it tells the truth. I am also the co-founder of [STEP](http://www.steptank.com/), a platform for the exchange of ideas for elite Chinese students.
 
