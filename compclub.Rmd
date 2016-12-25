@@ -7,7 +7,6 @@ css: style2.css
 #
 
 I hosted the [Computing Club](http://www.jhsph.edu/departments/biostatistics/academics-and-student-life/student-learning-groups/computing-club.html) for 2015-2016 academic year. This one-hour session takes place every other Tuesday from 12:15-1:15 pm, involving various topics on computing. More importantly, food will be provided in every session! Please see below for the schedules. Links to the previous years' Computing Club could be found here: [14-15](http://www.biostat.jhsph.edu/~ydu/comp_club.html), [13-14](http://www.biostat.jhsph.edu/~jbai/compclub.html), [12-13](http://www.biostat.jhsph.edu/~afisher/ComputingClub/), [11-12](http://www.biostat.jhsph.edu/~afrazee/old/computingclub.html), [10-11](http://www.biostat.jhsph.edu/bit/compintro/), [09-10](http://www.biostat.jhsph.edu/bit/compintro/index_0910.html).
-The schedule is listed below.   
 
 #
 
