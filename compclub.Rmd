@@ -12,7 +12,7 @@ I hosted the [Computing Club](http://www.jhsph.edu/departments/biostatistics/aca
 
 #
 __Welcome Session: Toolbox for Biostatistics Graduate Students__  
-Junrui Di \& Stephen Cristano  
+Junrui Di \& Stephen Cristiano  
 09/08/2015 W2029
 
 __Introduction to Cluster__  
