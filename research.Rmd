@@ -11,7 +11,7 @@ I develop and implement statstistical methodology to solve for scientific proble
 
 __Scientific Interests__: wearable devices, physical activity assessment, mHealth, sleep, circadian rhythm, gerontological epidemiology.
 
-__Statistical Methods__: feature exatraction from accelerometers, functional data analysis, matrix decomposition and matrix-variate analysis, multilevel data analysis.
+__Statistical Methods__: feature extraction from accelerometers, functional data analysis, matrix decomposition and matrix-variate analysis, multilevel data analysis.
 
 ###Selected Research Projects
 - __Modeling Activity Transition Matrix using Bivariate Exponential Distribution__:
