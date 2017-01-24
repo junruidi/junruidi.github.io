@@ -18,7 +18,8 @@ css: style2.css
 ####In Preparation
 1. __Di, J.__, Leroux, A., Urbanek, J., Spira, A., Schrack, J., and Zipunnikov, V.. “Fragmentation of Daily Patterns of Physical Activity: a statistical framework and application”. To be submitted to _Medicine & Science in Sports & Excercise_.
 2. Grigsby, M., __Di, J.__, Leroux, A., Checkley, W., and Crainiceanu, C.. “Novel Measures for Child Growth Model Selection”. To be submitted to _International Journal of Epidemiology_.
-3. Leroux, A., Urbanek, J., __Di, J.__, Crainiceanu, C., Zipunnikov, V.. "Accelerometry data structure and processing protocols in the NHANES study". 
+3. Johns, J., Zipunnikov, V., __Di, J.__, Swendsen, J., Merikangas, K.. "Fragmentation as a novel measure of mood stability assessed by electronic diaries". To be submitted.
+4. Leroux, A., Urbanek, J., __Di, J.__, Crainiceanu, C., Zipunnikov, V.. "Accelerometry data structure and processing protocols in the NHANES study". 
 
 ####Presentations
 1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (contributed oral). _2013 Joint Statistical Meeting, Montreal, Canada_. 
