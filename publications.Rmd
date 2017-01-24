@@ -22,5 +22,6 @@ css: style2.css
 4. Leroux, A., Urbanek, J., __Di, J.__, Crainiceanu, C., Zipunnikov, V.. "Accelerometry data structure and processing protocols in the NHANES study". 
 
 ####Presentations
-1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (contributed oral). _2013 Joint Statistical Meeting, Montreal, Canada_. 
+1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (contributed oral). _2013 JSM, Montreal, Canada_. 
 2. Fragmentation of Daily Physical Activity, Review and Application (poster). _2016 Baltimore Aging Showcases, Baltimore, MD_.
+3. Novel Statistical Framework to Study Fragmentation of Daily Physical Activity (contributed oral). _2017 ENAR, Washington, DC_. 
