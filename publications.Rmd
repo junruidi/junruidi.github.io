@@ -24,4 +24,5 @@ css: style2.css
 ####Presentations
 1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (contributed oral). _2013 JSM, Montreal, Canada_. 
 2. Fragmentation of Daily Physical Activity, Review and Application (poster). _2016 Baltimore Aging Showcases, Baltimore, MD_.
-3. Novel Statistical Framework to Study Fragmentation of Daily Physical Activity (contributed oral). _2017 ENAR, Washington, DC_. 
+3. Novel Statistical Framework to Study Fragmentation of Daily Physical Activity (contributed oral). _2017 ENAR, Washington, DC_. 4. Fragmentation of Daily Physical Activity, Review and Application (oral). _2017 IAGG, San Fracisco, CA_.
+5. Fragmentation of Daily Physical Activity, Review and Application (oral). _2017 ICAMPAM, Bethesda, MD_.
