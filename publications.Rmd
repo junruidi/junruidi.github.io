@@ -8,7 +8,7 @@ css: style2.css
 #
 
 ####Published\\In Press
-1.  __Di, J.__, Li, Y., Friedman, MR., Reddy, S., Surkan, PJ., Shoptaw, S., and Plankey, M.. ``[Determining Survey Satisficing of Online Longitudinal Survey Data in the Multicenter AIDS Cohort Study using a Group-Based Trajectory Analysis](https://www.ncbi.nlm.nih.gov/pubmed/27503107)''. _Journal of Medical Internet Research Public Health and Surveillance_. 2016; 2 (2): e150.
+1.  __Di, J.__, Li, Y., Friedman, MR., Reddy, S., Surkan, PJ., Shoptaw, S., and Plankey, M.. "[Determining Survey Satisficing of Online Longitudinal Survey Data in the Multicenter AIDS Cohort Study using a Group-Based Trajectory Analysis](https://www.ncbi.nlm.nih.gov/pubmed/27503107)". _Journal of Medical Internet Research Public Health and Surveillance_. 2016; 2 (2): e150.
 
 
 ####Under Review\\Revision
