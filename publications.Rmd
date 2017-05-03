@@ -18,7 +18,7 @@ css: style2.css
 
 ####In Preparation
 1. Grigsby, M., __Di, J.__, Leroux, A., Checkley, W., and Crainiceanu, C.. “Novel Measures for Child Growth Model Selection”. To be submitted to _International Journal of Epidemiology_.
-2. Johns, J., Zipunnikov, V., __Di, J.__, Swendsen, J., Merikangas, K.. "Fragmentation as a novel measure of mood stability assessed by electronic diaries". To be submitted.
+2. Johns, J., Zipunnikov, V., __Di, J.__, Swendsen, J., Merikangas, K.. "Fragmentation as a novel measure of mood stability assessed by electronic diaries". To be submitted to _Pschological Methods_.
  
 
 ####Presentations
