@@ -15,11 +15,12 @@ css: style2.css
 1. Zipunnikov, V., Dey, D., Leroux, A., __Di, J.__, Urbanek, J., Harris, T., and Crainiceanu, C..“Objectively measured late-morning physical activity predicts mortality in the NHANES 2003-2006 cohorts”. Resubmitted to _PLOS One_ after revision.
 2. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., and Zipunnikov, V.. "Re-evaluating the effect of age on physical activity over the lifespan". Resubmitted to _Preventive Medicine_ after revision.
 3. __Di, J.__, Leroux, A., Urbanek, J., Spira, A., Schrack, J., and Zipunnikov, V.. “Methods to quantify fragmentation of accelerometry-measured physical activity”. Under review _Medicine & Science in Sports & Excercise_.
+4. Johns, J., __Di, J.__, Zipunnikov, V.,  Swendsen, J., Merikangas, K.. "Fragmentation as a novel measure of mood stability assessed by electronic diaries". Under review _Pschological Methods_.
+ 
 
 ####In Preparation
 1. Grigsby, M., __Di, J.__, Leroux, A., Checkley, W., and Crainiceanu, C.. “Novel Measures for Child Growth Model Selection”. To be submitted to _International Journal of Epidemiology_.
-2. Johns, J., Zipunnikov, V., __Di, J.__, Swendsen, J., Merikangas, K.. "Fragmentation as a novel measure of mood stability assessed by electronic diaries". To be submitted to _Pschological Methods_.
- 
+
 
 ####Presentations
 1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (contributed oral). _2013 JSM, Montreal, Canada_. 
