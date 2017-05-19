@@ -27,10 +27,13 @@ css: style2.css
 4. __Di, J.__, Leroux, A., Urbanek, J., Spira, A., Schrack, J., and Zipunnikov, V.. Methods to quantify fragmentation of accelerometry-measured physical activity. Under review _Medicine & Science in Sports & Excercise_.
 5. Johns, J., __Di, J.__, Zipunnikov, V.,  Swendsen, J., and Merikangas, K.. Fragmentation as a novel measure of mood stability assessed by electronic diaries. Under review _Pschological Methods_.
 6. Grigsby, M., __Di, J.__, Leroux, A., Zipunnikov, V., Xiao, L., Crainiceanu, C., and Checkley, W.. Novel Metrics for Growth Model Selection. Under review _Emerging Themes in Epidemiology_. 
+7. Urbanek, J., Spira, A., __Di, J.__, Leroux, A., Crainiceanu, C., and Zipunnikov, V.. Epidemiology of Objectively Measured Bedtime and
+Chronotype in the US adolescents and adults: NHANES
+2003-2006. Under review _Chronobiology International_.
 
 ####In Preparation
-7. A study on extension of the fragmentation metrics.
-8. A study on analyzing accelerometry data measured at multiple days.
+8. A study on extension of the fragmentation metrics.
+9. A study on analyzing accelerometry data measured at multiple days.
 
 
 ####Presentations
