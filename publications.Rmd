@@ -39,6 +39,6 @@ Chronotype in the US adolescents and adults: NHANES 2003-2006. Under review _Chr
 1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (contributed oral). _2013 JSM, Montreal, Canada_. 
 2. Fragmentation of Daily Physical Activity, Review and Application (poster). _2016 Baltimore Aging Showcases, Baltimore, MD_.
 3. Novel Statistical Framework to Study Fragmentation of Daily Physical Activity (contributed oral). _2017 ENAR, Washington, DC_.
-4. Fragmentation of Daily Physical Activity, Review and Application (oral). _2017 ICAMPAM, Bethesda, MD_.
-5. Fragmentation of Daily Physical Activity, Review and Application (oral). _2017 IAGG, San Fracisco, CA_.
+4. Fragmentation of Physical Activity and Its Application (oral). _2017 ICAMPAM, Bethesda, MD_.
+5. Fragmentation of Daily Physical Activity: Prediction of Mortality in NHANES 2003-2006. _2017 IAGG, San Fracisco, CA_.
 
