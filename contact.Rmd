@@ -18,6 +18,9 @@ css: style2.css
 
 ### Work Phone
  410-955-4394
+
+### Fax
+ 410-955-0958
  
 ### Website
  [Personal Website](http://junruidi.github.io)  
