@@ -25,6 +25,10 @@ I am a science enthusiastic and fan of data. I enjoy solving scientific problems
 
 In my spare time, I am a music lover and singer. 
 
+<br>
+<br>
+<br>
+
 ##Education
 - __Ph.D.__ Johns Hopkins Bloomberg School of Public Health, Biostatistics
 - __M.Sc__ Georgetown Univeristy, Biostatistics
