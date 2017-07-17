@@ -19,14 +19,16 @@ css: style2.css
 I have served as a teaching assistant on a wide variety of courses in the department of biostatistics; the following is a chronological list:
 
 <center>
-Term  | Course Number| Title 
-------| -------------| ------
-Spring 2018   |  PH.140.623 (__Lead TA__)  |  Statistical Methods in Public Health III
-Fall 2017   |  PH.140.621 (__Lead TA__)  |  Statistical Methods in Public Health I
-Spring 2017   |   PH.140.623/4   |   Statistical Methods in Public Health III-IV
-Fall 2016   |   PH.140.621/2   |   Statistical Methods in Public Health I-II 
-Spring 2016   |   PH 140.753/4   |   Advanced Methods in Biostatistics III-IV
-Fall 2015   |   PH 140.751/2   |   Advanced Methods in Biostatistics I-II
-Spring 2014   |   BIST 514 (Georgetown)   |   Linear Modeling & Multivariate Analysis
+Term  | Course Number| Title  | Notes
+---------| -------------| ----------------------- | -----
+Spring 2018   |  PH.140.623   |  Statistical Methods in Public Health III | __Lead TA__$^\dagger$
+Fall 2017   |  PH.140.621   |  Statistical Methods in Public Health I   | __Lead TA__$^\dagger$
+Spring 2017   |   PH.140.623/4   |   Statistical Methods in Public Health III-IV   |
+Fall 2016   |   PH.140.621/2   |   Statistical Methods in Public Health I-II   |
+Spring 2016   |   PH 140.753/4   |   Advanced Methods in Biostatistics III-IV  |
+Fall 2015   |   PH 140.751/2   |   Advanced Methods in Biostatistics I-II   |
+Spring 2014   |   BIST 514  |   Linear Modeling & Multivariate Analysis   | Georgetown
 </center>
+
+$\dagger$: Responsibilities involve holding 2 - 3 lab lectures per week, beta-testing quizzes and exams, participating in TA meetings and providing some oversight for the other TAs
 
