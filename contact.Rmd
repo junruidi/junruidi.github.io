@@ -14,7 +14,7 @@ css: style2.css
 </script>
 
 ### Email
- jdi2@jhu.edu
+ jdi2[at]jhu[dot]edu
 
 ### Work Phone
  410-955-4394
