@@ -23,8 +23,8 @@ css: style2.css
 
 
 ####Under Review\\Revision
-3. Zipunnikov, V., Dey, D., Leroux, A., __Di, J.__, Urbanek, J., Harris, T., and Crainiceanu, C.. Objectively measured late-morning physical activity predicts mortality in the NHANES 2003-2006 cohorts. Resubmitted to _PLOS One_ after revision.
-4. __Di, J.__, Leroux, A., Urbanek, J., Spira, A., Schrack, J., and Zipunnikov, V.. Methods to quantify fragmentation of accelerometry-measured physical activity. Under review _Medicine & Science in Sports & Excercise_.
+3. Zipunnikov, V., Dey, D., Leroux, A., __Di, J.__, Urbanek, J., Harris, T., and Crainiceanu, C.. Objectively measured late-morning physical activity predicts mortality in the NHANES 2003-2006 cohorts. Resubmitted to _PLoS One_ after revision.
+4. __Di, J.__, Leroux, A., Urbanek, J., Spira, A., Schrack, J., and Zipunnikov, V.. Methods to quantify fragmentation of accelerometry-measured physical activity. Under review _PLoS One_.
 5. Johns, J., __Di, J.__, Merikangas, K., Cui, L.,  Swendsen, J., and Zipunnikov, V.. Fragmentation as a novel measure of stability in normalized trajectories of mood and attention assessed by electronic diaries. Under review _Physiological Measurement_.
 6. Grigsby, M., __Di, J.__, Leroux, A., Zipunnikov, V., Xiao, L., Crainiceanu, C., and Checkley, W.. Novel Metrics for Growth Model Selection. Under review _Emerging Themes in Epidemiology_. 
 7. Urbanek, J., Spira, A., __Di, J.__, Leroux, A., Crainiceanu, C., and Zipunnikov, V.. Epidemiology of Objectively Measured Bedtime and
@@ -36,9 +36,9 @@ Chronotype in the US adolescents and adults: NHANES 2003-2006. Under review _Chr
 
 
 ####Presentations
-1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (contributed oral). _2013 JSM, Montreal, Canada_. 
+1. Robust Integrative Analysis of Multi-Block Contaminated Datasets (topic contributed). _2013 JSM, Montreal, Canada_. 
 2. Fragmentation of Daily Physical Activity, Review and Application (poster). _2016 Baltimore Aging Showcases, Baltimore, MD_.
-3. Novel Statistical Framework to Study Fragmentation of Daily Physical Activity (contributed oral). _2017 ENAR, Washington, DC_.
+3. Novel Statistical Framework to Study Fragmentation of Daily Physical Activity (contributed). _2017 ENAR, Washington, DC_.
 4. Fragmentation of Physical Activity and Its Application (oral). _2017 ICAMPAM, Bethesda, MD_.
 5. Fragmentation of Daily Physical Activity: Prediction of Mortality in NHANES 2003-2006. _2017 IAGG, San Fracisco, CA_.
 

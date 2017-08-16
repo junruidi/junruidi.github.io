@@ -19,7 +19,7 @@ css: style2.css
 <div style="float:left;margin:0px 50px 0px 0px">
 ![](./files/photo1.jpg)
 </div>
-My name is Junrui Di (Simplified Chinese: 邸俊瑞). I'm a $4^{th}$ year PhD Candidate at the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/). I am part of the Wearable and Implantable Technology (WIT) research group. 
+My name is Junrui Di (Simplified Chinese: 邸俊瑞). I'm a 4th year PhD Candidate at the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/). I am part of the Wearable and Implantable Technology (WIT) research group. 
 
 I am a science enthusiastic and fan of data. I enjoy solving scientific problems with the help of statistics.  My philosophy is: data is powerful cause it tells the truth.
 
