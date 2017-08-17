@@ -29,7 +29,10 @@ __Statistical Methods__: feature engineering for wearable devices, matrix and te
 
 - __Collaborative Research Projects__: multiple collaborative research projects including: monitoring hospitalized patients with various activity trackers, sleep fragmetation and its association with cognitive functions, circadian rhythm and its association with mortality etc. 
 
+<br>
 
+###WordCloud Representing My research
+![](./files/wordcloud.png)
 
 
 
