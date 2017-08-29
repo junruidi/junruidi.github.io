@@ -28,7 +28,6 @@ Chronotype in the US adolescents and adults: NHANES 2003-2006. [arXiv:1706.05416
 
 ####Under Review\\Revision
 5. Zipunnikov, V., Dey, D., Leroux, A., __Di, J.__, Urbanek, J., Harris, T., and Crainiceanu, C.. Objectively measured late-morning physical activity predicts mortality in the NHANES 2003-2006 cohorts. Resubmitted to _PLoS One_ after revision.
-
 6. Johns, J., __Di, J.__, Merikangas, K., Cui, L.,  Swendsen, J., and Zipunnikov, V.. Fragmentation as a novel measure of stability in normalized trajectories of mood and attention assessed by electronic diaries. Under review _Physiological Measurement_.
 7. Grigsby, M., __Di, J.__, Leroux, A., Zipunnikov, V., Xiao, L., Crainiceanu, C., and Checkley, W.. Novel Metrics for Growth Model Selection. Under review _Emerging Themes in Epidemiology_. 
 
