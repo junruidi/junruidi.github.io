@@ -21,7 +21,7 @@ css: style2.css
 1. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., and Zipunnikov, V.. [Re-evaluating the effect of age on physical activity over the lifespan](http://www.sciencedirect.com/science/article/pii/S0091743517301949). _Preventive Medicine_. 2017; 101: 102-108.
 2.  __Di, J.__, Li, Y., Friedman, MR., Reddy, S., Surkan, PJ., Shoptaw, S., and Plankey, M.. [Determining Survey Satisficing of Online Longitudinal Survey Data in the Multicenter AIDS Cohort Study using a Group-Based Trajectory Analysis](http://publichealth.jmir.org/2016/2/e150/). _Journal of Medical Internet Research Public Health and Surveillance_. 2016; 2 (2): e150.
 
-####Preprint
+####Preprints
 3. Urbanek, J., Spira, A., __Di, J.__, Leroux, A., Crainiceanu, C., and Zipunnikov, V.. Epidemiology of Objectively Measured Bedtime and
 Chronotype in the US adolescents and adults: NHANES 2003-2006. [arXiv:1706.05416](https://arxiv.org/abs/1706.05416). Under review _Chronobiology International_.
 4. __Di, J.__, Leroux, A., Urbanek, R., Varadhan, J., Spira, A., Schrack, J., and Zipunnikov, V.. Patterns of sedentary and active time accumulation are associated with mortality in US adults: The NHANES study. Under review _PLoS ONE_.
