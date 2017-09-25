@@ -23,8 +23,8 @@ css: style2.css
 
 ####Preprints
 3. Urbanek, J., Spira, A., __Di, J.__, Leroux, A., Crainiceanu, C., and Zipunnikov, V.. Epidemiology of Objectively Measured Bedtime and
-Chronotype in the US adolescents and adults: NHANES 2003-2006. [arXiv:1706.05416](https://arxiv.org/abs/1706.05416). Under review _Chronobiology International_.
-4. __Di, J.__, Leroux, A., Urbanek, R., Varadhan, J., Spira, A., Schrack, J., and Zipunnikov, V.. Patterns of sedentary and active time accumulation are associated with mortality in US adults: The NHANES study. [bioRxiv 182337](http://www.biorxiv.org/content/early/2017/08/31/182337). Under review _PLoS ONE_.
+Chronotype in the US adolescents and adults: NHANES 2003-2006. [arXiv: 1706.05416](https://arxiv.org/abs/1706.05416). Under review _Chronobiology International_.
+4. __Di, J.__, Leroux, A., Urbanek, R., Varadhan, J., Spira, A., Schrack, J., and Zipunnikov, V.. Patterns of sedentary and active time accumulation are associated with mortality in US adults: The NHANES study. [bioRxiv: 182337](http://www.biorxiv.org/content/early/2017/08/31/182337). Under review _PLoS ONE_.
 
 ####Under Review\\Revision
 5. Zipunnikov, V., Dey, D., Leroux, A., __Di, J.__, Urbanek, J., Harris, T., and Crainiceanu, C.. Objectively measured late-morning physical activity predicts mortality in the NHANES 2003-2006 cohorts. Resubmitted to _PLoS ONE_ after revision.
