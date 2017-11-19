@@ -18,7 +18,7 @@ css: style2.css
 #
 
 ####Published\\In Press
-1. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., and Zipunnikov, V.. Total volume of physical activity: TAC, TLAC, or TAC($\lambda$). Accepted by _Preventive Medicine_. 2017.
+1. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., and Zipunnikov, V.. [Total volume of physical activity: TAC, TLAC, or TAC($\lambda$)](http://www.sciencedirect.com/science/article/pii/S0091743517303997). _Preventive Medicine_. 2017.
 2. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., and Zipunnikov, V.. [Re-evaluating the effect of age on physical activity over the lifespan](http://www.sciencedirect.com/science/article/pii/S0091743517301949). _Preventive Medicine_. 2017; 101: 102-108.
 3.  __Di, J.__, Li, Y., Friedman, MR., Reddy, S., Surkan, PJ., Shoptaw, S., and Plankey, M.. [Determining Survey Satisficing of Online Longitudinal Survey Data in the Multicenter AIDS Cohort Study using a Group-Based Trajectory Analysis](http://publichealth.jmir.org/2016/2/e150/). _Journal of Medical Internet Research Public Health and Surveillance_. 2016; 2 (2): e150.
 
