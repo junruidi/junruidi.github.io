@@ -32,6 +32,7 @@ chronotype in the US adolescents and adults: NHANES 2003-2006. [arXiv: 1706.0541
 7. Johns, J., __Di, J.__, Merikangas, K., Cui, L.,  Swendsen, J., and Zipunnikov, V.. Fragmentation as a novel measure of stability in normalized trajectories of mood and attention assessed by electronic diaries. Under review _Physiological Measurement_.
 8. Grigsby, M., __Di, J.__, Leroux, A., Zipunnikov, V., Xiao, L., Crainiceanu, C., and Checkley, W.. Novel Metrics for Growth Model Selection. Resubmitted to _Emerging Themes in Epidemiology_ after revision. 
 9. __Di, J.__, Spira, A., Urbanek, J., Bai, J., Wu, M., Resnick, S., Simonsick, E., Ferrucci, L., Schrack, J., and Zipunnikov, V.. Joint and individual representation of domains of physical activity, sleep, and circadian rhythmicity. Under review _Statistics in Biosciences_.
+10. Leroux, A., __Di, J.__, Smirnova, E., Mcguffey, E., Cao, Q., Bayatmokhtari, E., Tabacu, L., Zipunnikov, V., Urbanek, J., Crainiceanu, C.. Organizing and analyzing the activity data in NHANES. Under review _Statistics in Biosciences_.
 
 ####In Preparation
 10. Tensor cumulant analysis (TCA).
