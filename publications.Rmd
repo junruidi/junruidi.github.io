@@ -19,7 +19,7 @@ css: style2.css
 
 ####Published\\In Press
 1. Urbanek, J., Spira, A., __Di, J.__, Leroux, A., Crainiceanu, C., and Zipunnikov, V.. [Epidemiology of objectively measured bedtime and chronotype in US adolescents and adults: NHANES 2003–2006](http://www.tandfonline.com/doi/full/10.1080/07420528.2017.1411359). _Chronobiology International_. 2017.
-2. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., Xiao, L., and Zipunnikov, V.. [Total volume of physical activity: TAC, TLAC, or TAC($\lambda$)](http://www.sciencedirect.com/science/article/pii/S0091743517303997). _Preventive Medicine_. 2017.
+2. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., Xiao, L., and Zipunnikov, V.. [Total volume of physical activity: TAC, TLAC, or TAC($\lambda$)](http://www.sciencedirect.com/science/article/pii/S0091743517303997). _Preventive Medicine_. 2018; 106: 233-235.
 3. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., Xiao, L., and Zipunnikov, V.. [Re-evaluating the effect of age on physical activity over the lifespan](http://www.sciencedirect.com/science/article/pii/S0091743517301949). _Preventive Medicine_. 2017; 101: 102-108.
 4.  __Di, J.__, Li, Y., Friedman, MR., Reddy, S., Surkan, PJ., Shoptaw, S., and Plankey, M.. [Determining survey satisficing of online longitudinal survey data in the Multicenter AIDS Cohort Study using a Group-Based Trajectory Analysis](http://publichealth.jmir.org/2016/2/e150/). _Journal of Medical Internet Research Public Health and Surveillance_. 2016; 2 (2): e150.
 
