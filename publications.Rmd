@@ -36,19 +36,12 @@ css: style2.css
 <br>
 
 ####In Preparation
-11. Tensor cumulant analysis (TCA).
+11. Generalized singular value decompositions based on higher order interactions (GSVD).
 <br>
 <br>
 
 ####Softwares
-<center>
-
-Name | Type  | Authors  | Sources
-------------------------------------------- | ---------- | ----------------------------------  | -------------
-actigraphy: feature extraction for minute level actigraphy data   | R Package   |Junrui Di, John Muschelli, Vadim Zipunnikov  | [Github](https://github.com/junruidi/actigraphy)
-
-</center>
-
+1. __actigraphy__. (R package). Feature extraction for minute level actigraphy data. [[Github](https://github.com/junruidi/actigraphy)]. 
 
 
 
