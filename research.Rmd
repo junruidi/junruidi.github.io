@@ -20,7 +20,7 @@ I develop and implement statstistical methodology to solve for scientific proble
 
 My main area of expertise is related to data collection and analysis for objectively measured physical activity, sleep, and circadian rythmicity using actigraphy, acceleromtry etc. I develop novel statistical methogologies, and collaborate on multiple scientific projects as well. Specificly, I am interested in the following directions: 1) feature engineering for raw actigraphy data to summarize noisy and high dimensional physiological signal; 2) dimension reduction on high dimensional actigraphy data; and 3) integrative analysis of features acquired from multiple domains/modalities/devices. 
 
-__Scientific Interests__: wearable devices and their applcations in public health (e.g. mental health and aging), physical activity assessment, sleep, circadian rhythmicity.
+__Scientific Interests__: wearable devices and their applications in public health (e.g. mental health and aging), physical activity assessment, sleep, circadian rhythmicity.
 
 __Statistical Methods__: feature engineering for accelerometry signals, dimension reduction, functional data analysis, integration of multiple modalities.
 
