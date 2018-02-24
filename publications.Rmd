@@ -18,7 +18,7 @@ css: style2.css
 #
 
 ####Published\\In Press
-1. Grigsby, M., __Di, J.__, Leroux, A., Zipunnikov, V., Xiao, L., Crainiceanu, C., and Checkley, W.. [Novel Metrics for Growth Model Selection](https://ete-online.biomedcentral.com/articles/10.1186/s12982-018-0072-z). _Emerging Themes in Epidemiology_. 2018; 15: 4. 
+1. Grigsby, M., __Di, J.__, Leroux, A., Zipunnikov, V., Xiao, L., Crainiceanu, C., and Checkley, W.. [Novel metrics for growth model selection](https://ete-online.biomedcentral.com/articles/10.1186/s12982-018-0072-z). _Emerging Themes in Epidemiology_. 2018; 15: 4. 
 2. Urbanek, J., Spira, A., __Di, J.__, Leroux, A., Crainiceanu, C., and Zipunnikov, V.. [Epidemiology of objectively measured bedtime and chronotype in US adolescents and adults: NHANES 2003–2006](http://www.tandfonline.com/doi/full/10.1080/07420528.2017.1411359). _Chronobiology International_. 2017.
 3. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., Xiao, L., and Zipunnikov, V.. [Total volume of physical activity: TAC, TLAC, or TAC($\lambda$)](http://www.sciencedirect.com/science/article/pii/S0091743517303997). _Preventive Medicine_. 2018; 106: 233-235.
 4. Varma, V., Dey D., Leroux A., __Di, J.__, Urbanek, J., Xiao, L., and Zipunnikov, V.. [Re-evaluating the effect of age on physical activity over the lifespan](http://www.sciencedirect.com/science/article/pii/S0091743517301949). _Preventive Medicine_. 2017; 101: 102-108.
