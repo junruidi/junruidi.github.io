@@ -27,11 +27,11 @@ __Statistical Methods__: feature engineering for accelerometry signals, dimensio
 ###Selected Research Projects
 - __Integration of data from domains of physical activity, sleep, and circadian rhythmicity__: Implemented JIVE to efficiently deal with multivariate actgraphy features reprsenting multiple domians of physical activity, sleep, and circadian rhtymicity.
 
-- __Processed the NHANES 2003 - 2006 Accelerometery Data__: Processed high dimensonal and noisy NHANES 2003 - 2006 accelerometery data to a ready-to-use data package. Provided tutorial analytical pipeline together with codes for future researchers to conduct statistical analysis on NHANES accelerometery data. 
+- __Processed the NHANES 2003 - 2006 Accelerometery Data__: Processed NHANES 2003 - 2006 accelerometery data to a user-friendly data package. Provided analytical  tutorial to conduct statistical analysis on NHANES accelerometery data. 
 
 - __Novel Statistical Framework to Quantify Activity Fragmentation__: Developed a statistical framework to quantify patterns of sedentary/active time accumulation via metrics of fragmentation of bouts and studied their association with mortality in NHANES 2003-2006.
 
-- __Collaborative Research Projects__: multiple collaborative research projects including: monitoring hospitalized patients with various activity trackers, sleep fragmetation and its association with cognitive functions, circadian rhythm and its association with mortality etc. 
+- __Collaborative Research Projects__: multiple collaborative research projects including: monitoring hospitalized patients with various activity trackers, sleep fragmetation and its association with cognitive functions, circadian rhythmicity and its association with mortality etc. 
 
 <br>
 
