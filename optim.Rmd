@@ -25,9 +25,9 @@ I am taking __Optimization for Statistics__ with [Dr. Ravi Varadhan](https://www
 
 - [CVXR](https://cran.r-project.org/web/packages/CVXR/index.html): disciplined convex optimization.
 
-<center> <h3>Nonlinear Equations</h3> </center>
+<center> <h3>Miscellaneous</h3> </center>
 
-#### 1. Definitions
+#### 1. Equations systems
 
 If $f(x) = 0$, where $x \in \mathbb{R}^p$, $f \in \mathbb{R}^k$, then
 
