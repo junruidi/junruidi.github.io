@@ -1,0 +1,54 @@
+---
+title: "Notes on Statistical Optimization"
+css: style2.css
+---
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99094202-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+#
+
+#
+
+I am taking __Optimization for Statistics__ with Dr. Ravi Varadhan and Dr. Vadim Zipunnikov. Here are notes and some of my thoughts from the lectures.
+
+<center> <h4>Tools</h4> </center>
+ 
+- [NEOS](https://neos-guide.org/): network enabled optimization system.
+
+- [CVXR](https://cran.r-project.org/web/packages/CVXR/index.html): disciplined convex optimization.
+
+<center> <h4>Nonlinear Equations</h4> </center>
+
+#### 1. Definitions
+
+If $f(x) = 0$, where $x \in \mathbb{R}^p$, $f \in \mathbb{R}^k$, then
+
+- $k=p$: determined properly
+
+- $k>p$: over determined
+
+- $k<p$: underdetermined (over parametrized)
+
+#### 2. Different convergence rate
+
+Consider the series $\{x_k\} \rightarrow x^{*}$
+
+- q linear convergence
+
+- q super linear convergence
+
+- quadratic convergence
+
+- q sublinear convergence
+
+
+
+
