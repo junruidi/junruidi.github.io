@@ -1,5 +1,5 @@
 ---
-title: "Notes on Statistical Optimization"
+title: "Notes on Optimization"
 css: style2.css
 ---
 <script>
@@ -17,15 +17,15 @@ css: style2.css
 
 #
 
-I am taking __Optimization for Statistics__ with Dr. Ravi Varadhan and Dr. Vadim Zipunnikov. Here are notes and some of my thoughts from the lectures.
+I am taking __Optimization for Statistics__ with [Dr. Ravi Varadhan](https://www.jhsph.edu/faculty/directory/profile/2393/ravi-varadhan) and [Dr. Vadim Zipunnikov](http://www.biostat.jhsph.edu/~vzipunni/). Here are some of my thoughts and notes from the lectures.
 
-<center> <h4>Tools</h4> </center>
+<center> <h3>Tools</h3> </center>
  
 - [NEOS](https://neos-guide.org/): network enabled optimization system.
 
 - [CVXR](https://cran.r-project.org/web/packages/CVXR/index.html): disciplined convex optimization.
 
-<center> <h4>Nonlinear Equations</h4> </center>
+<center> <h3>Nonlinear Equations</h3> </center>
 
 #### 1. Definitions
 
