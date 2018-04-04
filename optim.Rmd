@@ -17,7 +17,7 @@ css: style2.css
 
 #
 
-I am taking __Optimization for Statistics__ with [Dr. Ravi Varadhan](https://www.jhsph.edu/faculty/directory/profile/2393/ravi-varadhan) and [Dr. Vadim Zipunnikov](http://www.biostat.jhsph.edu/~vzipunni/). Here are some of my thoughts and notes from the lectures.
+I am currently learning optimization. Here are some of my thoughts and notes.
 
 <center> <h3>Tools</h3> </center>
  
@@ -37,18 +37,25 @@ If $f(x) = 0$, where $x \in \mathbb{R}^p$, $f \in \mathbb{R}^k$, then
 
 - $k<p$: underdetermined (over parametrized)
 
-#### 2. Different convergence rate
+#### 2. Different convergence rate [More](https://en.wikipedia.org/wiki/Rate_of_convergence)
 
 Consider the series $\{x_k\} \rightarrow x^{*}$
 
 - q linear convergence
-
+$$\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} = c$$
 - q super linear convergence
-
-- quadratic convergence
-
+$$\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow 0$$
+- q quadratic convergence
+$$\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|^q} \rightarrow c$$
 - q sublinear convergence
+$$\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow 1$$
 
+<center> <h3>Numeric Derivative</h3> </center>
 
+- Standard approach (foward/backward)
 
+- Centered approach
 
+- [More readings](http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf) from Doron Levy.
+
+<center> <h3>Newton's Method</h3> </center>

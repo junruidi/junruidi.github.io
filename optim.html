@@ -231,7 +231,7 @@ $(document).ready(function () {
 </div>
 <div id="section-1" class="section level1">
 <h1></h1>
-<p>I am taking <strong>Optimization for Statistics</strong> with <a href="https://www.jhsph.edu/faculty/directory/profile/2393/ravi-varadhan">Dr. Ravi Varadhan</a> and <a href="http://www.biostat.jhsph.edu/~vzipunni/">Dr. Vadim Zipunnikov</a>. Here are some of my thoughts and notes from the lectures.</p>
+<p>I am currently learning optimization. Here are some of my thoughts and notes.</p>
 <center>
 <h3>
 Tools
@@ -255,15 +255,30 @@ Miscellaneous
 <li><p><span class="math inline">\(k&lt;p\)</span>: underdetermined (over parametrized)</p></li>
 </ul>
 </div>
-<div id="different-convergence-rate" class="section level4">
-<h4>2. Different convergence rate</h4>
+<div id="different-convergence-rate-more" class="section level4">
+<h4>2. Different convergence rate <a href="https://en.wikipedia.org/wiki/Rate_of_convergence">More</a></h4>
 <p>Consider the series <span class="math inline">\(\{x_k\} \rightarrow x^{*}\)</span></p>
 <ul>
-<li><p>q linear convergence</p></li>
-<li><p>q super linear convergence</p></li>
-<li><p>quadratic convergence</p></li>
-<li><p>q sublinear convergence</p></li>
+<li>q linear convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} = c\]</span></li>
+<li>q super linear convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow 0\]</span></li>
+<li>q quadratic convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|^q} \rightarrow c\]</span></li>
+<li>q sublinear convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow 1\]</span></li>
 </ul>
+<center>
+<h3>
+Numeric Derivative
+</h3>
+</center>
+<ul>
+<li><p>Standard approach (foward/backward)</p></li>
+<li><p>Centered approach</p></li>
+<li><p><a href="http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf">More readings</a> from Doron Levy.</p></li>
+</ul>
+<center>
+<h3>
+Newton’s Method
+</h3>
+</center>
 </div>
 </div>
 
