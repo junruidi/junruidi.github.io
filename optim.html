@@ -231,7 +231,7 @@ $(document).ready(function () {
 </div>
 <div id="section-1" class="section level1">
 <h1></h1>
-<p>I am currently learning optimization. Here are some of my thoughts and notes.</p>
+<p>I am currently learning optimization (thanks to Dr. Ravi Varadhan and Dr. Vadim Zipunnikov). Here are some of my thoughts and notes.</p>
 <center>
 <h3>
 Tools
@@ -264,21 +264,62 @@ Miscellaneous
 <li>q quadratic convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|^q} \rightarrow c\]</span></li>
 <li>q sublinear convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow 1\]</span></li>
 </ul>
+</div>
+<div id="gradient-hessian-and-jacobian" class="section level4">
+<h4>3. Gradient, hessian, and Jacobian</h4>
+<p>For a scalar function <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>:</p>
+<p>The gradient (first order derivatives) is the vector $f = (, ,) $.</p>
+<p>The hessian (second order derivatives) is the matrix <span class="math inline">\(\nabla^2 f = [\frac{\partial^2 f}{\partial x_i \partial x_j}]\)</span>.</p>
+<p>For a equation systems <span class="math inline">\(F: \mathbb{R}^p \rightarrow \mathbb{R}^p\)</span>:</p>
+<p>The Jacobian is the matrix <span class="math inline">\(J = [\frac{\partial F_i}{\partial x_j}]\)</span>.</p>
 <center>
 <h3>
 Numeric Derivative
 </h3>
 </center>
-<ul>
-<li><p>Standard approach (foward/backward)</p></li>
-<li><p>Centered approach</p></li>
-<li><p><a href="http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf">More readings</a> from Doron Levy.</p></li>
-</ul>
+</div>
+<div id="standard-approach-fowardbackward" class="section level4">
+<h4>1. Standard approach (foward/backward)</h4>
+<p><span class="math display">\[f&#39;(x) \approx \frac{f(x+h) - f(x)}{h} \approx \frac{f(x) - f(x-h)}{h}\]</span></p>
+</div>
+<div id="centered-differecing" class="section level4">
+<h4>2. Centered differecing</h4>
+<p><span class="math display">\[f&#39;(x) \approx \frac{f(x+h) - f(x-h)}{2h}\]</span> Derivation based on Talor expansion of <span class="math inline">\(f(x+h)\)</span> and <span class="math inline">\(f(x-h)\)</span>.</p>
+<p><span class="math display">\[f&#39;(x) = \frac{f(x+h) - f(x-h)}{2h} -\frac{h^2}{12}[f&#39;&#39;&#39;(\xi_1) + f&#39;&#39;&#39;(\xi_2)]\]</span></p>
+</div>
+<div id="selection-of-h" class="section level4">
+<h4>3. Selection of <span class="math inline">\(h\)</span></h4>
+<p><span class="math display">\[h = \sqrt{\epsilon} \max (|x|,\text{typical } x)\]</span> where <span class="math inline">\(\epsilon\)</span> is the machine constant.</p>
+</div>
+<div id="complex-step-derivation" class="section level4">
+<h4>4. Complex step derivation</h4>
+<p><span class="math display">\[f(x+ih) \approx f(x) + ihf&#39;(x) \]</span> <span class="math display">\[Img(f(x+ih)) \approx hf&#39;(x)\]</span> <span class="math display">\[f&#39;(x) \approx \frac{1}{h}Img(f(x+ih))\]</span></p>
+</div>
+<div id="more-readings-from-doron-levy." class="section level4">
+<h4>5. <a href="http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf">More readings</a> from Doron Levy.</h4>
 <center>
 <h3>
 Newton’s Method
 </h3>
 </center>
+</div>
+<div id="univariate-scalar-function" class="section level4">
+<h4>1. Univariate scalar function</h4>
+<p><span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span></p>
+<p><span class="math display">\[f(x) = f(x_c) + \int_{x_c}^{x}f&#39;(u)du \approx f(x_c) + f&#39;(x_c)(x-xc)\]</span></p>
+<p>The Newton’s estimation is</p>
+<p><span class="math display">\[x_{k+1} = x_{k} - \frac{f(x_k)}{f&#39;(x_k)}\]</span></p>
+</div>
+<div id="equation-systems" class="section level4">
+<h4>2. Equation systems</h4>
+<p><span class="math inline">\(F: \mathbb{R}^p\rightarrow \mathbb{R}^p\)</span>, and the Jacobian <span class="math inline">\(J = \frac{\partial F_i(x)}{\partial x_j}\)</span></p>
+<p><span class="math display">\[F(x_c + p) = F(x_c) + \int_{x_c}^{x}J(t)dt \approx F(x_c) + J(x_c)p\]</span> The Newton’s estimation is</p>
+<p><span class="math display">\[x_{k+1} = x_{k} - F(x_c)J^{-1}(x_c)\]</span></p>
+</div>
+<div id="quasi-newton" class="section level4">
+<h4>3. Quasi Newton</h4>
+<p>The goal is to not calculate <span class="math inline">\(J\)</span> for all the iterations, instead using the Broydan’s rank 1 update <span class="math inline">\(x_{k+1} = x_{k} - F(x_c)B_c^{-1}\)</span>.</p>
+<p><span class="math display">\[B_{k+1} = B_k + \frac{(y - B_k s)s^T}{s^Ts}\]</span> where <span class="math inline">\(y = F(x_{k+1}) - F(x_k)\)</span>, and step <span class="math inline">\(s = x_{k+1} - x_k\)</span>. Eventually, the inverse can be done using the sherman morrison formula.</p>
 </div>
 </div>
 
