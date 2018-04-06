@@ -17,8 +17,10 @@ css: style2.css
 
 #
 
-- [Computing Clubs](compclub.html)
+- [Computing Club](compclub.html)
 
 - [Notes on Optimization for Statistics](optim.html)
 
-- A good [reading](https://www.biorxiv.org/content/early/2018/03/05/276154) on analyzing raw accelerometry data. 
+- A good [reading](https://www.biorxiv.org/content/early/2018/03/05/276154) on analyzing raw accelerometry data
+
+- UFL [Statistics Jobs](http://forms.stat.ufl.edu/statistics-jobs/)

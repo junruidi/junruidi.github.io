@@ -25,6 +25,8 @@ I am currently learning optimization (thanks to Dr. Ravi Varadhan and Dr. Vadim 
 
 - [CVXR](https://cran.r-project.org/web/packages/CVXR/index.html): disciplined convex optimization.
 
+---
+
 <center> <h3>Miscellaneous</h3> </center>
 
 #### 1. Equations systems
@@ -62,6 +64,7 @@ For a equation systems $F: \mathbb{R}^p \rightarrow \mathbb{R}^p$:
 
 The Jacobian is the matrix $J = [\frac{\partial F_i}{\partial x_j}]$.
 
+---
 
 <center> <h3>Numeric Derivative</h3> </center>
 
@@ -88,6 +91,8 @@ $$f'(x) \approx \frac{1}{h}Img(f(x+ih))$$
 
 
 #### 5. [More readings](http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf) from Doron Levy.
+
+---
 
 <center> <h3>Newton's Method</h3> </center>
 
