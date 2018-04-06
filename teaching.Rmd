@@ -1,5 +1,5 @@
 ---
-title: "Teaching Assistant"
+title: "Teaching"
 css: style2.css
 ---
 <script>
@@ -23,10 +23,10 @@ Term  | Course Number| Title  | Notes
 ---------| -------------| ----------------------- | -----
 Spring 2018   |  PH.140.623   |  Statistical Methods in Public Health III | __Lead TA__$^\dagger$
 Fall 2017   |  PH.140.621   |  Statistical Methods in Public Health I   | __Lead TA__$^\dagger$
-Spring 2017   |   PH.140.623/4   |   Statistical Methods in Public Health III-IV   |
-Fall 2016   |   PH.140.621/2   |   Statistical Methods in Public Health I-II   |
-Spring 2016   |   PH 140.753/4   |   Advanced Methods in Biostatistics III-IV  |
-Fall 2015   |   PH 140.751/2   |   Advanced Methods in Biostatistics I-II   |
+Spring 2017   |   PH.140.623-4   |   Statistical Methods in Public Health III-IV   |
+Fall 2016   |   PH.140.621-2   |   Statistical Methods in Public Health I-II   |
+Spring 2016   |   PH 140.753-4   |   Advanced Methods in Biostatistics III-IV  | 
+Fall 2015   |   PH 140.751-2   |   Advanced Methods in Biostatistics I-II   | 
 Spring 2014   |   BIST 514  |   Linear Modeling & Multivariate Analysis   | Georgetown
 </center>
 
