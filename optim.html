@@ -324,6 +324,44 @@ Newton’s Method
 <p>The goal is to not calculate <span class="math inline">\(J\)</span> for all the iterations, instead using the Broydan’s rank 1 update <span class="math inline">\(x_{k+1} = x_{k} - F(x_c)B_c^{-1}\)</span>.</p>
 <p><span class="math display">\[B_{k+1} = B_k + \frac{(y - B_k s)s^T}{s^Ts}\]</span> where <span class="math inline">\(y = F(x_{k+1}) - F(x_k)\)</span>, and step <span class="math inline">\(s = x_{k+1} - x_k\)</span>. Eventually, the inverse can be done using the sherman morrison formula.</p>
 </div>
+<div id="solve-newtons-method-with-cholesky-decomposition" class="section level4">
+<h4>4. Solve Newton’s method with Cholesky decomposition</h4>
+<p>For <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>, where <span class="math inline">\(f\)</span> is twice differentiable with Llipschitz condition <span class="math inline">\(||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||\)</span>, and also <span class="math inline">\(\nabla f(x^*) = 0\)</span>, and <span class="math inline">\(\nabla^2 f(x^*)\)</span> is postive definite, the Newtown’s method</p>
+<p><span class="math display">\[\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)\]</span> can be solved by the Cholesky decomposition <span class="math inline">\(\nabla^2 f(x_k) = LL^T\)</span>, where <span class="math inline">\(L\)</span> is a lower triangular matrix by <span class="math display">\[LL^T S_k = -\nabla f(x_k)\]</span> .</p>
+<hr />
+<center>
+<h3>
+Gradient Descent
+</h3>
+</center>
+</div>
+<div id="definition" class="section level4">
+<h4>1. Definition</h4>
+<p>For a scalar function <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>, with gradient <span class="math inline">\(\nabla f\)</span>, the gradient descent (a.k.a. steepest descent) algorithm is</p>
+<p><span class="math display">\[x_{k+1} = x_k - \lambda \nabla f(x_k)\]</span></p>
+</div>
+<div id="intuition" class="section level4">
+<h4>2. Intuition</h4>
+<p>Gradient descent is based on the observation that if the multi-variable function <span class="math inline">\(f(x)\)</span> is defined and differentiable in a neighborhood of a point <span class="math inline">\(x_c\)</span> , then <span class="math inline">\(f(x)\)</span> decreases fastest if one goes from <span class="math inline">\(x_c\)</span> in the direction of the negative gradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_c\)</span>, <span class="math inline">\(\nabla f(x_c)\)</span>.</p>
+</div>
+<div id="line-search" class="section level4">
+<h4>3. Line search</h4>
+<p>The line search approach first finds a descent direction along which the objective function <span class="math inline">\(f\)</span> f will be reduced and then computes a step size that determines how far <span class="math inline">\(x\)</span> should move along that direction, i.e. <span class="math inline">\(\lambda\)</span> varies.</p>
+</div>
+<div id="coverngce-rate" class="section level4">
+<h4>4. Coverngce rate</h4>
+<p>For gradient descent algorithm</p>
+<p><span class="math display">\[\lim _{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}}\]</span></p>
+<p>where <span class="math inline">\(\lambda_{max}\)</span> and <span class="math inline">\(\lambda_{min}\)</span> are the largest and smallest eigen values of the hessin <span class="math inline">\(\nabla ^2 f(x)\)</span> where <span class="math inline">\(x\)</span> is closed to <span class="math inline">\(x^*\)</span>. If <span class="math inline">\(\lambda_{max} &gt;&gt; \lambda_{min}\)</span>, the <span class="math inline">\(\frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1\)</span>, i.e. gradient descent becomes sublinear, and inefficient.</p>
+<hr />
+<center>
+<h3>
+Hybrid Method
+</h3>
+</center>
+<p>A combination of Newton’s method and gradient descent can be formed in a format of a penalized ridge regression</p>
+<p><span class="math display">\[(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla f(x)\]</span> where <span class="math inline">\(\lambda\)</span> can be <span class="math inline">\(\{\lambda_k\}\rightarrow 0\)</span>, e.g. <span class="math inline">\(\lambda = \lambda/10\)</span>.</p>
+</div>
 </div>
 
 

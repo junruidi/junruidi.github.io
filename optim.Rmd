@@ -122,3 +122,45 @@ The goal is to not calculate $J$ for all the iterations, instead using the Broyd
 $$B_{k+1} = B_k + \frac{(y - B_k s)s^T}{s^Ts}$$
 where $y = F(x_{k+1}) - F(x_k)$, and step $s = x_{k+1} - x_k$. Eventually, the inverse can be done using the sherman morrison formula.
 
+#### 4. Solve Newton's method with Cholesky decomposition
+
+For $f: \mathbb{R}^p \rightarrow \mathbb{R}$, where $f$ is twice differentiable with Llipschitz condition $||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||$, and also $\nabla f(x^*) = 0$, and $\nabla^2 f(x^*)$ is postive definite, the Newtown's method
+
+$$\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)$$
+can be solved by the Cholesky decomposition $\nabla^2 f(x_k) = LL^T$, where $L$ is a lower triangular matrix by
+$$LL^T S_k = -\nabla f(x_k)$$
+.
+
+---
+
+<center> <h3>Gradient Descent</h3> </center>
+
+#### 1. Definition
+For a scalar function $f: \mathbb{R}^p \rightarrow \mathbb{R}$, with gradient $\nabla f$, the gradient descent (a.k.a. steepest descent) algorithm is 
+
+$$x_{k+1} = x_k - \lambda \nabla f(x_k)$$
+
+#### 2. Intuition
+
+Gradient descent is based on the observation that if the multi-variable function $f(x)$ is defined and differentiable in a neighborhood of a point $x_c$ , then $f(x)$ decreases fastest if one goes from $x_c$ in the direction of the negative gradient of $f$ at $x_c$, $\nabla f(x_c)$.
+
+#### 3. Line search
+The line search approach first finds a descent direction along which the objective function $f$ f will be reduced and then computes a step size that determines how far $x$ should move along that direction, i.e. $\lambda$ varies.
+
+
+#### 4. Coverngce rate
+For gradient descent algorithm 
+
+$$\lim _{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}}$$
+
+where $\lambda_{max}$ and $\lambda_{min}$ are the largest and smallest eigen values of the hessin $\nabla ^2 f(x)$ where $x$ is closed to $x^*$. 
+If $\lambda_{max} >> \lambda_{min}$, the $\frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1$, i.e. gradient descent becomes sublinear, and inefficient.
+
+
+---
+<center> <h3>Hybrid Method</h3> </center>
+
+A combination of Newton's method and gradient descent can be formed in a format of a penalized ridge regression 
+
+$$(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla f(x)$$
+where $\lambda$ can be $\{\lambda_k\}\rightarrow 0$, e.g. $\lambda = \lambda/10$.
