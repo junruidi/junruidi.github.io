@@ -35,8 +35,13 @@ __Statistical Methods__: feature engineering for accelerometry signals, dimensio
 
 <br>
 
-###WordCloud Representing My research
-![](./files/wordcloud.png)
+###Wordcloud Representing My Research
+```{r,echo=FALSE,out.width="75%",out.height="75%",fig.align = "center"}
+knitr::include_graphics("files/wordcloud.png")
+```
+
+
+
 
 
 
