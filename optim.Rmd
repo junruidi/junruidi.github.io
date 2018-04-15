@@ -129,7 +129,7 @@ For $f: \mathbb{R}^p \rightarrow \mathbb{R}$, where $f$ is twice differentiable 
 $$\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)$$
 can be solved by the Cholesky decomposition $\nabla^2 f(x_k) = LL^T$, where $L$ is a lower triangular matrix by
 $$LL^T S_k = -\nabla f(x_k)$$
-.
+
 
 ---
 
@@ -158,9 +158,79 @@ If $\lambda_{max} >> \lambda_{min}$, the $\frac{\lambda_{max} - \lambda_{min}}{\
 
 
 ---
+
 <center> <h3>Hybrid Method</h3> </center>
 
 A combination of Newton's method and gradient descent can be formed in a format of a penalized ridge regression 
 
 $$(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla f(x)$$
 where $\lambda$ can be $\{\lambda_k\}\rightarrow 0$, e.g. $\lambda = \lambda/10$.
+
+
+
+---
+
+<center> <h3>Constrained Optimization</h3> </center>
+
+#### 1. Definition
+
+$$\text{min}_{x \in \Omega  \subseteq \mathbb{R}^p} f(x)$$
+where $\Omega$ is th called the feasible set.
+
+#### 2. Types of constraints.
+
+- Box constraints: $l_i \leq x_i \leq u_i$
+
+  We can try to find a transformation $y= T(x)$. E.g. Take $t_i = 2 \frac{x_i - l_i}{u_i - l_i} - 1$, and then $y_i = \log (\frac{1+t_i}{1-t_i})$. And we see that $\Omega_y = \mathbb{R}^p$. But has to be careful that eht solution is not closed to the boundary. Another way is to do the projection. $\text{Proj}(x_i) = \text{median}(l_i, u_i, x_i)$
+
+- Linear equality constraints: $\Omega = \{x|Ax = b\}$
+
+- Linear ineqaulity constraints:$\Omega = \{x|Ax - b \leq 0\}$
+
+- Nonlinear equality or inequality $h_j(x) = 0$ or $g_j(x)\leq 0$
+
+#### 3. Newton's method with constrains.
+
+$\text{min} f(x)$ suich that $Ax = b$.
+
+The lagrangian is  $L(x) = f(x)+ \lambda^T()Ax-b)$, and we want $\nabla L(x) = \nabla f(x) +A^T \lambda = 0$.
+
+The first order optimality condition is ($S_k$ is the current step):
+
+$$\begin{cases} \nabla f(x) +A^T \lambda = 0 \\ AS_k = 0 \end{cases}$$
+
+And we also have
+
+$$\begin{cases} \nabla f(x+S_k) = \nabla f(x) + \nabla^2 f(x)S_k \\  \nabla f(x+S_k) +A^T \lambda = 0\end{cases}$$
+
+Eventually we have the KKT condition which is
+
+$$\begin{cases} \nabla f(x) + \nabla^2 f(x)S_k +A^T \lambda = 0\\ AS_k = 0\end{cases}$$ 
+with the matrix form
+
+$$\begin{pmatrix} \nabla^2 f & A^T \\ A & 0 \end{pmatrix} \begin{pmatrix} S_k \\ \lambda\end{pmatrix} = \begin{pmatrix} -\nabla f \\ 0 \end{pmatrix}$$
+
+Solve this to find $\lambda$ and $S_k$. 
+
+#### 4. Optimality on the boundary
+
+```{r, echo=FALSE}
+x = seq(1,2, by = 0.01)
+y = -2*x^2+4*x+2
+plot(x,y,xaxt = "n", yaxt = "n", xlab = "", ylab = "", type = "l",ylim = c(0,6), xlim = c(0,3))
+abline(v = c(1,2),lty = 3)
+axis(1, at = c(1,2),labels = c("a","b"))
+```
+
+Apparently, $f(b)$ is the minimum, but $f'(b) = 0$ fails. Instead, we should check
+
+$$f''(x^*) (x^* -a)(b - x^*) \geq 0$$
+
+#### 5. Reduced hessian
+
+$$[\nabla^2_{\text{R}}f(x)]_{ij} = \begin{cases} \delta_{ij} & \text{   if either i or j constrains is acive} \\ [\nabla^2 f(x)]_{ij} & \text{Otherwise} \end{cases} $$
+
+so that 
+$$\nabla^2_{\text{R}}f(x) = \begin{pmatrix} \nabla^2 f(x) & 0 \\ 0 & I \end{pmatrix}$$
+
+is PSD.

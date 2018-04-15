@@ -327,7 +327,7 @@ Newton’s Method
 <div id="solve-newtons-method-with-cholesky-decomposition" class="section level4">
 <h4>4. Solve Newton’s method with Cholesky decomposition</h4>
 <p>For <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>, where <span class="math inline">\(f\)</span> is twice differentiable with Llipschitz condition <span class="math inline">\(||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||\)</span>, and also <span class="math inline">\(\nabla f(x^*) = 0\)</span>, and <span class="math inline">\(\nabla^2 f(x^*)\)</span> is postive definite, the Newtown’s method</p>
-<p><span class="math display">\[\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)\]</span> can be solved by the Cholesky decomposition <span class="math inline">\(\nabla^2 f(x_k) = LL^T\)</span>, where <span class="math inline">\(L\)</span> is a lower triangular matrix by <span class="math display">\[LL^T S_k = -\nabla f(x_k)\]</span> .</p>
+<p><span class="math display">\[\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)\]</span> can be solved by the Cholesky decomposition <span class="math inline">\(\nabla^2 f(x_k) = LL^T\)</span>, where <span class="math inline">\(L\)</span> is a lower triangular matrix by <span class="math display">\[LL^T S_k = -\nabla f(x_k)\]</span></p>
 <hr />
 <center>
 <h3>
@@ -361,6 +361,53 @@ Hybrid Method
 </center>
 <p>A combination of Newton’s method and gradient descent can be formed in a format of a penalized ridge regression</p>
 <p><span class="math display">\[(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla f(x)\]</span> where <span class="math inline">\(\lambda\)</span> can be <span class="math inline">\(\{\lambda_k\}\rightarrow 0\)</span>, e.g. <span class="math inline">\(\lambda = \lambda/10\)</span>.</p>
+<hr />
+<center>
+<h3>
+Constrained Optimization
+</h3>
+</center>
+</div>
+<div id="definition-1" class="section level4">
+<h4>1. Definition</h4>
+<p><span class="math display">\[\text{min}_{x \in \Omega  \subseteq \mathbb{R}^p} f(x)\]</span> where <span class="math inline">\(\Omega\)</span> is th called the feasible set.</p>
+</div>
+<div id="types-of-constraints." class="section level4">
+<h4>2. Types of constraints.</h4>
+<ul>
+<li>Box constraints: <span class="math inline">\(l_i \leq x_i \leq u_i\)</span></li>
+</ul>
+<p>We can try to find a transformation <span class="math inline">\(y= T(x)\)</span>. E.g. Take <span class="math inline">\(t_i = 2 \frac{x_i - l_i}{u_i - l_i} - 1\)</span>, and then <span class="math inline">\(y_i = \log (\frac{1+t_i}{1-t_i})\)</span>. And we see that <span class="math inline">\(\Omega_y = \mathbb{R}^p\)</span>. But has to be careful that eht solution is not closed to the boundary. Another way is to do the projection. <span class="math inline">\(\text{Proj}(x_i) = \text{median}(l_i, u_i, x_i)\)</span></p>
+<ul>
+<li><p>Linear equality constraints: <span class="math inline">\(\Omega = \{x|Ax = b\}\)</span></p></li>
+<li><p>Linear ineqaulity constraints:<span class="math inline">\(\Omega = \{x|Ax - b \leq 0\}\)</span></p></li>
+<li><p>Nonlinear equality or inequality <span class="math inline">\(h_j(x) = 0\)</span> or <span class="math inline">\(g_j(x)\leq 0\)</span></p></li>
+</ul>
+</div>
+<div id="newtons-method-with-constrains." class="section level4">
+<h4>3. Newton’s method with constrains.</h4>
+<p><span class="math inline">\(\text{min} f(x)\)</span> suich that <span class="math inline">\(Ax = b\)</span>.</p>
+<p>The lagrangian is <span class="math inline">\(L(x) = f(x)+ \lambda^T()Ax-b)\)</span>, and we want <span class="math inline">\(\nabla L(x) = \nabla f(x) +A^T \lambda = 0\)</span>.</p>
+<p>The first order optimality condition is (<span class="math inline">\(S_k\)</span> is the current step):</p>
+<p><span class="math display">\[\begin{cases} \nabla f(x) +A^T \lambda = 0 \\ AS_k = 0 \end{cases}\]</span></p>
+<p>And we also have</p>
+<p><span class="math display">\[\begin{cases} \nabla f(x+S_k) = \nabla f(x) + \nabla^2 f(x)S_k \\  \nabla f(x+S_k) +A^T \lambda = 0\end{cases}\]</span></p>
+<p>Eventually we have the KKT condition which is</p>
+<p><span class="math display">\[\begin{cases} \nabla f(x) + \nabla^2 f(x)S_k +A^T \lambda = 0\\ AS_k = 0\end{cases}\]</span> with the matrix form</p>
+<p><span class="math display">\[\begin{pmatrix} \nabla^2 f &amp; A^T \\ A &amp; 0 \end{pmatrix} \begin{pmatrix} S_k \\ \lambda\end{pmatrix} = \begin{pmatrix} -\nabla f \\ 0 \end{pmatrix}\]</span></p>
+<p>Solve this to find <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(S_k\)</span>.</p>
+</div>
+<div id="optimality-on-the-boundary" class="section level4">
+<h4>4. Optimality on the boundary</h4>
+<p><img src="optim_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>Apparently, <span class="math inline">\(f(b)\)</span> is the minimum, but <span class="math inline">\(f&#39;(b) = 0\)</span> fails. Instead, we should check</p>
+<p><span class="math display">\[f&#39;&#39;(x^*) (x^* -a)(b - x^*) \geq 0\]</span></p>
+</div>
+<div id="reduced-hessian" class="section level4">
+<h4>5. Reduced hessian</h4>
+<p><span class="math display">\[[\nabla^2_{\text{R}}f(x)]_{ij} = \begin{cases} \delta_{ij} &amp; \text{   if either i or j constrains is acive} \\ [\nabla^2 f(x)]_{ij} &amp; \text{Otherwise} \end{cases} \]</span></p>
+<p>so that <span class="math display">\[\nabla^2_{\text{R}}f(x) = \begin{pmatrix} \nabla^2 f(x) &amp; 0 \\ 0 &amp; I \end{pmatrix}\]</span></p>
+<p>is PSD.</p>
 </div>
 </div>
 
