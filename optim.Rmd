@@ -25,6 +25,8 @@ I am currently learning optimization (thanks to Dr. Ravi Varadhan and Dr. Vadim 
 
 - [CVXR](https://cran.r-project.org/web/packages/CVXR/index.html): disciplined convex optimization.
 
+- [CRAN Task View: Optimization and Mathematical Programing](https://cran.r-project.org/web/views/Optimization.html)
+
 ---
 
 <center> <h3>Miscellaneous</h3> </center>
@@ -234,3 +236,99 @@ so that
 $$\nabla^2_{\text{R}}f(x) = \begin{pmatrix} \nabla^2 f(x) & 0 \\ 0 & I \end{pmatrix}$$
 
 is PSD.
+
+---
+
+<center> <h3>EM Algorithms</h3> </center>
+
+#### 1. Concepts
+
+Consider the data generating model that generate $x = \{y, z \}$, where $x$ is the full data, $y$ is the observed data, and $z$ is the latent data/missing values, and parameters $\theta$
+
+Observed density:
+$$p(y | \theta) = \int_{x}p(x|\theta)dx = \int_zp(x|\theta) p(z|y, \theta) dz$$
+
+This is often intractbale. Therefore, we consider EM. The complete data likelihood is $L_c(\theta) =p(y,z|\theta) $.
+
+#### 2. Procedures
+
+E Step: Calculate the expected value of the compete log likelihood with respect to the condition distribution of $z$ given $y$, under the $\theta^{(k)}$ from the current iteration $k$.
+
+$$ Q(\theta|\theta^{(k)}) = E_{z|y,\theta^{(k)}}(\log L(\theta; y,z)) = \int \log p(y,z|\theta) p(z|y,\theta^{(k)})dz$$
+
+M Step: Find the quantity that maximize the surrogate quantity $Q(\theta | \theta^{(k)})$.
+
+$$ \theta^{(k+1)} = \text{argmax}_\theta Q(\theta|\theta^{(k)})$$
+
+#### 3. Generalized EM
+Instead of finding $\text{argmax}_\theta Q$, we can find any $\theta$ that increase $Q$. 
+
+
+#### 4. Properties
+
+- $Q(\theta^{(k+1)}|\theta^{(k)})\geq Q(\theta^{(k)}|\theta^{(k)})$
+
+- The ascent property of EM: for the observed ata likelihood $L(\theta^{(k+1)}) \geq L(\theta^{(k)})$ 
+
+#### 5. Example 1: multinomial
+
+We have n = 197 data that fall into the 4 categroies $\mathbb{y} = (y_1, y_2, y_3, y_4) = c(125, 18,25,34)$, with propability $\mathbf{p} = (\frac{1}{2}+\frac{\theta}{4}, \frac{1}{4}(1-\theta),  \frac{1}{4}(1-\theta), \frac{\theta}{4})$, s.t. $0 \leq \theta \leq 1$. 
+
+Apparently, we can solve it by MLE. But Let's consider solving it using EM.
+
+Notice that the first probability is separatable. Therefore, we can separete $y = (x_1,x_2,x_3,x_4,x_5)$, such that $(x_3, x_4, x_5) = (y_2,y_3,y_4)$ are the observed data, and $z = (x_1,x_2)$ are latent data. We have $x_1+x_2 = y_1$ such that $p(x_1) = \frac{1}{2}$, $p(x_2) = \frac{\theta}{4}$. 
+
+The complete data likelihood is
+$g(x|\theta) = \frac{n!}{\prod_i x_i !} (\frac{1}{2})^{x_1}(\frac{\theta}{4})^{x_2}(\frac{1}{4}(1-\theta))^{x_3+x_4} (\frac{\theta}{4})^{x_5}$
+
+And the CDLL (complete data log likelihood) is 
+$$L_c = \log g(x|\theta) \propto (x_2 + x_5)\log \theta + (x_3+x_4)\log (1-\theta)$$
+The E step is 
+$$E(L_c) \propto (E(x_2) + x_5)\log \theta + (x_3+x_4)\log (1-\theta)$$
+where $E(x_2) = n \times \frac{\frac{\theta^{(k)}}{4}}{\frac{1}{2}+\frac{\theta^{(k)}}{4}}$, and then to maximize it in the M step.
+
+#### 6. Example 2: Finite mixture of normal distribution
+
+Consider a mixture model with $g$ univariate Gaussian components, with $\mu = (\mu_1,\dots \mu_g)$, and common variance $\sigma^2$. 
+
+The density is 
+
+$$f(y;\theta) = \sum_{j = 1}^{g}\pi_j f_j(y;\mu_j, \sigma^2)$$
+where $\theta = (\pi_1,\dots, \pi_g,\mu_1,\dots, \mu_g, \sigma^2)$.
+
+And the observed log likelihood is 
+
+$$L(\theta) = \sum_{i=1}^{n}\log (\sum_{j = 1}^g \pi_j f_j(y_j;\mu_j,\sigma^2))$$
+such that $\sum_{j}\pi_ = 1$, $\sigma^2 > 0$, and $0 \leq \pi_j \leq 1$. If we directly maximize it, it becomes a constrained problem. But we can solve it using EM.
+
+Consider the complete data to be $x = c(y,z)$, where $z$ is defined as
+
+$$z_{ij} = \begin{cases}1 \quad \text{if } y_i \text{ comes of the th component} \\ 0 \quad \text{otherwise}\end{cases}$$
+such that $\pi_j = \frac{\sum_i z_{ij}}{n}$
+
+The complete data likelihood becomes
+
+$$l_c(\theta) = \prod_i\prod_j \pi_j^{z_{ij}} f_j(y;\theta)^{z_{ij}}$$
+with the CDLL 
+
+$$L_c(\theta) = \sum_i\sum_j z_{ij}\log \pi_j + \sum_i\sum_j z_{ij}\log f_j (y_i;\theta)$$
+
+The expected value is 
+
+$$E(z_{ij}|y, \theta^{(k)}) = p[z_{ij} = 1|y, \theta^{(k)}]$$
+
+$$E(z_{ij}|y, \theta^{(k)}) = \frac{\pi_j^{(k)}f_j(y_i; \mu_j^{(k)}, \sigma^{2 (k)})}{\sum_j\pi_j^{(k)}f_j(y_i; \mu_j^{(k)}, \sigma^{2 (k)})}  = z_{ij}^{(k)}$$
+
+Plug $z_{ij}^{(k)}$ to get the expected value of CDLL and gives the E step. Then do M step, to get
+
+$$\pi_{j}^{(k+1)} = \frac{1}{n}\sum_{i}z_{ij}^{(k)}$$
+
+$$\mu_j^{(k+1)} = \frac{\sum_i z_{ij}^{(k)}y_i}{\sum_{i}z_{ij}^{(k)}}$$
+
+$$\sigma^{2(k+1)} = \frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2$$
+
+---
+
+<center> <h3>MM Algorithms</h3> </center>
+
+Majroized minimization/ minorize maximazation
