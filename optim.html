@@ -470,10 +470,48 @@ EM Algorithms
 <hr />
 <center>
 <h3>
-MM Algorithms
+MM Linear Regression Via SVD
 </h3>
 </center>
-<p>Majroized minimization/ minorize maximazation</p>
+</div>
+<div id="linear-regression-problem-setup" class="section level4">
+<h4>1. Linear regression problem setup</h4>
+<p><span class="math display">\[y = X\beta +\epsilon\]</span> where <span class="math inline">\(y \in \mathbb{R}^{n}\)</span>, <span class="math inline">\(X\in \mathbb{R}^{n\times p}\)</span>, <span class="math inline">\(\beta \in \mathbb{R}^{p}\)</span>, <span class="math inline">\(n&gt;p\)</span>, and <span class="math inline">\(\epsilon \sim N(0,\sigma^2 I)\)</span>. We know that the least square estimator is <span class="math display">\[\hat{\beta}_{ls} = (X&#39;X)^{-1}X&#39;Y\]</span></p>
+</div>
+<div id="estimation-and-prediction-via-svd" class="section level4">
+<h4>2. Estimation and prediction via SVD</h4>
+<p>Suppose the SVD of <span class="math inline">\(X\)</span> is <span class="math inline">\(X = USV&#39;\)</span> such that <span class="math inline">\(U&#39;U = V&#39;V = I\)</span>, and <span class="math inline">\(S\)</span> is diagonal matrix with ordered singular values on the main diagonal. Then</p>
+<p><span class="math display">\[\hat{\beta}_{ls} = VS^{-1}U&#39;y = \sum_{j = 1}^{p}v_j^{&#39;}\frac{&lt;u_j^{&#39;}, y&gt;}{s_j}\]</span> which means that <span class="math inline">\(\hat{\beta}_{ls} \in L_{span}(v_1^{&#39;},\cdots, v_p^{&#39;})\)</span>.</p>
+<p>And the predicted value <span class="math display">\[\hat{y} = X(X&#39;X)^{-1}X&#39;Y = \sum_{j= 1}^{p} = u_j &lt;u_j^{&#39;},y&gt;\]</span> such that <span class="math inline">\(\hat{y}\in L_{span}(u_1^{&#39;},\cdots, u_p^{&#39;})\)</span>.</p>
+</div>
+<div id="linear-regression-with-np" class="section level4">
+<h4>3. Linear regression with <span class="math inline">\(n&lt;p\)</span></h4>
+<p>If <span class="math inline">\(n&lt;p\)</span>, <span class="math inline">\(X&#39;X\)</span> is not full rank and so that is not invertible. But we can consider the generalized inverse <span class="math display">\[X^{-} = VS^{-1}U&#39;\]</span> such that <span class="math inline">\(XX^{-}X = X\)</span>. <span class="math inline">\(\hat{\beta}_{ls} = (X&#39;X)^{-}X&#39;y = VS^{-1}U&#39;y = X^{-}y\)</span>, which is not unique.</p>
+<p>We need to consider other approach for the estimation, e.g. ridge regression.</p>
+<hr />
+<center>
+<h3>
+MM Ridge Regression
+</h3>
+</center>
+</div>
+<div id="ridge-via-pennalization-v.s.-ridge-via-constraints" class="section level4">
+<h4>1. Ridge via pennalization v.s. Ridge via constraints</h4>
+<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||^2_2\]</span> which is a convex function (both parts are convect), and</p>
+<p><span class="math display">\[\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||^2_2 \leq S\]</span></p>
+</div>
+<div id="estimation" class="section level4">
+<h4>2. Estimation</h4>
+<p><span class="math display">\[l(\beta) = (y-X\beta)&#39;(y-X\beta)+\lambda \beta&#39;\beta\]</span> <span class="math display">\[l&#39;(\beta) = -2X&#39;y + 2X&#39;X\beta + 2\lambda \beta&#39; = 0\]</span> So that <span class="math display">\[\hat{\beta}_{rd} = (X&#39;X + \lambda I )^{-1}X&#39;y = \sum_{j=1}^{p} = v_j^{&#39;}\frac{s_j}{s_j+\lambda_j} &lt;y,u_j^{&#39;}&gt;\]</span></p>
+</div>
+<div id="some-properties" class="section level4">
+<h4>3. Some properties</h4>
+<p>If <span class="math inline">\(\lambda = 0\)</span>, then <span class="math inline">\(\hat{\beta}_{rd} = \hat{\beta}_{ls}\)</span>. And we will have</p>
+<p><span class="math display">\[0 \leq \frac{||\hat{\beta}_{rd}||^2_2}{||\hat{\beta}_{ls}||^2_2}\leq 1\]</span> where 0 is corresponding to <span class="math inline">\(\lambda \rightarrow \infty\)</span>, and 1 is corresponding to <span class="math inline">\(\lambda = 0\)</span>.</p>
+</div>
+<div id="space-for-ridge-regression-constraints" class="section level4">
+<h4>4. Space for ridge regression constraints</h4>
+<p><img src="optim_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 </div>
 

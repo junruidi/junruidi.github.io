@@ -329,6 +329,66 @@ $$\sigma^{2(k+1)} = \frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2$$
 
 ---
 
-<center> <h3>MM Algorithms</h3> </center>
+<center> <h3>MM Linear Regression Via SVD </h3> </center>
 
-Majroized minimization/ minorize maximazation
+#### 1. Linear regression problem setup
+
+$$y = X\beta +\epsilon$$
+where $y \in \mathbb{R}^{n}$, $X\in \mathbb{R}^{n\times p}$, $\beta \in \mathbb{R}^{p}$, $n>p$, and $\epsilon \sim N(0,\sigma^2 I)$. We know that the least square estimator is 
+$$\hat{\beta}_{ls} = (X'X)^{-1}X'Y$$
+
+#### 2. Estimation and prediction via SVD
+
+Suppose the SVD of $X$ is $X = USV'$ such that $U'U = V'V = I$, and $S$ is diagonal matrix with ordered singular values on the main diagonal. Then 
+
+$$\hat{\beta}_{ls} = VS^{-1}U'y = \sum_{j = 1}^{p}v_j^{'}\frac{<u_j^{'}, y>}{s_j}$$
+which means that $\hat{\beta}_{ls} \in L_{span}(v_1^{'},\cdots, v_p^{'})$. 
+
+And the predicted value 
+$$\hat{y} = X(X'X)^{-1}X'Y = \sum_{j= 1}^{p} = u_j <u_j^{'},y>$$
+such that $\hat{y}\in L_{span}(u_1^{'},\cdots, u_p^{'})$.
+
+#### 3. Linear regression with $n<p$
+
+If $n<p$, $X'X$ is not full rank and so that is not invertible. But we can consider the generalized inverse 
+$$X^{-} = VS^{-1}U'$$
+such that $XX^{-}X = X$. $\hat{\beta}_{ls} = (X'X)^{-}X'y = VS^{-1}U'y = X^{-}y$, which is not unique. 
+
+We need to consider other approach for the estimation, e.g. ridge regression.
+
+---
+
+<center> <h3>MM Ridge Regression </h3> </center>
+
+#### 1. Ridge via pennalization v.s. Ridge via constraints
+
+$$l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||^2_2$$
+which is a convex function (both parts are convect), and
+
+$$\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||^2_2 \leq S$$
+
+#### 2. Estimation
+$$l(\beta) = (y-X\beta)'(y-X\beta)+\lambda \beta'\beta$$
+$$l'(\beta) = -2X'y + 2X'X\beta + 2\lambda \beta' = 0$$
+So that 
+$$\hat{\beta}_{rd} = (X'X + \lambda I )^{-1}X'y = \sum_{j=1}^{p} = v_j^{'}\frac{s_j}{s_j+\lambda_j} <y,u_j^{'}>$$
+
+#### 3. Some properties
+
+If $\lambda = 0$, then $\hat{\beta}_{rd} = \hat{\beta}_{ls}$. And we will have
+
+$$0 \leq \frac{||\hat{\beta}_{rd}||^2_2}{||\hat{\beta}_{ls}||^2_2}\leq 1$$
+where 0 is corresponding to $\lambda \rightarrow \infty$, and 1 is corresponding to $\lambda = 0$. 
+
+#### 4. Space for ridge regression constraints
+
+```{r,echo=FALSE}
+library(plotrix)
+plot(x = 0, y = 0, col = "white",xlim = c(-2.5,2.5),ylim = c(-2.5,2.5),axes = F,xaxt = "n", yaxt = "n",xlab = expression(beta[1]),ylab = expression(beta[2]))
+abline(v = 0, h = 0)
+text(0,2.2,"s")
+text(0,-2.2,"-s")
+text(1.2,0,"s")
+text(-1.2,0,"-s")
+draw.circle(x = 0, y = 0, radius = 1)
+```
