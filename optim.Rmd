@@ -329,7 +329,7 @@ $$\sigma^{2(k+1)} = \frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2$$
 
 ---
 
-<center> <h3>MM Linear Regression Via SVD </h3> </center>
+<center> <h3> Linear Regression Via SVD </h3> </center>
 
 #### 1. Linear regression problem setup
 
@@ -358,7 +358,7 @@ We need to consider other approach for the estimation, e.g. ridge regression.
 
 ---
 
-<center> <h3>MM Ridge Regression </h3> </center>
+<center> <h3> Ridge Regression </h3> </center>
 
 #### 1. Ridge via pennalization v.s. Ridge via constraints
 
