@@ -512,6 +512,84 @@ Ridge Regression
 <div id="space-for-ridge-regression-constraints" class="section level4">
 <h4>4. Space for ridge regression constraints</h4>
 <p><img src="optim_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<hr />
+<center>
+<h3>
+LASSO Regression
+</h3>
+</center>
+</div>
+<div id="lasso-via-pennalization-v.s.-ridge-via-constraints" class="section level4">
+<h4>1. LASSO via pennalization v.s. Ridge via constraints</h4>
+<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||_1\]</span> which is a convex function (both parts are convect), and</p>
+<p><span class="math display">\[\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||_1 \leq S\]</span></p>
+</div>
+<div id="space-for-lasso-regression-constraints" class="section level4">
+<h4>2. Space for LASSO regression constraints</h4>
+<p><img src="optim_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>
+<div id="solution-for-orthonormal-desgin-xx-ni_p" class="section level4">
+<h4>3. Solution for orthonormal desgin (<span class="math inline">\(X&#39;X = nI_p\)</span>)</h4>
+<p><span class="math display">\[l(\beta) = \frac{1}{2n}||y-X\beta||^2_2 +\lambda ||\beta||_1\]</span></p>
+<p><span class="math display">\[\propto \frac{1}{n}\sum y&#39;x_j\beta_j + \frac{1}{2}\sum_{j=1}^{p}\beta_j^2 +\sum_{j = 1}^p|\beta_j|\lambda\]</span></p>
+<p>The problems becomes <span class="math display">\[\text{min} l(\beta) = \text{min}_{\beta}\{ \frac{1}{2}\beta^2 -\alpha \beta + \lambda |\beta|\}\]</span></p>
+<p>with <span class="math inline">\(\alpha = \frac{y&#39;x_j}{n}\)</span> which has the solution using the <strong>soft threshold operator</strong></p>
+<p><span class="math display">\[\beta^{*} = \text{sign}(\alpha)(|\alpha|-\lambda)_+ = S_{\lambda}(\alpha)\]</span></p>
+</div>
+<div id="normality-design-i.e.-textdiagfracxxn-i_p" class="section level4">
+<h4>4. Normality design (i.e. <span class="math inline">\(\text{diag}(\frac{X&#39;X}{n}) = I_p\)</span>)</h4>
+<p>We can use the coordinate descent solution (which converges to global optimal)</p>
+<p><span class="math display">\[\beta_j^{*} = S_\lambda (\frac{r_j^{&#39;} x_j}{n})\]</span> where <span class="math inline">\(r_{ij} = y_i - \sum_{k\neq j }x_{ik}\beta_k\)</span>.</p>
+<hr />
+<center>
+<h3>
+Optimization Problems for Convex Functions
+</h3>
+</center>
+</div>
+<div id="definition-2" class="section level4">
+<h4>1. Definition</h4>
+<p><span class="math inline">\(f(\lambda): \mathbb{R}^p \rightarrow \mathbb{R}\)</span> is convex if <span class="math inline">\(\forall x,y\in \mathbb{R}^p\)</span>, and <span class="math inline">\(\forall s \in [0,1]\)</span>, we have <span class="math display">\[f(sx + (1-s)y) \leq sf(x) + (1-s)f(y)\]</span> Or, the region wihtin the function is also a convex set. (Remeber it as a cup with minimum).</p>
+</div>
+<div id="properties-1" class="section level4">
+<h4>2. Properties</h4>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(f&#39;&#39;(x)&gt;0\)</span>.</li>
+<li>Any norm is a convex function.</li>
+<li>Nonnegative weighted sum of convex function is also convex.</li>
+<li>If <span class="math inline">\(f_1,f_2, \dots, f_n\)</span> are all convext, then <span class="math inline">\(\text{max}_n\{f_1(x), \dots, f_n(x)\}\)</span> is also convex.</li>
+</ol>
+</div>
+<div id="check-for-convexity" class="section level4">
+<h4>3. Check for convexity</h4>
+<ol style="list-style-type: decimal">
+<li>First order defnition</li>
+</ol>
+<p><span class="math display">\[f(x)\text{ is convext } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Second order properties <span class="math display">\[f(x)\text{ is convex } \iff \nabla^2 f(x) \geq 0 \]</span></li>
+</ol>
+</div>
+<div id="optimazation-problem-with-two-sets-of-constraints" class="section level4">
+<h4>4. Optimazation problem with two sets of constraints</h4>
+<p><span class="math display">\[\text{min}_x f(x)\]</span> s..t <span class="math display">\[g_j(x)\leq 0 \quad j = 1,\dots, m\]</span> <span class="math display">\[h_k(x) = 0 \quad k = 1,\dots, l\]</span></p>
+<p>which can be formulated as the lagrangian problem</p>
+<p><span class="math display">\[L(x,\lambda,v) = f(x)+\sum_{j = 1}^{m}\lambda_j g_j(x)+\sum_{k=1}^{l}v_kh_k(x)\]</span></p>
+</div>
+<div id="lagrangian-dual-function" class="section level4">
+<h4>5. Lagrangian dual function</h4>
+<p>Suppose for the previous lagrangian problem, there is a function <span class="math inline">\(g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}\)</span> Property 1. <span class="math inline">\(-g(\lambda, v)\)</span> is convext</p>
+<p>Property 2. If we define <span class="math inline">\(f^{*} = \text{inf}_{\text{feasible } x}f(x)\)</span>, then <span class="math inline">\(\forall \lambda \geq 0\)</span> and <span class="math inline">\(\forall v\)</span>, <span class="math inline">\(g(\lambda, v)\leq f^{*}\)</span>.</p>
+</div>
+<div id="kkt-conditions" class="section level4">
+<h4>6. KKT conditions</h4>
+<p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convext, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optioal, we have the following conditions</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0\)</span></li>
+<li><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></li>
+<li><span class="math inline">\(\lambda_j \geq 0\)</span></li>
+<li><span class="math inline">\(\sum_j \lambda_j^* g_j(x^*) = 0\)</span>, then <span class="math inline">\(\forall j\)</span>, either <span class="math inline">\(\lambda_j^* = 0\)</span> or <span class="math inline">\(g_j = 0\)</span>.</li>
+</ol>
 </div>
 </div>
 
