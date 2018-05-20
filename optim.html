@@ -553,22 +553,22 @@ Optimization Problems for Convex Functions
 </div>
 <div id="properties-1" class="section level4">
 <h4>2. Properties</h4>
-<ol style="list-style-type: decimal">
+<ul>
 <li><span class="math inline">\(f&#39;&#39;(x)&gt;0\)</span>.</li>
 <li>Any norm is a convex function.</li>
 <li>Nonnegative weighted sum of convex function is also convex.</li>
 <li>If <span class="math inline">\(f_1,f_2, \dots, f_n\)</span> are all convext, then <span class="math inline">\(\text{max}_n\{f_1(x), \dots, f_n(x)\}\)</span> is also convex.</li>
-</ol>
+</ul>
 </div>
 <div id="check-for-convexity" class="section level4">
 <h4>3. Check for convexity</h4>
-<ol style="list-style-type: decimal">
-<li>First order defnition</li>
-</ol>
+<ul>
+<li>First order definition</li>
+</ul>
 <p><span class="math display">\[f(x)\text{ is convext } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p\]</span></p>
-<ol start="2" style="list-style-type: decimal">
+<ul>
 <li>Second order properties <span class="math display">\[f(x)\text{ is convex } \iff \nabla^2 f(x) \geq 0 \]</span></li>
-</ol>
+</ul>
 </div>
 <div id="optimazation-problem-with-two-sets-of-constraints" class="section level4">
 <h4>4. Optimazation problem with two sets of constraints</h4>
@@ -584,12 +584,12 @@ Optimization Problems for Convex Functions
 <div id="kkt-conditions" class="section level4">
 <h4>6. KKT conditions</h4>
 <p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convext, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optioal, we have the following conditions</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0\)</span></li>
-<li><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></li>
-<li><span class="math inline">\(\lambda_j \geq 0\)</span></li>
-<li><span class="math inline">\(\sum_j \lambda_j^* g_j(x^*) = 0\)</span>, then <span class="math inline">\(\forall j\)</span>, either <span class="math inline">\(\lambda_j^* = 0\)</span> or <span class="math inline">\(g_j = 0\)</span>.</li>
-</ol>
+<ul>
+<li><p><span class="math inline">\(\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0\)</span></p></li>
+<li><p><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></p></li>
+<li><p><span class="math inline">\(\lambda_j \geq 0\)</span></p></li>
+<li><p><span class="math inline">\(\sum_j \lambda_j^* g_j(x^*) = 0\)</span>, then <span class="math inline">\(\forall j\)</span>, either <span class="math inline">\(\lambda_j^* = 0\)</span> or <span class="math inline">\(g_j = 0\)</span>.</p></li>
+</ul>
 </div>
 </div>
 

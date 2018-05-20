@@ -446,18 +446,18 @@ Or, the region wihtin the function is also a convex set. (Remeber it as a cup wi
 
 #### 2. Properties
 
-1. $f''(x)>0$.
-2. Any norm is a convex function.
-3. Nonnegative weighted sum of convex function is also convex.
-4. If $f_1,f_2, \dots, f_n$ are all convext, then $\text{max}_n\{f_1(x), \dots, f_n(x)\}$ is also convex.
+- $f''(x)>0$.
+- Any norm is a convex function.
+- Nonnegative weighted sum of convex function is also convex.
+- If $f_1,f_2, \dots, f_n$ are all convext, then $\text{max}_n\{f_1(x), \dots, f_n(x)\}$ is also convex.
 
 #### 3. Check for convexity
 
-1. First order defnition 
+- First order definition 
 
 $$f(x)\text{ is convext } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p$$
 
-2. Second order properties
+- Second order properties
 $$f(x)\text{ is convex } \iff \nabla^2 f(x) \geq 0 $$
 
 #### 4. Optimazation problem with two sets of constraints
@@ -479,8 +479,11 @@ Property 2. If we define $f^{*} = \text{inf}_{\text{feasible } x}f(x)$, then $\f
 #### 6. KKT conditions
 Now all assume $f$, $g$, $h$ are all differentiable and convext, then if $x^{*}$ and $(\lambda^*, v^*)$ are primal and optioal, we have the following conditions
 
-1. $\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0$
-2. $x^*$ is feasible, i.e. $g_j(x^*)\leq 0$ and $h_k(x^*)=0$
-3. $\lambda_j \geq 0$
-4. $\sum_j \lambda_j^* g_j(x^*) = 0$, then $\forall j$, either $\lambda_j^* = 0$ or $g_j = 0$.
+- $\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0$
+
+- $x^*$ is feasible, i.e. $g_j(x^*)\leq 0$ and $h_k(x^*)=0$
+
+- $\lambda_j \geq 0$
+
+- $\sum_j \lambda_j^* g_j(x^*) = 0$, then $\forall j$, either $\lambda_j^* = 0$ or $g_j = 0$.
 
