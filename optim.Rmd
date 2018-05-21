@@ -327,6 +327,8 @@ $$\mu_j^{(k+1)} = \frac{\sum_i z_{ij}^{(k)}y_i}{\sum_{i}z_{ij}^{(k)}}$$
 
 $$\sigma^{2(k+1)} = \frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2$$
 
+#### 7. Exmaple R codes can be seen [here](https://github.com/junruidi/EM-Algorithm).
+
 ---
 
 <center> <h3> Linear Regression Via SVD </h3> </center>
