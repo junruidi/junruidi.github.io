@@ -16,6 +16,7 @@ css: style2.css
 #
 
 #
+Here is a list of my selected publicaitons.
 
 ####Published\\In Press
 1. Grigsby, M., __Di, J.__, Leroux, A., Zipunnikov, V., Xiao, L., Crainiceanu, C., and Checkley, W.. [Novel metrics for growth model selection](https://ete-online.biomedcentral.com/articles/10.1186/s12982-018-0072-z). _Emerging Themes in Epidemiology_. 2018; 15(1): 4. 
@@ -38,7 +39,7 @@ physical functioning in older adults. Under review _Journal of Gerontology: Medi
 <br>
 
 ####In Preparation
-12. Capturing enhanced information with higher-order tensorian statistics and predicting mortality from accelerometry measured physical activity.
+12. Capturing enhanced information with higher-order tensorian statistics and its application in accelerometry measured physical activity.
 <br>
 <br>
 
