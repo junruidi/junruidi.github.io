@@ -21,8 +21,10 @@ I have served as a teaching assistant on a wide variety of courses in the depart
 <center>
 Term  | Course Number| Title  | Notes
 ---------| -------------| ----------------------- | -----
-Spring 2018   |  PH.140.623   |  Statistical Methods in Public Health III | __Lead TA__$^\dagger$
-Fall 2017   |  PH.140.621   |  Statistical Methods in Public Health I   | __Lead TA__$^\dagger$
+Spring 2019   |  PH.140.623   |  Statistical Methods in Public Health III | __Lab Instructor__$^\dagger$
+Fall 2018   |  PH.140.621   |  Statistical Methods in Public Health I   | __Lab Instructor__$^\dagger$
+Spring 2018   |  PH.140.623   |  Statistical Methods in Public Health III | __Lab Instructor__$^\dagger$
+Fall 2017   |  PH.140.621   |  Statistical Methods in Public Health I   | __Lab Instructor__$^\dagger$
 Spring 2017   |   PH.140.623-4   |   Statistical Methods in Public Health III-IV   |
 Fall 2016   |   PH.140.621-2   |   Statistical Methods in Public Health I-II   |
 Spring 2016   |   PH 140.753-4   |   Advanced Methods in Biostatistics III-IV  | 
