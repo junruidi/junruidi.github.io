@@ -23,20 +23,20 @@ css: style2.css
 </div>
 My name is Junrui Di (Simplified Chinese: 邸俊瑞). I'm a 5th year PhD Candidate at the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/). I am part of the Wearable and Implantable Technology (WIT) research group consisting of experts in the field of wearable/implantable technology.  Before joining Hopkins, I recieved my Bachelor degree in Applied Mathematics from [UC Berkeley](https://math.berkeley.edu/) in 2012, and my Master degree in Biostatistics from [Georgetown University](https://biostatistics.georgetown.edu/) in 2013. 
 
-#### Contact
-Department of Biostatistics  
-Johns Hopkins Bloomberg School of Public Health  
-615 N Wolfe St, E3039  
-Baltimore, MD, 21205
 
-jdi2[at]jhu[dot]edu
+615 N Wolfe St E3039  
+Baltimore, MD 21205\
+ Tel: 410-955-4394\
+ Email: jdi2[at]jhu[dot]edu
 
 
 <br>
 <br>
+<br>
+<br>
 
-##Latest News
-- I am working at Takeda Pharmaceutical in Cambridge as an intern Biostatistician from June to August to work on projects related to implementation of wearable devices in clincial trials. 
+## Latest News
+- I am working at Takeda Pharmaceutical in Cambridge Massachusetts as an intern Biostatistician for the summer. The projects are related to implementation of wearable devices in clincial trials. 
 
 - Is your sleep on weekends messing up the week? Check the new release about the OBT paper. [More](https://www.futurity.org/sleep-on-weekends-americans-1741482/)
 
