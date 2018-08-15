@@ -1,7 +1,7 @@
 name: "junrui-website"
 output_dir: "."
 navbar:
-  title: "Junrui Di"
+  title: "Home"
   left:
     - text: "About Me"
       href: index.html
@@ -15,8 +15,7 @@ navbar:
       href: teaching.html
     - text: "Resources"
       href: resources.html
-    - text: "Contact"
-      href: contact.html
+
 
   right:
     - icon: fa-paper-plane fa-lg
