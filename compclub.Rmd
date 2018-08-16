@@ -1,0 +1,49 @@
+---
+title: "Computing Club"
+css: style2.css
+---
+#
+
+#
+
+<link rel="stylesheet" href="academicons/css/academicons.min.css"/>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99094202-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+I hosted the [Computing Club](http://www.jhsph.edu/departments/biostatistics/academics-and-student-life/student-learning-groups/computing-club.html) for 2015-2016 academic year. This one-hour session takes place every other Tuesday from 12:15-1:15 pm, involving various topics on computing. More importantly, food will be provided in every session! Please see below for the schedules. Links to the previous years' Computing Club could be found here: [14-15](http://www.biostat.jhsph.edu/~ydu/comp_club.html), [13-14](http://www.biostat.jhsph.edu/~jbai/compclub.html), [12-13](http://www.biostat.jhsph.edu/~afisher/ComputingClub/), [11-12](http://www.biostat.jhsph.edu/~afrazee/old/computingclub.html), [10-11](http://www.biostat.jhsph.edu/bit/compintro/), [09-10](http://www.biostat.jhsph.edu/bit/compintro/index_0910.html).
+
+#
+
+#
+<center>
+
+Date \& Location  | Topics  | Presenter
+---------------| ----------------------------  | -------------
+09/08/2015 W2029   |   Welcome Session: Toolbox for Biostatistics Graduate Students   |Junrui Di \& Stephen Cristiano  
+09/22/2015 W2303   |   Introduction to Cluster   |   [Zhicheng Ji](http://www.biostat.jhsph.edu/~zji4/)  
+10/06/2015 W2029   |   Computing Q\&A Session   |   [John Muschelli](http://johnmuschelli.com/)
+10/20/2015 W2029   |   Boosting Computation with rcpp   |   Stephen Cristiano  
+11/03/2015 W2029    |   D3 Visulization   |   [Leslie Myint](https://lesliemyint.wordpress.com/)  
+11/17/2015 W2303   |   Master Students' Showcases: (1) Making Maps in R (2) Plots Arrangement in R   |   Jisoo Kim  \& Hanying Li  
+12/01/2015 W2029   |   Toolbox for GWAS  |  Haoyu Zhang
+12/15/2015 W2029   |   A Survey of Automatic Bayesian Computation Softwares   |   [Zhenke Wu](http://zhenkewu.com/)  
+02/09/2016 W2029   |   Creating Posters with Latex   |   Junrui Di
+02/23/2016         |   _Cancelled_                        |    
+03/29/2016 W2029   |   Independent Component Analysis   |   [Lei Huang](http://www.biostat.jhsph.edu/~lehuang/)  
+04/12/2016 W2029   |   Initial Steps towards Reproducible Research   |   [Peter Hickey](http://peterhickey.org/)  
+05/10/2016 W2029   |   Polishing Figures with Illustrator   |   [Elizabeth Sweeney](https://elizabethmargaretsweeney.wordpress.com/)  
+
+</center>
+
+
+
+
