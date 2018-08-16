@@ -22,11 +22,13 @@ navbar:
       href: mailto:jdi2@jhu.edu
     - icon: ai-cv ai-lg
       href: files/Curriculum Vitae.pdf
+    - text: "SC"
+      href: https://www.scopus.com/authid/detail.uri?authorId=57194500578
     - icon: ai-google-scholar ai-lg
       href: https://scholar.google.com/citations?user=9YSnIL4AAAAJ&hl=en
     - icon: fa-github fa-lg
       href: http://github.com/junruidi
-    - icon: fa-linkedin fa-lg
-      href: https://www.linkedin.com/in/junruidi/
+#    - icon: fa-linkedin fa-lg
+#      href: https://www.linkedin.com/in/junruidi/
     - icon: fa-twitter fa-lg
       href: https://twitter.com/JunruiDi
