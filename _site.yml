@@ -26,5 +26,7 @@ navbar:
       href: https://scholar.google.com/citations?user=9YSnIL4AAAAJ&hl=en
     - icon: fa-github fa-lg
       href: http://github.com/junruidi
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/junruidi/
     - icon: fa-twitter fa-lg
       href: https://twitter.com/JunruiDi
