@@ -9,8 +9,8 @@ navbar:
       href: research.html
     - text: "Publications"
       href: publications.html 
-    - text: "Vitae"
-      href: cv.html 
+#    - text: "Vitae"
+#      href: cv.html 
     - text: "Teaching"
       href: teaching.html
     - text: "Resources"
@@ -18,8 +18,10 @@ navbar:
 
 
   right:
-    - icon: fa-paper-plane fa-lg
+    - icon: fa-envelope fa-lg
       href: mailto:jdi2@jhu.edu
+    - icon: ai-cv ai-lg
+      href: files/Curriculum Vitae.pdf
     - icon: ai-google-scholar ai-lg
       href: https://scholar.google.com/citations?user=9YSnIL4AAAAJ&hl=en
     - icon: fa-github fa-lg
