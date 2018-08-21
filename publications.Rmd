@@ -34,6 +34,8 @@ css: style2.css
 1. __actigraphy__. (R package). Feature extraction for minute level actigraphy data. [[Github](https://github.com/junruidi/actigraphy)]. 
 2. __cdHOTS__. (R package). Construct and decompose higher order tensorian statistics. 
 [[Github](https://github.com/junruidi/cdHOTS)]
+2. __actigraphy-profiles__. (R Shiny App). A visualization tool for displaying minute-level actigrpahy profiles (More features to be online).
+[[Github](https://github.com/junruidi/actigraphy-profiles)]
 
 
 
