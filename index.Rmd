@@ -36,7 +36,6 @@ Baltimore, MD 21205\
 <br>
 
 ## Latest News
-- I am working at Takeda Pharmaceutical in Cambridge Massachusetts as an intern Biostatistician for the summer. The projects are related to implementation of wearable devices in clincial trials. 
 
 - Is your sleep on weekends messing up the week? Check the new release about the OBT paper. [More](https://www.futurity.org/sleep-on-weekends-americans-1741482/)
 
