@@ -39,7 +39,7 @@ If $f(x) = 0$, where $x \in \mathbb{R}^p$, $f \in \mathbb{R}^k$, then
 
 - $k=p$: determined properly
 
-- $k>p$: over determined
+- $k>p$: overdetermined
 
 - $k<p$: underdetermined (over parametrized)
 
@@ -62,9 +62,9 @@ For a scalar function $f: \mathbb{R}^p \rightarrow \mathbb{R}$:
 
 The gradient (first order derivatives) is the vector  $\nabla f = (\frac{\partial f}{\partial x_1}, \cdots,\frac{\partial f}{\partial x_p}) $. 
 
-The hessian (second order derivatives) is the matrix $\nabla^2 f = [\frac{\partial^2 f}{\partial x_i \partial x_j}]$.
+The Hessian (second order derivatives) is the matrix $\nabla^2 f = [\frac{\partial^2 f}{\partial x_i \partial x_j}]$.
 
-For a equation systems $F: \mathbb{R}^p \rightarrow \mathbb{R}^p$:
+For an equation systems $F: \mathbb{R}^p \rightarrow \mathbb{R}^p$:
 
 The Jacobian is the matrix $J = [\frac{\partial F_i}{\partial x_j}]$.
 
@@ -124,11 +124,11 @@ $$x_{k+1} = x_{k} - F(x_c)J^{-1}(x_c)$$
 The goal is to not calculate $J$ for all the iterations, instead using the Broydan's rank 1 update $x_{k+1} = x_{k} - F(x_c)B_c^{-1}$.
 
 $$B_{k+1} = B_k + \frac{(y - B_k s)s^T}{s^Ts}$$
-where $y = F(x_{k+1}) - F(x_k)$, and step $s = x_{k+1} - x_k$. Eventually, the inverse can be done using the sherman morrison formula.
+where $y = F(x_{k+1}) - F(x_k)$, and step $s = x_{k+1} - x_k$. Eventually, the inverse can be done using the Sherman-Morrison formula.
 
 #### 4. Solve Newton's method with Cholesky decomposition
 
-For $f: \mathbb{R}^p \rightarrow \mathbb{R}$, where $f$ is twice differentiable with Llipschitz condition $||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||$, and also $\nabla f(x^*) = 0$, and $\nabla^2 f(x^*)$ is postive definite, the Newtown's method
+For $f: \mathbb{R}^p \rightarrow \mathbb{R}$, where $f$ is twice differentiable with Llipschitz condition $||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||$, and also $\nabla f(x^*) = 0$, and $\nabla^2 f(x^*)$ is positive definite, the Newtown's method
 
 $$\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)$$
 can be solved by the Cholesky decomposition $\nabla^2 f(x_k) = LL^T$, where $L$ is a lower triangular matrix by
@@ -157,7 +157,7 @@ For gradient descent algorithm
 
 $$\lim _{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}}$$
 
-where $\lambda_{max}$ and $\lambda_{min}$ are the largest and smallest eigen values of the hessin $\nabla ^2 f(x)$ where $x$ is closed to $x^*$. 
+where $\lambda_{max}$ and $\lambda_{min}$ are the largest and smallest eigenvalues of the Hessian $\nabla ^2 f(x)$ where $x$ is closed to $x^*$. 
 If $\lambda_{max} >> \lambda_{min}$, the $\frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1$, i.e. gradient descent becomes sublinear, and inefficient.
 
 
@@ -179,7 +179,7 @@ where $\lambda$ can be $\{\lambda_k\}\rightarrow 0$, e.g. $\lambda = \lambda/10$
 #### 1. Definition
 
 $$\text{min}_{x \in \Omega  \subseteq \mathbb{R}^p} f(x)$$
-where $\Omega$ is th called the feasible set.
+where $\Omega$ is called the feasible set.
 
 #### 2. Types of constraints.
 
@@ -189,13 +189,13 @@ where $\Omega$ is th called the feasible set.
 
 - Linear equality constraints: $\Omega = \{x|Ax = b\}$
 
-- Linear ineqaulity constraints:$\Omega = \{x|Ax - b \leq 0\}$
+- Linear inequality constraints:$\Omega = \{x|Ax - b \leq 0\}$
 
 - Nonlinear equality or inequality $h_j(x) = 0$ or $g_j(x)\leq 0$
 
 #### 3. Newton's method with constraints.
 
-$\text{min} f(x)$ suich that $Ax = b$.
+$\text{min} f(x)$ such that $Ax = b$.
 
 The lagrangian is  $L(x) = f(x)+ \lambda^T()Ax-b)$, and we want $\nabla L(x) = \nabla f(x) +A^T \lambda = 0$.
 
@@ -453,13 +453,13 @@ Or, the region wihtin the function is also a convex set. (Remeber it as a cup wi
 - $f''(x)>0$.
 - Any norm is a convex function.
 - Nonnegative weighted sum of convex function is also convex.
-- If $f_1,f_2, \dots, f_n$ are all convext, then $\text{max}_n\{f_1(x), \dots, f_n(x)\}$ is also convex.
+- If $f_1,f_2, \dots, f_n$ are all convex, then $\text{max}_n\{f_1(x), \dots, f_n(x)\}$ is also convex.
 
 #### 3. Check for convexity
 
 - First order definition 
 
-$$f(x)\text{ is convext } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p$$
+$$f(x)\text{ is convex } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p$$
 
 - Second order properties
 $$f(x)\text{ is convex } \iff \nabla^2 f(x) \geq 0 $$
@@ -476,12 +476,12 @@ $$L(x,\lambda,v) = f(x)+\sum_{j = 1}^{m}\lambda_j g_j(x)+\sum_{k=1}^{l}v_kh_k(x)
 
 #### 5. Lagrangian dual function
 Suppose for the previous lagrangian problem, there is a function $g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}$
-Property 1. $-g(\lambda, v)$ is convext
+Property 1. $-g(\lambda, v)$ is convex
 
 Property 2. If we define $f^{*} = \text{inf}_{\text{feasible } x}f(x)$, then $\forall \lambda \geq 0$ and $\forall v$, $g(\lambda, v)\leq f^{*}$. 
 
 #### 6. KKT conditions
-Now all assume $f$, $g$, $h$ are all differentiable and convext, then if $x^{*}$ and $(\lambda^*, v^*)$ are primal and optioal, we have the following conditions
+Now all assume $f$, $g$, $h$ are all differentiable and convex, then if $x^{*}$ and $(\lambda^*, v^*)$ are primal and optioal, we have the following conditions
 
 - $\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0$
 

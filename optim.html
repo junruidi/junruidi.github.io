@@ -188,7 +188,7 @@ $(document).ready(function () {
   <a href="index.html">About Me</a>
 </li>
 <li>
-  <a href="research.html">Reserch</a>
+  <a href="research.html">Research</a>
 </li>
 <li>
   <a href="publications.html">Publications</a>
@@ -212,9 +212,6 @@ $(document).ready(function () {
     <span class="ai ai-cv ai-lg"></span>
      
   </a>
-</li>
-<li>
-  <a href="https://www.scopus.com/authid/detail.uri?authorId=57194500578">SC</a>
 </li>
 <li>
   <a href="https://scholar.google.com/citations?user=9YSnIL4AAAAJ&amp;hl=en">
@@ -286,7 +283,7 @@ Miscellaneous
 <p>If <span class="math inline">\(f(x) = 0\)</span>, where <span class="math inline">\(x \in \mathbb{R}^p\)</span>, <span class="math inline">\(f \in \mathbb{R}^k\)</span>, then</p>
 <ul>
 <li><p><span class="math inline">\(k=p\)</span>: determined properly</p></li>
-<li><p><span class="math inline">\(k&gt;p\)</span>: over determined</p></li>
+<li><p><span class="math inline">\(k&gt;p\)</span>: overdetermined</p></li>
 <li><p><span class="math inline">\(k&lt;p\)</span>: underdetermined (over parametrized)</p></li>
 </ul>
 </div>
@@ -304,8 +301,8 @@ Miscellaneous
 <h4>3. Gradient, hessian, and Jacobian</h4>
 <p>For a scalar function <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>:</p>
 <p>The gradient (first order derivatives) is the vector $f = (, ,) $.</p>
-<p>The hessian (second order derivatives) is the matrix <span class="math inline">\(\nabla^2 f = [\frac{\partial^2 f}{\partial x_i \partial x_j}]\)</span>.</p>
-<p>For a equation systems <span class="math inline">\(F: \mathbb{R}^p \rightarrow \mathbb{R}^p\)</span>:</p>
+<p>The Hessian (second order derivatives) is the matrix <span class="math inline">\(\nabla^2 f = [\frac{\partial^2 f}{\partial x_i \partial x_j}]\)</span>.</p>
+<p>For an equation systems <span class="math inline">\(F: \mathbb{R}^p \rightarrow \mathbb{R}^p\)</span>:</p>
 <p>The Jacobian is the matrix <span class="math inline">\(J = [\frac{\partial F_i}{\partial x_j}]\)</span>.</p>
 <hr />
 <center>
@@ -356,11 +353,11 @@ Newton’s Method
 <div id="quasi-newton" class="section level4">
 <h4>3. Quasi Newton</h4>
 <p>The goal is to not calculate <span class="math inline">\(J\)</span> for all the iterations, instead using the Broydan’s rank 1 update <span class="math inline">\(x_{k+1} = x_{k} - F(x_c)B_c^{-1}\)</span>.</p>
-<p><span class="math display">\[B_{k+1} = B_k + \frac{(y - B_k s)s^T}{s^Ts}\]</span> where <span class="math inline">\(y = F(x_{k+1}) - F(x_k)\)</span>, and step <span class="math inline">\(s = x_{k+1} - x_k\)</span>. Eventually, the inverse can be done using the sherman morrison formula.</p>
+<p><span class="math display">\[B_{k+1} = B_k + \frac{(y - B_k s)s^T}{s^Ts}\]</span> where <span class="math inline">\(y = F(x_{k+1}) - F(x_k)\)</span>, and step <span class="math inline">\(s = x_{k+1} - x_k\)</span>. Eventually, the inverse can be done using the Sherman-Morrison formula.</p>
 </div>
 <div id="solve-newtons-method-with-cholesky-decomposition" class="section level4">
 <h4>4. Solve Newton’s method with Cholesky decomposition</h4>
-<p>For <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>, where <span class="math inline">\(f\)</span> is twice differentiable with Llipschitz condition <span class="math inline">\(||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||\)</span>, and also <span class="math inline">\(\nabla f(x^*) = 0\)</span>, and <span class="math inline">\(\nabla^2 f(x^*)\)</span> is postive definite, the Newtown’s method</p>
+<p>For <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>, where <span class="math inline">\(f\)</span> is twice differentiable with Llipschitz condition <span class="math inline">\(||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||\)</span>, and also <span class="math inline">\(\nabla f(x^*) = 0\)</span>, and <span class="math inline">\(\nabla^2 f(x^*)\)</span> is positive definite, the Newtown’s method</p>
 <p><span class="math display">\[\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)\]</span> can be solved by the Cholesky decomposition <span class="math inline">\(\nabla^2 f(x_k) = LL^T\)</span>, where <span class="math inline">\(L\)</span> is a lower triangular matrix by <span class="math display">\[LL^T S_k = -\nabla f(x_k)\]</span></p>
 <hr />
 <center>
@@ -386,7 +383,7 @@ Gradient Descent
 <h4>4. Convergence rate</h4>
 <p>For gradient descent algorithm</p>
 <p><span class="math display">\[\lim _{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}}\]</span></p>
-<p>where <span class="math inline">\(\lambda_{max}\)</span> and <span class="math inline">\(\lambda_{min}\)</span> are the largest and smallest eigen values of the hessin <span class="math inline">\(\nabla ^2 f(x)\)</span> where <span class="math inline">\(x\)</span> is closed to <span class="math inline">\(x^*\)</span>. If <span class="math inline">\(\lambda_{max} &gt;&gt; \lambda_{min}\)</span>, the <span class="math inline">\(\frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1\)</span>, i.e. gradient descent becomes sublinear, and inefficient.</p>
+<p>where <span class="math inline">\(\lambda_{max}\)</span> and <span class="math inline">\(\lambda_{min}\)</span> are the largest and smallest eigenvalues of the Hessian <span class="math inline">\(\nabla ^2 f(x)\)</span> where <span class="math inline">\(x\)</span> is closed to <span class="math inline">\(x^*\)</span>. If <span class="math inline">\(\lambda_{max} &gt;&gt; \lambda_{min}\)</span>, the <span class="math inline">\(\frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1\)</span>, i.e. gradient descent becomes sublinear, and inefficient.</p>
 <hr />
 <center>
 <h3>
@@ -404,7 +401,7 @@ Constrained Optimization
 </div>
 <div id="definition-1" class="section level4">
 <h4>1. Definition</h4>
-<p><span class="math display">\[\text{min}_{x \in \Omega  \subseteq \mathbb{R}^p} f(x)\]</span> where <span class="math inline">\(\Omega\)</span> is th called the feasible set.</p>
+<p><span class="math display">\[\text{min}_{x \in \Omega  \subseteq \mathbb{R}^p} f(x)\]</span> where <span class="math inline">\(\Omega\)</span> is called the feasible set.</p>
 </div>
 <div id="types-of-constraints." class="section level4">
 <h4>2. Types of constraints.</h4>
@@ -414,13 +411,13 @@ Constrained Optimization
 <p>We can try to find a transformation <span class="math inline">\(y= T(x)\)</span>. E.g. Take <span class="math inline">\(t_i = 2 \frac{x_i - l_i}{u_i - l_i} - 1\)</span>, and then <span class="math inline">\(y_i = \log (\frac{1+t_i}{1-t_i})\)</span>. And we see that <span class="math inline">\(\Omega_y = \mathbb{R}^p\)</span>. But has to be careful that eht solution is not closed to the boundary. Another way is to do the projection. <span class="math inline">\(\text{Proj}(x_i) = \text{median}(l_i, u_i, x_i)\)</span></p>
 <ul>
 <li><p>Linear equality constraints: <span class="math inline">\(\Omega = \{x|Ax = b\}\)</span></p></li>
-<li><p>Linear ineqaulity constraints:<span class="math inline">\(\Omega = \{x|Ax - b \leq 0\}\)</span></p></li>
+<li><p>Linear inequality constraints:<span class="math inline">\(\Omega = \{x|Ax - b \leq 0\}\)</span></p></li>
 <li><p>Nonlinear equality or inequality <span class="math inline">\(h_j(x) = 0\)</span> or <span class="math inline">\(g_j(x)\leq 0\)</span></p></li>
 </ul>
 </div>
 <div id="newtons-method-with-constraints." class="section level4">
 <h4>3. Newton’s method with constraints.</h4>
-<p><span class="math inline">\(\text{min} f(x)\)</span> suich that <span class="math inline">\(Ax = b\)</span>.</p>
+<p><span class="math inline">\(\text{min} f(x)\)</span> such that <span class="math inline">\(Ax = b\)</span>.</p>
 <p>The lagrangian is <span class="math inline">\(L(x) = f(x)+ \lambda^T()Ax-b)\)</span>, and we want <span class="math inline">\(\nabla L(x) = \nabla f(x) +A^T \lambda = 0\)</span>.</p>
 <p>The first order optimality condition is (<span class="math inline">\(S_k\)</span> is the current step):</p>
 <p><span class="math display">\[\begin{cases} \nabla f(x) +A^T \lambda = 0 \\ AS_k = 0 \end{cases}\]</span></p>
@@ -593,7 +590,7 @@ Optimization Problems for Convex Functions
 <li><span class="math inline">\(f&#39;&#39;(x)&gt;0\)</span>.</li>
 <li>Any norm is a convex function.</li>
 <li>Nonnegative weighted sum of convex function is also convex.</li>
-<li>If <span class="math inline">\(f_1,f_2, \dots, f_n\)</span> are all convext, then <span class="math inline">\(\text{max}_n\{f_1(x), \dots, f_n(x)\}\)</span> is also convex.</li>
+<li>If <span class="math inline">\(f_1,f_2, \dots, f_n\)</span> are all convex, then <span class="math inline">\(\text{max}_n\{f_1(x), \dots, f_n(x)\}\)</span> is also convex.</li>
 </ul>
 </div>
 <div id="check-for-convexity" class="section level4">
@@ -601,7 +598,7 @@ Optimization Problems for Convex Functions
 <ul>
 <li>First order definition</li>
 </ul>
-<p><span class="math display">\[f(x)\text{ is convext } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p\]</span></p>
+<p><span class="math display">\[f(x)\text{ is convex } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p\]</span></p>
 <ul>
 <li>Second order properties <span class="math display">\[f(x)\text{ is convex } \iff \nabla^2 f(x) \geq 0 \]</span></li>
 </ul>
@@ -614,12 +611,12 @@ Optimization Problems for Convex Functions
 </div>
 <div id="lagrangian-dual-function" class="section level4">
 <h4>5. Lagrangian dual function</h4>
-<p>Suppose for the previous lagrangian problem, there is a function <span class="math inline">\(g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}\)</span> Property 1. <span class="math inline">\(-g(\lambda, v)\)</span> is convext</p>
+<p>Suppose for the previous lagrangian problem, there is a function <span class="math inline">\(g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}\)</span> Property 1. <span class="math inline">\(-g(\lambda, v)\)</span> is convex</p>
 <p>Property 2. If we define <span class="math inline">\(f^{*} = \text{inf}_{\text{feasible } x}f(x)\)</span>, then <span class="math inline">\(\forall \lambda \geq 0\)</span> and <span class="math inline">\(\forall v\)</span>, <span class="math inline">\(g(\lambda, v)\leq f^{*}\)</span>.</p>
 </div>
 <div id="kkt-conditions" class="section level4">
 <h4>6. KKT conditions</h4>
-<p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convext, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optioal, we have the following conditions</p>
+<p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convex, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optioal, we have the following conditions</p>
 <ul>
 <li><p><span class="math inline">\(\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0\)</span></p></li>
 <li><p><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></p></li>
