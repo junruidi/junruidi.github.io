@@ -146,7 +146,7 @@ $$x_{k+1} = x_k - \lambda \nabla f(x_k)$$
 
 #### 2. Intuition
 
-Gradient descent is based on the observation that if the multi-variable function $f(x)$ is defined and differentiable in a neighborhood of a point $x_c$ , then $f(x)$ decreases fastest if one goes from $x_c$ in the direction of the negative gradient of $f$ at $x_c$, $\nabla f(x_c)$.
+Gradient descent is based on the observation that if the multi-variable function $f(x)$ is defined and differentiable in a neighborhood of a point $x_c$, then $f(x)$ decreases fastest if one goes from $x_c$ in the direction of the negative gradient of $f$ at $x_c$, $\nabla f(x_c)$.
 
 #### 3. Line search
 The line search approach first finds a descent direction along which the objective function $f$ f will be reduced and then computes a step size that determines how far $x$ should move along that direction, i.e. $\lambda$ varies.
@@ -270,7 +270,7 @@ Instead of finding $\text{argmax}_\theta Q$, we can find any $\theta$ that incre
 
 - $Q(\theta^{(k+1)}|\theta^{(k)})\geq Q(\theta^{(k)}|\theta^{(k)})$
 
-- The ascent property of EM: for the observed ata likelihood $L(\theta^{(k+1)}) \geq L(\theta^{(k)})$ 
+- The ascent property of EM: for the observed data likelihood $L(\theta^{(k+1)}) \geq L(\theta^{(k)})$ 
 
 #### 5. Example 1: multinomial
 
@@ -305,7 +305,7 @@ such that $\sum_{j}\pi_ = 1$, $\sigma^2 > 0$, and $0 \leq \pi_j \leq 1$. If we d
 
 Consider the complete data to be $x = c(y,z)$, where $z$ is defined as
 
-$$z_{ij} = \begin{cases}1 \quad \text{if } y_i \text{ comes of the th component} \\ 0 \quad \text{otherwise}\end{cases}$$
+$$z_{ij} = \begin{cases}1 \quad \text{if } y_i \text{ comes from the ith component} \\ 0 \quad \text{otherwise}\end{cases}$$
 such that $\pi_j = \frac{\sum_i z_{ij}}{n}$
 
 The complete data likelihood becomes
@@ -329,7 +329,7 @@ $$\mu_j^{(k+1)} = \frac{\sum_i z_{ij}^{(k)}y_i}{\sum_{i}z_{ij}^{(k)}}$$
 
 $$\sigma^{2(k+1)} = \frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2$$
 
-#### 7. Exmaple R codes can be seen [here](https://github.com/junruidi/EM-Algorithm).
+#### 7. Example R codes can be seen [here](https://github.com/junruidi/EM-Algorithm).
 
 ---
 
@@ -364,10 +364,10 @@ We need to consider other approaches for the estimation, e.g. ridge regression.
 
 <center> <h3> Ridge Regression </h3> </center>
 
-#### 1. Ridge via pennalization v.s. Ridge via constraints
+#### 1. Ridge via penalization v.s. Ridge via constraints
 
 $$l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||^2_2$$
-which is a convex function (both parts are convect), and
+which is a convex function (both parts are convex), and
 
 $$\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||^2_2 \leq S$$
 
@@ -401,10 +401,10 @@ draw.circle(x = 0, y = 0, radius = 1)
 
 <center> <h3> LASSO Regression </h3> </center>
 
-#### 1. LASSO via pennalization v.s. Ridge via constraints
+#### 1. LASSO via penalization v.s. Ridge via constraints
 
 $$l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||_1$$
-which is a convex function (both parts are convect), and
+which is a convex function (both parts are convecx), and
 
 $$\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||_1 \leq S$$
 
@@ -420,12 +420,12 @@ lines(x=c(1,0),y = c(0,-1))
 lines(x=c(-1,0),y = c(0,-1))
 ```
 
-#### 3. Solution for orthonormal desgin ($X'X = nI_p$)
+#### 3. Solution for orthonormal design ($X'X = nI_p$)
 $$l(\beta) = \frac{1}{2n}||y-X\beta||^2_2 +\lambda ||\beta||_1$$
 
 $$\propto \frac{1}{n}\sum y'x_j\beta_j + \frac{1}{2}\sum_{j=1}^{p}\beta_j^2 +\sum_{j = 1}^p|\beta_j|\lambda$$
 
-The problems becomes
+The problem becomes
 $$\text{min} l(\beta) = \text{min}_{\beta}\{ \frac{1}{2}\beta^2 -\alpha \beta + \lambda |\beta|\}$$
 
 with $\alpha = \frac{y'x_j}{n}$ which has the solution using the __soft threshold operator__
@@ -446,7 +446,7 @@ where $r_{ij} = y_i - \sum_{k\neq j }x_{ik}\beta_k$.
 #### 1. Definition
 $f(\lambda): \mathbb{R}^p \rightarrow \mathbb{R}$ is convex if $\forall x,y\in \mathbb{R}^p$, and $\forall s \in [0,1]$, we have 
 $$f(sx + (1-s)y) \leq sf(x) + (1-s)f(y)$$
-Or, the region wihtin the function is also a convex set. (Remeber it as a cup with minimum).
+Or, the region within the function is also a convex set. (Remeber it as a cup with minimum).
 
 #### 2. Properties
 
@@ -475,13 +475,13 @@ which can be formulated as the Lagrangian problem
 $$L(x,\lambda,v) = f(x)+\sum_{j = 1}^{m}\lambda_j g_j(x)+\sum_{k=1}^{l}v_kh_k(x)$$
 
 #### 5. Lagrangian dual function
-Suppose for the previous lagrangian problem, there is a function $g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}$
+Suppose for the previous Lagrangian problem, there is a function $g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}$
 Property 1. $-g(\lambda, v)$ is convex
 
 Property 2. If we define $f^{*} = \text{inf}_{\text{feasible } x}f(x)$, then $\forall \lambda \geq 0$ and $\forall v$, $g(\lambda, v)\leq f^{*}$. 
 
 #### 6. KKT conditions
-Now all assume $f$, $g$, $h$ are all differentiable and convex, then if $x^{*}$ and $(\lambda^*, v^*)$ are primal and optioal, we have the following conditions
+Now all assume $f$, $g$, $h$ are all differentiable and convex, then if $x^{*}$ and $(\lambda^*, v^*)$ are primal and optimal, we have the following conditions
 
 - $\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0$
 

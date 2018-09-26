@@ -373,7 +373,7 @@ Gradient Descent
 </div>
 <div id="intuition" class="section level4">
 <h4>2. Intuition</h4>
-<p>Gradient descent is based on the observation that if the multi-variable function <span class="math inline">\(f(x)\)</span> is defined and differentiable in a neighborhood of a point <span class="math inline">\(x_c\)</span> , then <span class="math inline">\(f(x)\)</span> decreases fastest if one goes from <span class="math inline">\(x_c\)</span> in the direction of the negative gradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_c\)</span>, <span class="math inline">\(\nabla f(x_c)\)</span>.</p>
+<p>Gradient descent is based on the observation that if the multi-variable function <span class="math inline">\(f(x)\)</span> is defined and differentiable in a neighborhood of a point <span class="math inline">\(x_c\)</span>, then <span class="math inline">\(f(x)\)</span> decreases fastest if one goes from <span class="math inline">\(x_c\)</span> in the direction of the negative gradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_c\)</span>, <span class="math inline">\(\nabla f(x_c)\)</span>.</p>
 </div>
 <div id="line-search" class="section level4">
 <h4>3. Line search</h4>
@@ -467,7 +467,7 @@ EM Algorithms
 <h4>4. Properties</h4>
 <ul>
 <li><p><span class="math inline">\(Q(\theta^{(k+1)}|\theta^{(k)})\geq Q(\theta^{(k)}|\theta^{(k)})\)</span></p></li>
-<li><p>The ascent property of EM: for the observed ata likelihood <span class="math inline">\(L(\theta^{(k+1)}) \geq L(\theta^{(k)})\)</span></p></li>
+<li><p>The ascent property of EM: for the observed data likelihood <span class="math inline">\(L(\theta^{(k+1)}) \geq L(\theta^{(k)})\)</span></p></li>
 </ul>
 </div>
 <div id="example-1-multinomial" class="section level4">
@@ -486,7 +486,7 @@ EM Algorithms
 <p>And the observed log likelihood is</p>
 <p><span class="math display">\[L(\theta) = \sum_{i=1}^{n}\log (\sum_{j = 1}^g \pi_j f_j(y_j;\mu_j,\sigma^2))\]</span> such that <span class="math inline">\(\sum_{j}\pi_ = 1\)</span>, <span class="math inline">\(\sigma^2 &gt; 0\)</span>, and <span class="math inline">\(0 \leq \pi_j \leq 1\)</span>. If we directly maximize it, it becomes a constrained problem. But we can solve it using EM.</p>
 <p>Consider the complete data to be <span class="math inline">\(x = c(y,z)\)</span>, where <span class="math inline">\(z\)</span> is defined as</p>
-<p><span class="math display">\[z_{ij} = \begin{cases}1 \quad \text{if } y_i \text{ comes of the th component} \\ 0 \quad \text{otherwise}\end{cases}\]</span> such that <span class="math inline">\(\pi_j = \frac{\sum_i z_{ij}}{n}\)</span></p>
+<p><span class="math display">\[z_{ij} = \begin{cases}1 \quad \text{if } y_i \text{ comes from the ith component} \\ 0 \quad \text{otherwise}\end{cases}\]</span> such that <span class="math inline">\(\pi_j = \frac{\sum_i z_{ij}}{n}\)</span></p>
 <p>The complete data likelihood becomes</p>
 <p><span class="math display">\[l_c(\theta) = \prod_i\prod_j \pi_j^{z_{ij}} f_j(y;\theta)^{z_{ij}}\]</span> with the CDLL</p>
 <p><span class="math display">\[L_c(\theta) = \sum_i\sum_j z_{ij}\log \pi_j + \sum_i\sum_j z_{ij}\log f_j (y_i;\theta)\]</span></p>
@@ -498,8 +498,8 @@ EM Algorithms
 <p><span class="math display">\[\mu_j^{(k+1)} = \frac{\sum_i z_{ij}^{(k)}y_i}{\sum_{i}z_{ij}^{(k)}}\]</span></p>
 <p><span class="math display">\[\sigma^{2(k+1)} = \frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2\]</span></p>
 </div>
-<div id="exmaple-r-codes-can-be-seen-here." class="section level4">
-<h4>7. Exmaple R codes can be seen <a href="https://github.com/junruidi/EM-Algorithm">here</a>.</h4>
+<div id="example-r-codes-can-be-seen-here." class="section level4">
+<h4>7. Example R codes can be seen <a href="https://github.com/junruidi/EM-Algorithm">here</a>.</h4>
 <hr />
 <center>
 <h3>
@@ -528,9 +528,9 @@ Ridge Regression
 </h3>
 </center>
 </div>
-<div id="ridge-via-pennalization-v.s.-ridge-via-constraints" class="section level4">
-<h4>1. Ridge via pennalization v.s. Ridge via constraints</h4>
-<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||^2_2\]</span> which is a convex function (both parts are convect), and</p>
+<div id="ridge-via-penalization-v.s.-ridge-via-constraints" class="section level4">
+<h4>1. Ridge via penalization v.s. Ridge via constraints</h4>
+<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||^2_2\]</span> which is a convex function (both parts are convex), and</p>
 <p><span class="math display">\[\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||^2_2 \leq S\]</span></p>
 </div>
 <div id="estimation" class="section level4">
@@ -552,20 +552,20 @@ LASSO Regression
 </h3>
 </center>
 </div>
-<div id="lasso-via-pennalization-v.s.-ridge-via-constraints" class="section level4">
-<h4>1. LASSO via pennalization v.s. Ridge via constraints</h4>
-<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||_1\]</span> which is a convex function (both parts are convect), and</p>
+<div id="lasso-via-penalization-v.s.-ridge-via-constraints" class="section level4">
+<h4>1. LASSO via penalization v.s. Ridge via constraints</h4>
+<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||_1\]</span> which is a convex function (both parts are convecx), and</p>
 <p><span class="math display">\[\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||_1 \leq S\]</span></p>
 </div>
 <div id="space-for-lasso-regression-constraints" class="section level4">
 <h4>2. Space for LASSO regression constraints</h4>
 <p><img src="optim_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
-<div id="solution-for-orthonormal-desgin-xx-ni_p" class="section level4">
-<h4>3. Solution for orthonormal desgin (<span class="math inline">\(X&#39;X = nI_p\)</span>)</h4>
+<div id="solution-for-orthonormal-design-xx-ni_p" class="section level4">
+<h4>3. Solution for orthonormal design (<span class="math inline">\(X&#39;X = nI_p\)</span>)</h4>
 <p><span class="math display">\[l(\beta) = \frac{1}{2n}||y-X\beta||^2_2 +\lambda ||\beta||_1\]</span></p>
 <p><span class="math display">\[\propto \frac{1}{n}\sum y&#39;x_j\beta_j + \frac{1}{2}\sum_{j=1}^{p}\beta_j^2 +\sum_{j = 1}^p|\beta_j|\lambda\]</span></p>
-<p>The problems becomes <span class="math display">\[\text{min} l(\beta) = \text{min}_{\beta}\{ \frac{1}{2}\beta^2 -\alpha \beta + \lambda |\beta|\}\]</span></p>
+<p>The problem becomes <span class="math display">\[\text{min} l(\beta) = \text{min}_{\beta}\{ \frac{1}{2}\beta^2 -\alpha \beta + \lambda |\beta|\}\]</span></p>
 <p>with <span class="math inline">\(\alpha = \frac{y&#39;x_j}{n}\)</span> which has the solution using the <strong>soft threshold operator</strong></p>
 <p><span class="math display">\[\beta^{*} = \text{sign}(\alpha)(|\alpha|-\lambda)_+ = S_{\lambda}(\alpha)\]</span></p>
 </div>
@@ -582,7 +582,7 @@ Optimization Problems for Convex Functions
 </div>
 <div id="definition-2" class="section level4">
 <h4>1. Definition</h4>
-<p><span class="math inline">\(f(\lambda): \mathbb{R}^p \rightarrow \mathbb{R}\)</span> is convex if <span class="math inline">\(\forall x,y\in \mathbb{R}^p\)</span>, and <span class="math inline">\(\forall s \in [0,1]\)</span>, we have <span class="math display">\[f(sx + (1-s)y) \leq sf(x) + (1-s)f(y)\]</span> Or, the region wihtin the function is also a convex set. (Remeber it as a cup with minimum).</p>
+<p><span class="math inline">\(f(\lambda): \mathbb{R}^p \rightarrow \mathbb{R}\)</span> is convex if <span class="math inline">\(\forall x,y\in \mathbb{R}^p\)</span>, and <span class="math inline">\(\forall s \in [0,1]\)</span>, we have <span class="math display">\[f(sx + (1-s)y) \leq sf(x) + (1-s)f(y)\]</span> Or, the region within the function is also a convex set. (Remeber it as a cup with minimum).</p>
 </div>
 <div id="properties-1" class="section level4">
 <h4>2. Properties</h4>
@@ -611,12 +611,12 @@ Optimization Problems for Convex Functions
 </div>
 <div id="lagrangian-dual-function" class="section level4">
 <h4>5. Lagrangian dual function</h4>
-<p>Suppose for the previous lagrangian problem, there is a function <span class="math inline">\(g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}\)</span> Property 1. <span class="math inline">\(-g(\lambda, v)\)</span> is convex</p>
+<p>Suppose for the previous Lagrangian problem, there is a function <span class="math inline">\(g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}\)</span> Property 1. <span class="math inline">\(-g(\lambda, v)\)</span> is convex</p>
 <p>Property 2. If we define <span class="math inline">\(f^{*} = \text{inf}_{\text{feasible } x}f(x)\)</span>, then <span class="math inline">\(\forall \lambda \geq 0\)</span> and <span class="math inline">\(\forall v\)</span>, <span class="math inline">\(g(\lambda, v)\leq f^{*}\)</span>.</p>
 </div>
 <div id="kkt-conditions" class="section level4">
 <h4>6. KKT conditions</h4>
-<p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convex, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optioal, we have the following conditions</p>
+<p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convex, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optimal, we have the following conditions</p>
 <ul>
 <li><p><span class="math inline">\(\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0\)</span></p></li>
 <li><p><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></p></li>
