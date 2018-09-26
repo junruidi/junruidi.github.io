@@ -32,7 +32,7 @@ Date \& Location  | Topics  | Presenter
 09/22/2015 W2303   |   Introduction to Cluster   |   [Zhicheng Ji](http://www.biostat.jhsph.edu/~zji4/)  
 10/06/2015 W2029   |   Computing Q\&A Session   |   [John Muschelli](http://johnmuschelli.com/)
 10/20/2015 W2029   |   Boosting Computation with rcpp   |   Stephen Cristiano  
-11/03/2015 W2029    |   D3 Visulization   |   [Leslie Myint](https://lesliemyint.wordpress.com/)  
+11/03/2015 W2029    |   D3 Visualization    |   [Leslie Myint](https://lesliemyint.wordpress.com/)  
 11/17/2015 W2303   |   Master Students' Showcases: (1) Making Maps in R (2) Plots Arrangement in R   |   Jisoo Kim  \& Hanying Li  
 12/01/2015 W2029   |   Toolbox for GWAS  |  Haoyu Zhang
 12/15/2015 W2029   |   A Survey of Automatic Bayesian Computation Softwares   |   [Zhenke Wu](http://zhenkewu.com/)  

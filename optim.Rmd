@@ -27,7 +27,7 @@ I am currently learning optimization (thanks to Dr. Ravi Varadhan and Dr. Vadim 
 
 - [CVXR](https://cran.r-project.org/web/packages/CVXR/index.html): disciplined convex optimization.
 
-- [CRAN Task View: Optimization and Mathematical Programing](https://cran.r-project.org/web/views/Optimization.html)
+- [CRAN Task View: Optimization and Mathematical Programming](https://cran.r-project.org/web/views/Optimization.html)
 
 ---
 
@@ -152,7 +152,7 @@ Gradient descent is based on the observation that if the multi-variable function
 The line search approach first finds a descent direction along which the objective function $f$ f will be reduced and then computes a step size that determines how far $x$ should move along that direction, i.e. $\lambda$ varies.
 
 
-#### 4. Coverngce rate
+#### 4. Convergence rate
 For gradient descent algorithm 
 
 $$\lim _{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}}$$
@@ -193,7 +193,7 @@ where $\Omega$ is th called the feasible set.
 
 - Nonlinear equality or inequality $h_j(x) = 0$ or $g_j(x)\leq 0$
 
-#### 3. Newton's method with constrains.
+#### 3. Newton's method with constraints.
 
 $\text{min} f(x)$ suich that $Ax = b$.
 
@@ -207,7 +207,7 @@ And we also have
 
 $$\begin{cases} \nabla f(x+S_k) = \nabla f(x) + \nabla^2 f(x)S_k \\  \nabla f(x+S_k) +A^T \lambda = 0\end{cases}$$
 
-Eventually we have the KKT condition which is
+Eventually, we have the KKT condition which is
 
 $$\begin{cases} \nabla f(x) + \nabla^2 f(x)S_k +A^T \lambda = 0\\ AS_k = 0\end{cases}$$ 
 with the matrix form
@@ -245,7 +245,7 @@ is PSD.
 
 #### 1. Concepts
 
-Consider the data generating model that generate $x = \{y, z \}$, where $x$ is the full data, $y$ is the observed data, and $z$ is the latent data/missing values, and parameters $\theta$
+Consider the data generating model that generates $x = \{y, z \}$, where $x$ is the full data, $y$ is the observed data, and $z$ is the latent data/missing values, and parameters $\theta$
 
 Observed density:
 $$p(y | \theta) = \int_{x}p(x|\theta)dx = \int_zp(x|\theta) p(z|y, \theta) dz$$
@@ -254,7 +254,7 @@ This is often intractbale. Therefore, we consider EM. The complete data likeliho
 
 #### 2. Procedures
 
-E Step: Calculate the expected value of the compete log likelihood with respect to the condition distribution of $z$ given $y$, under the $\theta^{(k)}$ from the current iteration $k$.
+E Step: Calculate the expected value of the complete log likelihood with respect to the conditional distribution of $z$ given $y$, under the $\theta^{(k)}$ from the current iteration $k$.
 
 $$ Q(\theta|\theta^{(k)}) = E_{z|y,\theta^{(k)}}(\log L(\theta; y,z)) = \int \log p(y,z|\theta) p(z|y,\theta^{(k)})dz$$
 
@@ -358,7 +358,7 @@ If $n<p$, $X'X$ is not full rank and so that is not invertible. But we can consi
 $$X^{-} = VS^{-1}U'$$
 such that $XX^{-}X = X$. $\hat{\beta}_{ls} = (X'X)^{-}X'y = VS^{-1}U'y = X^{-}y$, which is not unique. 
 
-We need to consider other approach for the estimation, e.g. ridge regression.
+We need to consider other approaches for the estimation, e.g. ridge regression.
 
 ---
 
@@ -470,7 +470,7 @@ s..t
 $$g_j(x)\leq 0 \quad j = 1,\dots, m$$
 $$h_k(x) = 0 \quad k = 1,\dots, l$$
 
-which can be formulated as the lagrangian problem 
+which can be formulated as the Lagrangian problem 
 
 $$L(x,\lambda,v) = f(x)+\sum_{j = 1}^{m}\lambda_j g_j(x)+\sum_{k=1}^{l}v_kh_k(x)$$
 

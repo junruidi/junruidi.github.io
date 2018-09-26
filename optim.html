@@ -273,7 +273,7 @@ Tools
 <ul>
 <li><p><a href="https://neos-guide.org/">NEOS</a>: network enabled optimization system.</p></li>
 <li><p><a href="https://cran.r-project.org/web/packages/CVXR/index.html">CVXR</a>: disciplined convex optimization.</p></li>
-<li><p><a href="https://cran.r-project.org/web/views/Optimization.html">CRAN Task View: Optimization and Mathematical Programing</a></p></li>
+<li><p><a href="https://cran.r-project.org/web/views/Optimization.html">CRAN Task View: Optimization and Mathematical Programming</a></p></li>
 </ul>
 <hr />
 <center>
@@ -382,8 +382,8 @@ Gradient Descent
 <h4>3. Line search</h4>
 <p>The line search approach first finds a descent direction along which the objective function <span class="math inline">\(f\)</span> f will be reduced and then computes a step size that determines how far <span class="math inline">\(x\)</span> should move along that direction, i.e. <span class="math inline">\(\lambda\)</span> varies.</p>
 </div>
-<div id="coverngce-rate" class="section level4">
-<h4>4. Coverngce rate</h4>
+<div id="convergence-rate" class="section level4">
+<h4>4. Convergence rate</h4>
 <p>For gradient descent algorithm</p>
 <p><span class="math display">\[\lim _{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}}\]</span></p>
 <p>where <span class="math inline">\(\lambda_{max}\)</span> and <span class="math inline">\(\lambda_{min}\)</span> are the largest and smallest eigen values of the hessin <span class="math inline">\(\nabla ^2 f(x)\)</span> where <span class="math inline">\(x\)</span> is closed to <span class="math inline">\(x^*\)</span>. If <span class="math inline">\(\lambda_{max} &gt;&gt; \lambda_{min}\)</span>, the <span class="math inline">\(\frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1\)</span>, i.e. gradient descent becomes sublinear, and inefficient.</p>
@@ -418,15 +418,15 @@ Constrained Optimization
 <li><p>Nonlinear equality or inequality <span class="math inline">\(h_j(x) = 0\)</span> or <span class="math inline">\(g_j(x)\leq 0\)</span></p></li>
 </ul>
 </div>
-<div id="newtons-method-with-constrains." class="section level4">
-<h4>3. Newton’s method with constrains.</h4>
+<div id="newtons-method-with-constraints." class="section level4">
+<h4>3. Newton’s method with constraints.</h4>
 <p><span class="math inline">\(\text{min} f(x)\)</span> suich that <span class="math inline">\(Ax = b\)</span>.</p>
 <p>The lagrangian is <span class="math inline">\(L(x) = f(x)+ \lambda^T()Ax-b)\)</span>, and we want <span class="math inline">\(\nabla L(x) = \nabla f(x) +A^T \lambda = 0\)</span>.</p>
 <p>The first order optimality condition is (<span class="math inline">\(S_k\)</span> is the current step):</p>
 <p><span class="math display">\[\begin{cases} \nabla f(x) +A^T \lambda = 0 \\ AS_k = 0 \end{cases}\]</span></p>
 <p>And we also have</p>
 <p><span class="math display">\[\begin{cases} \nabla f(x+S_k) = \nabla f(x) + \nabla^2 f(x)S_k \\  \nabla f(x+S_k) +A^T \lambda = 0\end{cases}\]</span></p>
-<p>Eventually we have the KKT condition which is</p>
+<p>Eventually, we have the KKT condition which is</p>
 <p><span class="math display">\[\begin{cases} \nabla f(x) + \nabla^2 f(x)S_k +A^T \lambda = 0\\ AS_k = 0\end{cases}\]</span> with the matrix form</p>
 <p><span class="math display">\[\begin{pmatrix} \nabla^2 f &amp; A^T \\ A &amp; 0 \end{pmatrix} \begin{pmatrix} S_k \\ \lambda\end{pmatrix} = \begin{pmatrix} -\nabla f \\ 0 \end{pmatrix}\]</span></p>
 <p>Solve this to find <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(S_k\)</span>.</p>
@@ -451,13 +451,13 @@ EM Algorithms
 </div>
 <div id="concepts" class="section level4">
 <h4>1. Concepts</h4>
-<p>Consider the data generating model that generate <span class="math inline">\(x = \{y, z \}\)</span>, where <span class="math inline">\(x\)</span> is the full data, <span class="math inline">\(y\)</span> is the observed data, and <span class="math inline">\(z\)</span> is the latent data/missing values, and parameters <span class="math inline">\(\theta\)</span></p>
+<p>Consider the data generating model that generates <span class="math inline">\(x = \{y, z \}\)</span>, where <span class="math inline">\(x\)</span> is the full data, <span class="math inline">\(y\)</span> is the observed data, and <span class="math inline">\(z\)</span> is the latent data/missing values, and parameters <span class="math inline">\(\theta\)</span></p>
 <p>Observed density: <span class="math display">\[p(y | \theta) = \int_{x}p(x|\theta)dx = \int_zp(x|\theta) p(z|y, \theta) dz\]</span></p>
 <p>This is often intractbale. Therefore, we consider EM. The complete data likelihood is $L_c() =p(y,z|) $.</p>
 </div>
 <div id="procedures" class="section level4">
 <h4>2. Procedures</h4>
-<p>E Step: Calculate the expected value of the compete log likelihood with respect to the condition distribution of <span class="math inline">\(z\)</span> given <span class="math inline">\(y\)</span>, under the <span class="math inline">\(\theta^{(k)}\)</span> from the current iteration <span class="math inline">\(k\)</span>.</p>
+<p>E Step: Calculate the expected value of the complete log likelihood with respect to the conditional distribution of <span class="math inline">\(z\)</span> given <span class="math inline">\(y\)</span>, under the <span class="math inline">\(\theta^{(k)}\)</span> from the current iteration <span class="math inline">\(k\)</span>.</p>
 <p><span class="math display">\[ Q(\theta|\theta^{(k)}) = E_{z|y,\theta^{(k)}}(\log L(\theta; y,z)) = \int \log p(y,z|\theta) p(z|y,\theta^{(k)})dz\]</span></p>
 <p>M Step: Find the quantity that maximize the surrogate quantity <span class="math inline">\(Q(\theta | \theta^{(k)})\)</span>.</p>
 <p><span class="math display">\[ \theta^{(k+1)} = \text{argmax}_\theta Q(\theta|\theta^{(k)})\]</span></p>
@@ -523,7 +523,7 @@ Linear Regression Via SVD
 <div id="linear-regression-with-np" class="section level4">
 <h4>3. Linear regression with <span class="math inline">\(n&lt;p\)</span></h4>
 <p>If <span class="math inline">\(n&lt;p\)</span>, <span class="math inline">\(X&#39;X\)</span> is not full rank and so that is not invertible. But we can consider the generalized inverse <span class="math display">\[X^{-} = VS^{-1}U&#39;\]</span> such that <span class="math inline">\(XX^{-}X = X\)</span>. <span class="math inline">\(\hat{\beta}_{ls} = (X&#39;X)^{-}X&#39;y = VS^{-1}U&#39;y = X^{-}y\)</span>, which is not unique.</p>
-<p>We need to consider other approach for the estimation, e.g. ridge regression.</p>
+<p>We need to consider other approaches for the estimation, e.g. ridge regression.</p>
 <hr />
 <center>
 <h3>
@@ -609,7 +609,7 @@ Optimization Problems for Convex Functions
 <div id="optimazation-problem-with-two-sets-of-constraints" class="section level4">
 <h4>4. Optimazation problem with two sets of constraints</h4>
 <p><span class="math display">\[\text{min}_x f(x)\]</span> s..t <span class="math display">\[g_j(x)\leq 0 \quad j = 1,\dots, m\]</span> <span class="math display">\[h_k(x) = 0 \quad k = 1,\dots, l\]</span></p>
-<p>which can be formulated as the lagrangian problem</p>
+<p>which can be formulated as the Lagrangian problem</p>
 <p><span class="math display">\[L(x,\lambda,v) = f(x)+\sum_{j = 1}^{m}\lambda_j g_j(x)+\sum_{k=1}^{l}v_kh_k(x)\]</span></p>
 </div>
 <div id="lagrangian-dual-function" class="section level4">
