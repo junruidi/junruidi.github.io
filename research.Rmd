@@ -31,26 +31,27 @@ __Scientific Interests__: wearable devices and their applications in public heal
 __Statistical Methods__: feature engineering for accelerometry signals, dimension reduction, functional data analysis, integration of multiple modalities.
 
 ###Selected Research Projects
-- __Integration of data from domains of physical activity, sleep, and circadian rhythmicity__: Implemented JIVE to jointly reduce the dimesnion of multivariate actigraphy features representing multiple domains of physical activity, sleep, and circadian rhythmicity.
+
+__Integration of data from domains of physical activity, sleep, and circadian rhythmicity__: Implemented JIVE to jointly reduce the dimesnion of multivariate actigraphy features representing multiple domains of physical activity, sleep, and circadian rhythmicity.
 
 ```{r,echo=FALSE,out.width="30%",out.height="30%",fig.align = "center"}
 knitr::include_graphics("files/venn.png")
 ```
 
-- __Novel Features to Quantify Activity Fragmentation__: Developed between-state transition probabilities to quantify patterns of sedentary/active time accumulation studied their association with mortality in NHANES 2003-2006.
+__Novel Features to Quantify Activity Fragmentation__: Developed between-state transition probabilities to quantify patterns of sedentary/active time accumulation studied their association with mortality in NHANES 2003-2006.
 
 ```{r,echo=FALSE,out.width="75%",out.height="75%",fig.align = "center"}
 knitr::include_graphics("files/frag.png")
 ```
 
-- __Processed the NHANES 2003 - 2006 Accelerometery Data__: Processed NHANES 2003 - 2006 accelerometry data to a user-friendly data package. Provided analytical tutorial to conduct statistical analysis on NHANES accelerometry data. (Package [here](https://github.com/andrew-leroux/rnhanesdata))
+__Processed the NHANES 2003 - 2006 Accelerometery Data__: Processed NHANES 2003 - 2006 accelerometry data to a user-friendly data package. Provided analytical tutorial to conduct statistical analysis on NHANES accelerometry data. (Package [here](https://github.com/andrew-leroux/rnhanesdata))
 
 ```{r,echo=FALSE,out.width="50%",out.height="50%",fig.align = "center"}
 knitr::include_graphics("files/nhanes.png")
 ```
 
 
-- __Collaborative Research Projects__: multiple collaborative research projects including: monitoring hospitalized patients with various activity trackers, sleep fragmentation and its association with cognitive functions, circadian rhythmicity and its association with mortality etc. 
+__Collaborative Research Projects__: multiple collaborative research projects including: monitoring hospitalized patients with various activity trackers, sleep fragmentation and its association with cognitive functions, circadian rhythmicity and its association with mortality etc. 
 
 
 
