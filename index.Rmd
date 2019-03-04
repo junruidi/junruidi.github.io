@@ -21,7 +21,7 @@ css: style2.css
 <div style="float:left;margin:0px 50px 0px 0px">
 ![](./files/photo1.jpg)
 </div>
-My name is Junrui Di (Simplified Chinese: 邸俊瑞). I'm a 5th year PhD Candidate at the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/). I am part of the Wearable and Implantable Technology (WIT) research group consisting of experts in the field of wearable/implantable technology.  Before joining Hopkins, I received my Bachelor degree in Applied Mathematics from [UC Berkeley](https://math.berkeley.edu/) in 2012, and my Master degree in Biostatistics from [Georgetown University](https://biostatistics.georgetown.edu/) in 2013. 
+My name is Junrui Di (Simplified Chinese: 邸俊瑞). I'm a 5th year PhD Candidate at the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/) under the advisement of [Dr. Vadim Zipunnikov](http://www.biostat.jhsph.edu/~vzipunni/). I am part of the Wearable and Implantable Technology (WIT) research group consisting of experts in the field of wearable/implantable technology.  Before joining Hopkins, I received my Bachelor degree in Applied Mathematics from [UC Berkeley](https://math.berkeley.edu/) in 2012, and my Master degree in Biostatistics from [Georgetown University](https://biostatistics.georgetown.edu/) in 2013. 
 
 
 615 N Wolfe St E3039  
@@ -36,11 +36,7 @@ Baltimore, MD 21205\
 <br>
 
 ## Latest News
-- My thesis defense (with title "Feature Engineering and Statistical Modeling of Wearable Devices Data") is scheduled to be on Feb 25th 1:30 - 3:30 pm located in E9519 of BSPH Bldg. Welcome to join!
-
-- Is your sleep on weekends messing up the week? Check the new release about the OBT paper. [More](https://www.futurity.org/sleep-on-weekends-americans-1741482/)
-
-- [JHU Biostatistics](http://www.jhsph.edu/departments/biostatistics/) is the top biostat (along with some great company in a 3-way tie) and is 3rd overall among statistics and biostatistics in the new US News and world report rankings! [More](https://www.usnews.com/best-graduate-schools/top-science-schools/statistics-rankings).
+- I defended my thesis (with title "Feature Engineering and Statistical Modeling of Wearable Devices Data") on Feb 25th 2019. Thanks everyone!
 
 
 
