@@ -21,7 +21,7 @@ css: style2.css
 <div style="float:left;margin:0px 50px 0px 0px">
 ![](./files/photo1.jpg)
 </div>
-My name is Junrui Di (Simplified Chinese: 邸俊瑞). I received my PhD degree in 2019 from the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/) under the advisement of [Dr. Vadim Zipunnikov](http://www.biostat.jhsph.edu/~vzipunni/). Before joining Hopkins, I received my Bachelor degree in Applied Mathematics from [UC Berkeley](https://math.berkeley.edu/) in 2012, and my Master degree in Biostatistics from [Georgetown University](https://biostatistics.georgetown.edu/) in 2013. 
+My name is Junrui Di (Simplified Chinese: 邸俊瑞). I received my PhD degree in 2019 from the [Johns Hopkins Bloomberg School of Public Health](http://www.jhsph.edu/) [Department of Biostatistics](http://www.jhsph.edu/departments/biostatistics/) (advisor: [Dr. Vadim Zipunnikov](http://www.biostat.jhsph.edu/~vzipunni/)). Before joining Hopkins, I received my Bachelor degree in Applied Mathematics from [UC Berkeley](https://math.berkeley.edu/) in 2012, and my Master degree in Biostatistics from [Georgetown University](https://biostatistics.georgetown.edu/) in 2013. 
 
 
 
@@ -29,6 +29,12 @@ My name is Junrui Di (Simplified Chinese: 邸俊瑞). I received my PhD degree i
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 ## Latest News
 - I will join Digital Medicine team in Pfizer as a Biostatistician.
