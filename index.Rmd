@@ -37,7 +37,7 @@ My name is Junrui Di (Simplified Chinese: 邸俊瑞). I received my PhD degree i
 
 
 ## Latest News
-- I will join Digital Medicine team in Pfizer as a Biostatistician.
+- I will join the Digital Medicine group at Pfizer Early Clinical Development as a Biostatistician.
 
 - I defended my thesis (with title "Feature Engineering and Statistical Modeling of Wearable Devices Data") on Feb 25th 2019. Thanks everyone!
 
