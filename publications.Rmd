@@ -18,7 +18,7 @@ css: style2.css
 #
 
 #
-####Selected Publications
+#### Selected Publications
 1. __Di, J.__, Spira, A., Bai, J., Urbanek, J., Leroux, A., Wu, M., Resnik, S., Simonsick, E., Ferrucci, L., Schrack, J., and Zipunnikov, V.. [Joint and individual representation of domains of physical activity, sleep, and circadian rhythmicity](https://link.springer.com/article/10.1007/s12561-019-09236-4). _Statistics in Biosciences_. 2019. 
 2. Johns, J., __Di, J.__, Merikangas, K., Cui, L., Swendsen, J., and Zipunnikov, V.. [Fragmentation as a novel measure of stability in normalized trajectories of mood and attention measured by ecological momentary assessment](https://psycnet.apa.org/doiLanding?doi=10.1037%2Fpas0000661). _Psychological Assessment_. 2019.
 3. Leroux, A., __Di, J.__, Smirnova, E., Mcguffey, E., Cao, Q., Bayatmokhtari, E., Tabacu, L., Zipunnikov, V., Urbanek, J., Crainiceanu, C.. [Organizing and analyzing the activity data in NHANES](https://link.springer.com/article/10.1007/s12561-018-09229-9). _Statistics in Biosciences_. 2019.
@@ -36,7 +36,7 @@ A full list of my publications can be found on my [Google Scholar page](https://
 <br>
 
 
-####Softwares
+#### Softwares
 1. __actigraphy__. (R package). Feature extraction for minute level actigraphy data. [[Github](https://github.com/junruidi/actigraphy)].
 2. __cdHOTS__. (R package). Construct and decompose higher order tensorian statistics.
 [[Github](https://github.com/junruidi/cdHOTS)]
