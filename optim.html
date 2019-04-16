@@ -499,10 +499,8 @@ Constrained Optimization
 <div id="types-of-constraints." class="section level4">
 <h4>2. Types of constraints.</h4>
 <ul>
-<li>Box constraints: <span class="math inline">\(l_i \leq x_i \leq u_i\)</span></li>
-</ul>
-<p>We can try to find a transformation <span class="math inline">\(y= T(x)\)</span>. E.g. Take <span class="math inline">\(t_i = 2 \frac{x_i - l_i}{u_i - l_i} - 1\)</span>, and then <span class="math inline">\(y_i = \log (\frac{1+t_i}{1-t_i})\)</span>. And we see that <span class="math inline">\(\Omega_y = \mathbb{R}^p\)</span>. But has to be careful that eht solution is not closed to the boundary. Another way is to do the projection. <span class="math inline">\(\text{Proj}(x_i) = \text{median}(l_i, u_i, x_i)\)</span></p>
-<ul>
+<li><p>Box constraints: <span class="math inline">\(l_i \leq x_i \leq u_i\)</span></p>
+<p>We can try to find a transformation <span class="math inline">\(y= T(x)\)</span>. E.g. Take <span class="math inline">\(t_i = 2 \frac{x_i - l_i}{u_i - l_i} - 1\)</span>, and then <span class="math inline">\(y_i = \log (\frac{1+t_i}{1-t_i})\)</span>. And we see that <span class="math inline">\(\Omega_y = \mathbb{R}^p\)</span>. But has to be careful that eht solution is not closed to the boundary. Another way is to do the projection. <span class="math inline">\(\text{Proj}(x_i) = \text{median}(l_i, u_i, x_i)\)</span></p></li>
 <li><p>Linear equality constraints: <span class="math inline">\(\Omega = \{x|Ax = b\}\)</span></p></li>
 <li><p>Linear inequality constraints:<span class="math inline">\(\Omega = \{x|Ax - b \leq 0\}\)</span></p></li>
 <li><p>Nonlinear equality or inequality <span class="math inline">\(h_j(x) = 0\)</span> or <span class="math inline">\(g_j(x)\leq 0\)</span></p></li>
