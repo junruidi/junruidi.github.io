@@ -50,7 +50,7 @@ __Novel Features to Quantify Activity Fragmentation__: Developed between-state t
 knitr::include_graphics("files/frag.png")
 ```
 
-__Processed the NHANES 2003 - 2006 Accelerometery Data__: Processed NHANES 2003 - 2006 accelerometry data to a user-friendly data package. Provided analytical tutorial to conduct statistical analysis on NHANES accelerometry data. (See [here](https://link.springer.com/article/10.1007/s12561-019-09236-4))
+__Processed the NHANES 2003 - 2006 Accelerometery Data__: Processed NHANES 2003 - 2006 accelerometry data to a user-friendly data package. Provided analytical tutorial to conduct statistical analysis on NHANES accelerometry data. (See [here](https://link.springer.com/article/10.1007/s12561-018-09229-9), and [package](https://oslerinhealth.org/package/rnhanesdata))
 
 ```{r,echo=FALSE,out.width="50%",out.height="50%",fig.align = "center"}
 knitr::include_graphics("files/nhanes.png")
