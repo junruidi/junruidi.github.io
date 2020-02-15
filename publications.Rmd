@@ -38,7 +38,7 @@ A full list of my publications can be found on my [Google Scholar page](https://
 
 
 #### Softwares
-1. __actigraphy__. (R package). Feature extraction from minute level actigraphy data. [[Github](https://github.com/junruidi/actigraphy)].
+1. __actigraphy__. (R package). Feature extraction from minute level actigraphy data (will be deprecated). [[Github](https://github.com/junruidi/actigraphy)].
 2. __cdHOTS__. (R package). Construct and decompose higher order tensorian statistics.[[Github](https://github.com/junruidi/cdHOTS)]
 3. __actigraphy-profiles__. (R Shiny App). A visualization tool for displaying minute-level actigraphy profiles (More features to be online). [[Github](https://github.com/junruidi/actigraphy-profiles)]
 4. __ActFrag__. (R package). Activity fragmentation metrics extraced from minute level actigraphy data. [[Github](https://github.com/junruidi/ActFrag)] [[CRAN](https://cran.r-project.org/web/packages/ActFrag/index.html)]
