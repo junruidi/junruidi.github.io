@@ -25,6 +25,8 @@ css: style2.css
 
 - [Teaching Experience](teaching.html)
 
+- [Notes on Deep Learning with R](files/Deep Learning with R/Deep-Learning-with-R.html)
+
 
 
 
