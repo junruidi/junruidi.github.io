@@ -458,7 +458,7 @@ Gradient Descent
 </div>
 <div id="line-search" class="section level4">
 <h4>3. Line search</h4>
-<p>The line search approach first finds a descent direction along which the objective function <span class="math inline">\(f\)</span> f will be reduced and then computes a step size that determines how far <span class="math inline">\(x\)</span> should move along that direction, i.e. <span class="math inline">\(\lambda\)</span> varies.</p>
+<p>The line search approach first finds a descent direction along which the objective function <span class="math inline">\(f\)</span> f will be reduced and then computes a step size that determines how far <span class="math inline">\(x\)</span> should move along that direction, i.e. <span class="math inline">\(\lambda\)</span> varies.</p>
 </div>
 <div id="convergence-rate" class="section level4">
 <h4>4. Convergence rate</h4>
@@ -472,7 +472,7 @@ Hybrid Method
 </h3>
 </center>
 <p>A combination of Newton’s method and gradient descent can be formed in a format of a penalized ridge regression</p>
-<p><span class="math display">\[(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla f(x)\]</span> where <span class="math inline">\(\lambda\)</span> can be <span class="math inline">\(\{\lambda_k\}\rightarrow 0\)</span>, e.g. <span class="math inline">\(\lambda = \lambda/10\)</span>.</p>
+<p><span class="math display">\[(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla f(x)\]</span> where <span class="math inline">\(\lambda\)</span> can be <span class="math inline">\(\{\lambda_k\}\rightarrow 0\)</span>, e.g. <span class="math inline">\(\lambda = \lambda/10\)</span>.</p>
 <hr />
 <center>
 <h3>
@@ -649,7 +649,7 @@ LASSO Regression
 <p><span class="math display">\[\beta^{*} = \text{sign}(\alpha)(|\alpha|-\lambda)_+ = S_{\lambda}(\alpha)\]</span></p>
 </div>
 <div id="normality-design-i.e.-textdiagfracxxn-i_p" class="section level4">
-<h4>4. Normality design (i.e. <span class="math inline">\(\text{diag}(\frac{X&#39;X}{n}) = I_p\)</span>)</h4>
+<h4>4. Normality design (i.e. <span class="math inline">\(\text{diag}(\frac{X&#39;X}{n}) = I_p\)</span>)</h4>
 <p>We can use the coordinate descent solution (which converges to global optimal)</p>
 <p><span class="math display">\[\beta_j^{*} = S_\lambda (\frac{r_j^{&#39;} x_j}{n})\]</span> where <span class="math inline">\(r_{ij} = y_i - \sum_{k\neq j }x_{ik}\beta_k\)</span>.</p>
 <hr />
@@ -698,7 +698,7 @@ Optimization Problems for Convex Functions
 <p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convex, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optimal, we have the following conditions</p>
 <ul>
 <li><p><span class="math inline">\(\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0\)</span></p></li>
-<li><p><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></p></li>
+<li><p><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></p></li>
 <li><p><span class="math inline">\(\lambda_j \geq 0\)</span></p></li>
 <li><p><span class="math inline">\(\sum_j \lambda_j^* g_j(x^*) = 0\)</span>, then <span class="math inline">\(\forall j\)</span>, either <span class="math inline">\(\lambda_j^* = 0\)</span> or <span class="math inline">\(g_j = 0\)</span>.</p></li>
 </ul>
