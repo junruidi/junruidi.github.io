@@ -38,11 +38,11 @@ A full list of my publications can be found on my [Google Scholar page](https://
 
 
 #### Softwares
-1. __actigraphy__. (R package). Feature extraction from minute level actigraphy data (__DEPRECATED__: the functionality has been optimzed and separated into [[ActFrag](https://github.com/junruidi/ActFrag)] and [[ActCR](https://github.com/junruidi/ActCR)]). 
+1. __actigraphy__. (R package). Feature extraction from minute level actigraphy data (__DEPRECATED__: the functionality has been optimized and separated into [[ActFrag](https://github.com/junruidi/ActFrag)] and [[ActCR](https://github.com/junruidi/ActCR)]). 
 2. __cdHOTS__. (R package). Construct and decompose higher order tensorian statistics.[[Github](https://github.com/junruidi/cdHOTS)]
 3. __actigraphy-profiles__. (R Shiny App). A visualization tool for displaying minute-level actigraphy profiles (More features to be online). [[Github](https://github.com/junruidi/actigraphy-profiles)]
 4. __ActFrag__. (R package). Activity fragmentation metrics extraced from minute level actigraphy data. [[Github](https://github.com/junruidi/ActFrag)] [[CRAN](https://cran.r-project.org/web/packages/ActFrag/index.html)]
 [[Osler](https://oslerinhealth.org/package/ActFrag)]
-5. __ActCR__. (R package). Extract circadian rhythms metrics from actigraphy data. [[Github](https://github.com/junruidi/ActCR)]
+5. __ActCR__. (R package). Extract circadian rhythms metrics from actigraphy data. [[Github](https://github.com/junruidi/ActCR)][[CRAN](https://cran.r-project.org/web/packages/ActCR/index.html)]
 
 
