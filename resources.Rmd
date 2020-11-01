@@ -23,9 +23,9 @@ css: style2.css
 
 <!-- - [Computing Club](compclub.html) -->
 
-- [Notes on Optimization for Statistics](optim.html)
-
 <!-- - [Teaching Experience](teaching.html) -->
+
+- [Notes on Optimization for Statistics](optim.html)
 
 - [Notes on Deep Learning with R](https://junruidi.github.io/DeepLearningWithR/Deep-Learning-with-R.html)
 
