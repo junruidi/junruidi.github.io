@@ -15,9 +15,9 @@ css: style2.css
 
 </script>
 
-#
+<br>
+<br>
 
-#
 #### Selected Publications
 1. Wanigatunga, A., __Di, J.__, Zipunnikov, V., Urbanek, J., Kuo, P., Simonsick, EM., Ferrucci, L., and Schrack, J.. [Association of total daily physical activity and fragmented physical activity with mortality in older adults](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2752084). _JAMA Network Open_. 2019.
 2. __Di, J.__, Spira, A., Bai, J., Urbanek, J., Leroux, A., Wu, M., Resnik, S., Simonsick, E., Ferrucci, L., Schrack, J., and Zipunnikov, V.. [Joint and individual representation of domains of physical activity, sleep, and circadian rhythmicity](https://link.springer.com/article/10.1007/s12561-019-09236-4). _Statistics in Biosciences_. 2019. 

@@ -14,9 +14,10 @@ css: style2.css
   ga('send', 'pageview');
 
 </script>
-#
 
-#
+<br>
+<br>
+
 
 ```{r,echo=FALSE,out.width="75%",out.height="75%",fig.align = "center"}
 knitr::include_graphics("files/wordcloud.png")
