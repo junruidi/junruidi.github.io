@@ -20,7 +20,6 @@ css: style2.css
 <br>
 
 
-
 <!-- - [Computing Club](compclub.html) -->
 
 <!-- - [Teaching Experience](teaching.html) -->
@@ -28,6 +27,8 @@ css: style2.css
 - [Notes on Optimization for Statistics](optim.html)
 
 - [Notes on Deep Learning with R](https://junruidi.github.io/DeepLearningWithR/Deep-Learning-with-R.html)
+
+- [Notes on Elements with Statistical Learning](https://github.com/junruidi/ESL/blob/main/ESL.pdf)
 
 
 
