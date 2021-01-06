@@ -9,26 +9,16 @@ navbar:
       href: research.html
     - text: "Publications"
       href: publications.html 
-#    - text: "Vitae"
-#      href: cv.html 
-#    - text: "Teaching"
-#      href: teaching.html
     - text: "Resources"
       href: resources.html
-
-
   right:
     - icon: fa-envelope fa-lg
       href: mailto:dijunrui@gmail.com
     - icon: ai-cv ai-lg
       href: files/Curriculum Vitae.pdf
-#    - text: "SC"
-#      href: https://www.scopus.com/authid/detail.uri?authorId=57194500578
     - icon: ai-google-scholar ai-lg
       href: https://scholar.google.com/citations?user=9YSnIL4AAAAJ&hl=en
+    - icon: ai-github ai-lg
+      href: http://github.com/junruidi
     - icon: fa-github fa-lg
       href: http://github.com/junruidi
-    - icon: fa-linkedin fa-lg
-      href: https://www.linkedin.com/in/junruidi/
-    - icon: fa-twitter fa-lg
-      href: https://twitter.com/JunruiDi
