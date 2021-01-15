@@ -22,6 +22,6 @@ navbar:
       href: http://github.com/junruidi
 
 
-output:
-  html_document:
-    theme: cosmo
+# output:
+#   html_document:
+#     theme: cosmo
