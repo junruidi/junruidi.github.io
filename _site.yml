@@ -18,7 +18,10 @@ navbar:
       href: files/Curriculum Vitae.pdf
     - icon: ai-google-scholar ai-lg
       href: https://scholar.google.com/citations?user=9YSnIL4AAAAJ&hl=en
-    - icon: ai-github ai-lg
+    - icon: <i class="fab fa-github big-icon"></i>
       href: http://github.com/junruidi
-    - icon: fa-github fa-lg
-      href: http://github.com/junruidi
+
+
+output:
+  html_document:
+    theme: cosmo
