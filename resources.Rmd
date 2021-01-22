@@ -27,20 +27,20 @@ css: style2.css
 <!-- - [Notes on Optimization for Statistics](optim.html) -->
 
 
-<center> <h3>Optimization for statistics</h3> </center>
+<center> <h3>Optimization for Statistics</h3> </center>
 
 [Notes on Optimization for Statistics](optim.html)
 
-A large variety of statistical problems are essentially solutions to optimization problems. The mathematical techniques of optimization are fundamental to statistical theory and practice. I took the _Optimization_ special course (thanks to Dr. Ravi Varadhan and Dr. Vadim Zipunnikov) at Johns Hopkins. Here are some of my thoughts and notes on gradient descent, constrained optimization, EM Algorithms, and convex optimization etc.
+A large variety of statistical problems are essentially solutions to optimization problems. The mathematical techniques of optimization are fundamental to statistical theory and practice. I was fortunate to take the _Optimization for Statistics_ special course (thanks to Dr. Ravi Varadhan and Dr. Vadim Zipunnikov) at Johns Hopkins. Here are some of my thoughts and notes on gradient descent, constrained optimization, EM Algorithms, and convex optimization etc.
 )
 
 ---
 
-<center> <h3>Deep Learning with R</h3> </center>
+<center> <h3>Deep Learning for R Users</h3> </center>
 
 [Notes on Deep Learning with R](https://junruidi.github.io/DeepLearningWithR/Deep-Learning-with-R.html)
 
-`Keras` is a high level neural networks API developed by [Francois Chollet](https://fchollet.com/) to enable fast experimentation, which turns out to be extremely useful for statisticians and data scientists like me, who likes to "go from ideas to result with the least possible delay". It has been made available in R since 2017 (see [keras](https://cloud.r-project.org/web/packages/keras/index.html) on CRAN). As an R programmer, I recommend to start with the two books, [_Deep Learning with R_](https://www.manning.com/books/deep-learning-with-r)  by Chollet and [_Deep Learning with R_](https://www.amazon.com/Deep-Learning-R-Abhijit-Ghatak/dp/9811358494) by Ghatak, since they both have details about the methodologies as well as R codes. Here are some of my notes. 
+`Keras` is a high level neural networks API developed by [Francois Chollet](https://fchollet.com/) to enable fast experimentation, which turns out to be extremely useful for statisticians and data scientists like me, who likes to "go from ideas to result with the least possible delays". It has been made available in R since 2017 (see [keras](https://cloud.r-project.org/web/packages/keras/index.html) on CRAN). As an R programmer, I recommend to start with the two books, [_Deep Learning with R_](https://www.manning.com/books/deep-learning-with-r)  by Chollet and [_Deep Learning with R_](https://www.amazon.com/Deep-Learning-R-Abhijit-Ghatak/dp/9811358494) by Ghatak, since they both have details about the methodologies as well as R codes. Here are some of my notes. 
 
 ---
 
