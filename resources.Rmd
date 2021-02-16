@@ -31,7 +31,7 @@ css: style2.css
 
 [Notes on Optimization for Statistics](optim.html)
 
-A large variety of statistical problems are essentially solutions to optimization problems. The mathematical techniques of optimization are fundamental to statistical theory and practice. I was fortunate to take the _Optimization for Statistics_ special course (thanks to Dr. Ravi Varadhan and Dr. Vadim Zipunnikov) at Johns Hopkins. Here are some of my thoughts and notes on gradient descent, constrained optimization, EM Algorithms, and convex optimization etc.
+A large variety of statistical problems are essentially solutions to optimization problems. The mathematical techniques of optimization are fundamental to statistical theory and practice. I was fortunate to take the _Optimization for Statistics_ special course (thanks to Dr. Ravi Varadhan and Dr. Vadim Zipunnikov) at Johns Hopkins. Here are some of my thoughts and notes on gradient descent, constrained optimization, EM Algorithms, and convex optimization, etc.
 )
 
 ---
@@ -40,7 +40,7 @@ A large variety of statistical problems are essentially solutions to optimizatio
 
 [Notes on Deep Learning with R](https://junruidi.github.io/DeepLearningWithR/Deep-Learning-with-R.html)
 
-`Keras` is a high level neural networks API developed by [Francois Chollet](https://fchollet.com/) to enable fast experimentation, which turns out to be extremely useful for statisticians and data scientists like me, who likes to "go from ideas to result with the least possible delays". It has been made available in R since 2017 (see [keras](https://cloud.r-project.org/web/packages/keras/index.html) on CRAN). As an R programmer, I recommend to start with the two books, [_Deep Learning with R_](https://www.manning.com/books/deep-learning-with-r)  by Chollet and [_Deep Learning with R_](https://www.amazon.com/Deep-Learning-R-Abhijit-Ghatak/dp/9811358494) by Ghatak, since they both have details about the methodologies as well as R codes. Here are some of my notes. 
+`Keras` is a high level neural networks API developed by [Francois Chollet](https://fchollet.com/) to enable fast experimentation, which turns out to be extremely useful for statisticians and data scientists like me, who likes to "go from ideas to result with the least possible delays". It has been made available in R since 2017 (see [keras](https://cloud.r-project.org/web/packages/keras/index.html) on CRAN). As an R programmer, I recommend starting with the two books, [_Deep Learning with R_](https://www.manning.com/books/deep-learning-with-r)  by Chollet and [_Deep Learning with R_](https://www.amazon.com/Deep-Learning-R-Abhijit-Ghatak/dp/9811358494) by Ghatak, since they both have details about the methodologies as well as R codes. Here are some of my notes. 
 
 ---
 
@@ -49,11 +49,11 @@ A large variety of statistical problems are essentially solutions to optimizatio
 [Notes on ESL](https://github.com/junruidi/ESL/blob/main/ESL.pdf)
 
 
-[_Elements of Statistical Learning, Data Mining, Inference, and Prediction (2nd Ed)_](https://web.stanford.edu/~hastie/ElemStatLearn/) is my all time favorite text book on statistical learning (or other people may call it machine learning). I read this book from time to time to alway keep up with the fundamentals of statistical learning. Here is my study notes to summarize the important messages delivered by the book and to also incorporate some of my thoughts and experience using them. Another book that I find fairly useful for implementing ML techniques in R is [_Hands-On Machine Learning with R_](https://bradleyboehmke.github.io/HOML/) which has R implementation practice for all commonly used ML models.  
+[_Elements of Statistical Learning, Data Mining, Inference, and Prediction (2nd Ed)_](https://web.stanford.edu/~hastie/ElemStatLearn/) is my all-time favorite textbook on statistical learning (or other people may call it machine learning). I read this book from time to time to always keep up with the fundamentals of statistical learning. Here are my study notes to summarize the important messages delivered by the book and to also incorporate some of my thoughts and experience using them. Another book that I find fairly useful for implementing ML techniques in R is [_Hands-On Machine Learning with R_](https://bradleyboehmke.github.io/HOML/) which has R implementation practice for all commonly used ML models.  
 
 ---
 <center> <h3>R Programming with `tidyverse` and `tidymodel`</h3> </center>
 
 [Notes on `tidymodel`](https://junruidi.github.io/AdvancedR/tidymodel.html)
 
-The tidyverse is an collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. As a modern-time R programmer, there is no reason for us not to use it. I have gradually changed my coding habits and switched to `tidy` way of programming. Here are some of the most fundamental skills in this domain. 
+The tidyverse is a collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. As a modern-time R programmer, there is no reason for us not to use it. I have gradually changed my coding habits and switched to `tidy` way of programming. Here are some of the most fundamental skills in this domain. 
