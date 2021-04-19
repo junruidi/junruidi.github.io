@@ -4,7 +4,7 @@
 #working on at the time. 
 setwd("~/Dropbox/web/junruidi.github.io/")
 
-setwd("C:/Users/STEP/Dropbox/web/junruidi.github.io/")
+setwd("D:/Dropbox/web/junruidi.github.io/")
 
 #render your sweet site. 
 rmarkdown::render_site()
