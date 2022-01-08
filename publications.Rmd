@@ -21,7 +21,7 @@ css: style2.css
 
 #### Selected Publications on Wearables/Digital Measurements
 
-* __Di, J.__, Demanuele, C., Kettermann, A., Karahanoglu., FI., Capperlleri, JC., Potter, A., Bury, D., Cedarbaum, J., Byrom, B.. [Considerations to address missing data when deriving clinical trial endpoints from digital health technologies (DHTs)](https://www.sciencedirect.com/science/article/pii/S1551714421003979). _Contemporary Clinical Trials_. 2021
+* __Di, J.__, Demanuele, C., Kettermann, A., Karahanoglu., FI., Capperlleri, JC., Potter, A., Bury, D., Cedarbaum, J., Byrom, B.. [Considerations to address missing data when deriving clinical trial endpoints from digital health technologies (DHTs)](https://www.sciencedirect.com/science/article/pii/S1551714421003979). _Contemporary Clinical Trials_. 2021.
 * Kuo, PL., __Di, J.__, Ferrucci L., and Lin, FR.. [Analysis of hearing loss and physical activity among US adults, 60 - 69 ears](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2778845). _JAMA Network Open_. 2021.
 * Mahadevan, N., Christakis, Y., __Di, J.__, Bruno, J., Zhang Y., Dorsey, ER., Pigeon, WR., Beck, LA., Thomas, K., Liu, Y., Wicker, M., Brooks, C., Kabiri, NS., Bhangu, J., Northcott, C., and Patel, S.. [Development of digital measures for nighttime scratch and sleep using wrist-worn wearable devices](https://www.nature.com/articles/s41746-021-00402-x). _Nature npj Digital Medicine_. 2021. 
 Behind the paper blog post: [Wearable sensors can tell you more than just step count: measuring nighttime scratching and sleep](https://go.nature.com/3e2M4TH).
