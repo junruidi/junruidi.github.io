@@ -39,6 +39,9 @@ __Scientific Interests__: wearable devices and their applications in public heal
 
 __Statistical Methods__: feature engineering for accelerometry signals, dimension reduction, functional data analysis, integration of multiple modalities.
 
+
+A recent paper I just published about __dealing with missing data from wearable devices__ can be found [here](files/missing2022.pdf).
+
 ## Selected Research Projects
 
 __Integration of data from domains of physical activity, sleep, and circadian rhythmicity__: Implemented JIVE to jointly reduce the dimesnion of multivariate actigraphy features representing multiple domains of physical activity, sleep, and circadian rhythmicity to provide data driven features and intuition about the multi-modal data structure. (See paper [here](https://link.springer.com/article/10.1007/s12561-019-09236-4))
