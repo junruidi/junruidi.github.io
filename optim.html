@@ -13,7 +13,7 @@
 
 <title>Notes on Optimization</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -59,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style2.css" type="text/css" />
 
 
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -235,7 +243,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -312,16 +320,22 @@ $(document).ready(function () {
 </div>
 <div id="section-1" class="section level1">
 <h1></h1>
-<p>I am currently learning optimization (thanks to Dr. Ravi Varadhan and Dr. Vadim Zipunnikov). Here are some of my thoughts and notes.</p>
+<p>I am currently learning optimization (thanks to Dr. Ravi Varadhan and
+Dr. Vadim Zipunnikov). Here are some of my thoughts and notes.</p>
 <center>
 <h3>
 Tools
 </h3>
 </center>
 <ul>
-<li><p><a href="https://neos-guide.org/">NEOS</a>: network enabled optimization system.</p></li>
-<li><p><a href="https://cran.r-project.org/web/packages/CVXR/index.html">CVXR</a>: disciplined convex optimization.</p></li>
-<li><p><a href="https://cran.r-project.org/web/views/Optimization.html">CRAN Task View: Optimization and Mathematical Programming</a></p></li>
+<li><p><a href="https://neos-guide.org/">NEOS</a>: network enabled
+optimization system.</p></li>
+<li><p><a
+href="https://cran.r-project.org/web/packages/CVXR/index.html">CVXR</a>:
+disciplined convex optimization.</p></li>
+<li><p><a
+href="https://cran.r-project.org/web/views/Optimization.html">CRAN Task
+View: Optimization and Mathematical Programming</a></p></li>
 </ul>
 <hr />
 <center>
@@ -331,30 +345,51 @@ Miscellaneous
 </center>
 <div id="equations-systems" class="section level4">
 <h4>1. Equations systems</h4>
-<p>If <span class="math inline">\(f(x) = 0\)</span>, where <span class="math inline">\(x \in \mathbb{R}^p\)</span>, <span class="math inline">\(f \in \mathbb{R}^k\)</span>, then</p>
+<p>If <span class="math inline">\(f(x) = 0\)</span>, where <span
+class="math inline">\(x \in \mathbb{R}^p\)</span>, <span
+class="math inline">\(f \in \mathbb{R}^k\)</span>, then</p>
 <ul>
-<li><p><span class="math inline">\(k=p\)</span>: determined properly</p></li>
-<li><p><span class="math inline">\(k&gt;p\)</span>: overdetermined</p></li>
-<li><p><span class="math inline">\(k&lt;p\)</span>: underdetermined (over parametrized)</p></li>
+<li><p><span class="math inline">\(k=p\)</span>: determined
+properly</p></li>
+<li><p><span class="math inline">\(k&gt;p\)</span>:
+overdetermined</p></li>
+<li><p><span class="math inline">\(k&lt;p\)</span>: underdetermined
+(over parametrized)</p></li>
 </ul>
 </div>
 <div id="different-convergence-rate-more" class="section level4">
-<h4>2. Different convergence rate <a href="https://en.wikipedia.org/wiki/Rate_of_convergence">More</a></h4>
-<p>Consider the series <span class="math inline">\(\{x_k\} \rightarrow x^{*}\)</span></p>
+<h4>2. Different convergence rate <a
+href="https://en.wikipedia.org/wiki/Rate_of_convergence">More</a></h4>
+<p>Consider the series <span class="math inline">\(\{x_k\} \rightarrow
+x^{*}\)</span></p>
 <ul>
-<li>q linear convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} = c\]</span></li>
-<li>q super linear convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow 0\]</span></li>
-<li>q quadratic convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|^q} \rightarrow c\]</span></li>
-<li>q sublinear convergence <span class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow 1\]</span></li>
+<li>q linear convergence <span class="math display">\[\text{lim}_{k
+\rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} =
+c\]</span></li>
+<li>q super linear convergence <span
+class="math display">\[\text{lim}_{k \rightarrow \infty} \frac{|x_{k+1}
+- x^*|}{|x_k - x^*|} \rightarrow 0\]</span></li>
+<li>q quadratic convergence <span class="math display">\[\text{lim}_{k
+\rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|^q} \rightarrow
+c\]</span></li>
+<li>q sublinear convergence <span class="math display">\[\text{lim}_{k
+\rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \rightarrow
+1\]</span></li>
 </ul>
 </div>
 <div id="gradient-hessian-and-jacobian" class="section level4">
 <h4>3. Gradient, hessian, and Jacobian</h4>
-<p>For a scalar function <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>:</p>
-<p>The gradient (first order derivatives) is the vector $f = (, ,) $.</p>
-<p>The Hessian (second order derivatives) is the matrix <span class="math inline">\(\nabla^2 f = [\frac{\partial^2 f}{\partial x_i \partial x_j}]\)</span>.</p>
-<p>For an equation systems <span class="math inline">\(F: \mathbb{R}^p \rightarrow \mathbb{R}^p\)</span>:</p>
-<p>The Jacobian is the matrix <span class="math inline">\(J = [\frac{\partial F_i}{\partial x_j}]\)</span>.</p>
+<p>For a scalar function <span class="math inline">\(f: \mathbb{R}^p
+\rightarrow \mathbb{R}\)</span>:</p>
+<p>The gradient (first order derivatives) is the vector $f = (, ,)
+$.</p>
+<p>The Hessian (second order derivatives) is the matrix <span
+class="math inline">\(\nabla^2 f = [\frac{\partial^2 f}{\partial x_i
+\partial x_j}]\)</span>.</p>
+<p>For an equation systems <span class="math inline">\(F: \mathbb{R}^p
+\rightarrow \mathbb{R}^p\)</span>:</p>
+<p>The Jacobian is the matrix <span class="math inline">\(J =
+[\frac{\partial F_i}{\partial x_j}]\)</span>.</p>
 <hr />
 <center>
 <h3>
@@ -364,23 +399,36 @@ Numeric Derivative
 </div>
 <div id="standard-approach-fowardbackward" class="section level4">
 <h4>1. Standard approach (foward/backward)</h4>
-<p><span class="math display">\[f&#39;(x) \approx \frac{f(x+h) - f(x)}{h} \approx \frac{f(x) - f(x-h)}{h}\]</span></p>
+<p><span class="math display">\[f&#39;(x) \approx \frac{f(x+h) -
+f(x)}{h} \approx \frac{f(x) - f(x-h)}{h}\]</span></p>
 </div>
 <div id="centered-differecing" class="section level4">
 <h4>2. Centered differecing</h4>
-<p><span class="math display">\[f&#39;(x) \approx \frac{f(x+h) - f(x-h)}{2h}\]</span> Derivation based on Talor expansion of <span class="math inline">\(f(x+h)\)</span> and <span class="math inline">\(f(x-h)\)</span>.</p>
-<p><span class="math display">\[f&#39;(x) = \frac{f(x+h) - f(x-h)}{2h} -\frac{h^2}{12}[f&#39;&#39;&#39;(\xi_1) + f&#39;&#39;&#39;(\xi_2)]\]</span></p>
+<p><span class="math display">\[f&#39;(x) \approx \frac{f(x+h) -
+f(x-h)}{2h}\]</span> Derivation based on Talor expansion of <span
+class="math inline">\(f(x+h)\)</span> and <span
+class="math inline">\(f(x-h)\)</span>.</p>
+<p><span class="math display">\[f&#39;(x) = \frac{f(x+h) - f(x-h)}{2h}
+-\frac{h^2}{12}[f&#39;&#39;&#39;(\xi_1) +
+f&#39;&#39;&#39;(\xi_2)]\]</span></p>
 </div>
 <div id="selection-of-h" class="section level4">
 <h4>3. Selection of <span class="math inline">\(h\)</span></h4>
-<p><span class="math display">\[h = \sqrt{\epsilon} \max (|x|,\text{typical } x)\]</span> where <span class="math inline">\(\epsilon\)</span> is the machine constant.</p>
+<p><span class="math display">\[h = \sqrt{\epsilon} \max
+(|x|,\text{typical } x)\]</span> where <span
+class="math inline">\(\epsilon\)</span> is the machine constant.</p>
 </div>
 <div id="complex-step-derivation" class="section level4">
 <h4>4. Complex step derivation</h4>
-<p><span class="math display">\[f(x+ih) \approx f(x) + ihf&#39;(x) \]</span> <span class="math display">\[Img(f(x+ih)) \approx hf&#39;(x)\]</span> <span class="math display">\[f&#39;(x) \approx \frac{1}{h}Img(f(x+ih))\]</span></p>
+<p><span class="math display">\[f(x+ih) \approx f(x) + ihf&#39;(x)
+\]</span> <span class="math display">\[Img(f(x+ih)) \approx
+hf&#39;(x)\]</span> <span class="math display">\[f&#39;(x) \approx
+\frac{1}{h}Img(f(x+ih))\]</span></p>
 </div>
 <div id="more-readings-from-doron-levy." class="section level4">
-<h4>5. <a href="http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf">More readings</a> from Doron Levy.</h4>
+<h4>5. <a
+href="http://www2.math.umd.edu/~dlevy/classes/amsc466/lecture-notes/differentiation-chap.pdf">More
+readings</a> from Doron Levy.</h4>
 <hr />
 <center>
 <h3>
@@ -390,26 +438,52 @@ Newton’s Method
 </div>
 <div id="univariate-scalar-function" class="section level4">
 <h4>1. Univariate scalar function</h4>
-<p><span class="math inline">\(f: \mathbb{R}\rightarrow \mathbb{R}\)</span></p>
-<p><span class="math display">\[f(x) = f(x_c) + \int_{x_c}^{x}f&#39;(u)du \approx f(x_c) + f&#39;(x_c)(x-xc)\]</span></p>
+<p><span class="math inline">\(f: \mathbb{R}\rightarrow
+\mathbb{R}\)</span></p>
+<p><span class="math display">\[f(x) = f(x_c) +
+\int_{x_c}^{x}f&#39;(u)du \approx f(x_c) +
+f&#39;(x_c)(x-xc)\]</span></p>
 <p>The Newton’s estimation is</p>
-<p><span class="math display">\[x_{k+1} = x_{k} - \frac{f(x_k)}{f&#39;(x_k)}\]</span></p>
+<p><span class="math display">\[x_{k+1} = x_{k} -
+\frac{f(x_k)}{f&#39;(x_k)}\]</span></p>
 </div>
 <div id="equation-systems" class="section level4">
 <h4>2. Equation systems</h4>
-<p><span class="math inline">\(F: \mathbb{R}^p\rightarrow \mathbb{R}^p\)</span>, and the Jacobian <span class="math inline">\(J = \frac{\partial F_i(x)}{\partial x_j}\)</span></p>
-<p><span class="math display">\[F(x_c + p) = F(x_c) + \int_{x_c}^{x}J(t)dt \approx F(x_c) + J(x_c)p\]</span> The Newton’s estimation is</p>
-<p><span class="math display">\[x_{k+1} = x_{k} - F(x_c)J^{-1}(x_c)\]</span></p>
+<p><span class="math inline">\(F: \mathbb{R}^p\rightarrow
+\mathbb{R}^p\)</span>, and the Jacobian <span class="math inline">\(J =
+\frac{\partial F_i(x)}{\partial x_j}\)</span></p>
+<p><span class="math display">\[F(x_c + p) = F(x_c) +
+\int_{x_c}^{x}J(t)dt \approx F(x_c) + J(x_c)p\]</span> The Newton’s
+estimation is</p>
+<p><span class="math display">\[x_{k+1} = x_{k} -
+F(x_c)J^{-1}(x_c)\]</span></p>
 </div>
 <div id="quasi-newton" class="section level4">
 <h4>3. Quasi Newton</h4>
-<p>The goal is to not calculate <span class="math inline">\(J\)</span> for all the iterations, instead using the Broydan’s rank 1 update <span class="math inline">\(x_{k+1} = x_{k} - F(x_c)B_c^{-1}\)</span>.</p>
-<p><span class="math display">\[B_{k+1} = B_k + \frac{(y - B_k s)s^T}{s^Ts}\]</span> where <span class="math inline">\(y = F(x_{k+1}) - F(x_k)\)</span>, and step <span class="math inline">\(s = x_{k+1} - x_k\)</span>. Eventually, the inverse can be done using the Sherman-Morrison formula.</p>
+<p>The goal is to not calculate <span class="math inline">\(J\)</span>
+for all the iterations, instead using the Broydan’s rank 1 update <span
+class="math inline">\(x_{k+1} = x_{k} - F(x_c)B_c^{-1}\)</span>.</p>
+<p><span class="math display">\[B_{k+1} = B_k + \frac{(y - B_k
+s)s^T}{s^Ts}\]</span> where <span class="math inline">\(y = F(x_{k+1}) -
+F(x_k)\)</span>, and step <span class="math inline">\(s = x_{k+1} -
+x_k\)</span>. Eventually, the inverse can be done using the
+Sherman-Morrison formula.</p>
 </div>
-<div id="solve-newtons-method-with-cholesky-decomposition" class="section level4">
+<div id="solve-newtons-method-with-cholesky-decomposition"
+class="section level4">
 <h4>4. Solve Newton’s method with Cholesky decomposition</h4>
-<p>For <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>, where <span class="math inline">\(f\)</span> is twice differentiable with Llipschitz condition <span class="math inline">\(||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma ||x-y||\)</span>, and also <span class="math inline">\(\nabla f(x^*) = 0\)</span>, and <span class="math inline">\(\nabla^2 f(x^*)\)</span> is positive definite, the Newtown’s method</p>
-<p><span class="math display">\[\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla f(x_k)\]</span> can be solved by the Cholesky decomposition <span class="math inline">\(\nabla^2 f(x_k) = LL^T\)</span>, where <span class="math inline">\(L\)</span> is a lower triangular matrix by <span class="math display">\[LL^T S_k = -\nabla f(x_k)\]</span></p>
+<p>For <span class="math inline">\(f: \mathbb{R}^p \rightarrow
+\mathbb{R}\)</span>, where <span class="math inline">\(f\)</span> is
+twice differentiable with Llipschitz condition <span
+class="math inline">\(||\nabla^2f(x) - \nabla^2f(y)||\leq \gamma
+||x-y||\)</span>, and also <span class="math inline">\(\nabla f(x^*) =
+0\)</span>, and <span class="math inline">\(\nabla^2 f(x^*)\)</span> is
+positive definite, the Newtown’s method</p>
+<p><span class="math display">\[\nabla^2 f(x_k) (x_{k+1}-x_k) = -\nabla
+f(x_k)\]</span> can be solved by the Cholesky decomposition <span
+class="math inline">\(\nabla^2 f(x_k) = LL^T\)</span>, where <span
+class="math inline">\(L\)</span> is a lower triangular matrix by <span
+class="math display">\[LL^T S_k = -\nabla f(x_k)\]</span></p>
 <hr />
 <center>
 <h3>
@@ -419,30 +493,60 @@ Gradient Descent
 </div>
 <div id="definition" class="section level4">
 <h4>1. Definition</h4>
-<p>For a scalar function <span class="math inline">\(f: \mathbb{R}^p \rightarrow \mathbb{R}\)</span>, with gradient <span class="math inline">\(\nabla f\)</span>, the gradient descent (a.k.a. steepest descent) algorithm is</p>
-<p><span class="math display">\[x_{k+1} = x_k - \lambda \nabla f(x_k)\]</span></p>
+<p>For a scalar function <span class="math inline">\(f: \mathbb{R}^p
+\rightarrow \mathbb{R}\)</span>, with gradient <span
+class="math inline">\(\nabla f\)</span>, the gradient descent (a.k.a.
+steepest descent) algorithm is</p>
+<p><span class="math display">\[x_{k+1} = x_k - \lambda \nabla
+f(x_k)\]</span></p>
 </div>
 <div id="intuition" class="section level4">
 <h4>2. Intuition</h4>
-<p>Gradient descent is based on the observation that if the multi-variable function <span class="math inline">\(f(x)\)</span> is defined and differentiable in a neighborhood of a point <span class="math inline">\(x_c\)</span>, then <span class="math inline">\(f(x)\)</span> decreases fastest if one goes from <span class="math inline">\(x_c\)</span> in the direction of the negative gradient of <span class="math inline">\(f\)</span> at <span class="math inline">\(x_c\)</span>, <span class="math inline">\(\nabla f(x_c)\)</span>.</p>
+<p>Gradient descent is based on the observation that if the
+multi-variable function <span class="math inline">\(f(x)\)</span> is
+defined and differentiable in a neighborhood of a point <span
+class="math inline">\(x_c\)</span>, then <span
+class="math inline">\(f(x)\)</span> decreases fastest if one goes from
+<span class="math inline">\(x_c\)</span> in the direction of the
+negative gradient of <span class="math inline">\(f\)</span> at <span
+class="math inline">\(x_c\)</span>, <span class="math inline">\(\nabla
+f(x_c)\)</span>.</p>
 </div>
 <div id="line-search" class="section level4">
 <h4>3. Line search</h4>
-<p>The line search approach first finds a descent direction along which the objective function <span class="math inline">\(f\)</span> f will be reduced and then computes a step size that determines how far <span class="math inline">\(x\)</span> should move along that direction, i.e. <span class="math inline">\(\lambda\)</span> varies.</p>
+<p>The line search approach first finds a descent direction along which
+the objective function <span class="math inline">\(f\)</span> f will be
+reduced and then computes a step size that determines how far <span
+class="math inline">\(x\)</span> should move along that direction,
+i.e. <span class="math inline">\(\lambda\)</span> varies.</p>
 </div>
 <div id="convergence-rate" class="section level4">
 <h4>4. Convergence rate</h4>
 <p>For gradient descent algorithm</p>
-<p><span class="math display">\[\lim _{k \rightarrow \infty} \frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}}\]</span></p>
-<p>where <span class="math inline">\(\lambda_{max}\)</span> and <span class="math inline">\(\lambda_{min}\)</span> are the largest and smallest eigenvalues of the Hessian <span class="math inline">\(\nabla ^2 f(x)\)</span> where <span class="math inline">\(x\)</span> is closed to <span class="math inline">\(x^*\)</span>. If <span class="math inline">\(\lambda_{max} &gt;&gt; \lambda_{min}\)</span>, the <span class="math inline">\(\frac{\lambda_{max} - \lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1\)</span>, i.e. gradient descent becomes sublinear, and inefficient.</p>
+<p><span class="math display">\[\lim _{k \rightarrow \infty}
+\frac{|x_{k+1} - x^*|}{|x_k - x^*|} \leq \frac{\lambda_{max} -
+\lambda_{min}}{\lambda_{max} - \lambda_{min}}\]</span></p>
+<p>where <span class="math inline">\(\lambda_{max}\)</span> and <span
+class="math inline">\(\lambda_{min}\)</span> are the largest and
+smallest eigenvalues of the Hessian <span class="math inline">\(\nabla
+^2 f(x)\)</span> where <span class="math inline">\(x\)</span> is closed
+to <span class="math inline">\(x^*\)</span>. If <span
+class="math inline">\(\lambda_{max} &gt;&gt; \lambda_{min}\)</span>, the
+<span class="math inline">\(\frac{\lambda_{max} -
+\lambda_{min}}{\lambda_{max} - \lambda_{min}} \approx 1\)</span>,
+i.e. gradient descent becomes sublinear, and inefficient.</p>
 <hr />
 <center>
 <h3>
 Hybrid Method
 </h3>
 </center>
-<p>A combination of Newton’s method and gradient descent can be formed in a format of a penalized ridge regression</p>
-<p><span class="math display">\[(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla f(x)\]</span> where <span class="math inline">\(\lambda\)</span> can be <span class="math inline">\(\{\lambda_k\}\rightarrow 0\)</span>, e.g. <span class="math inline">\(\lambda = \lambda/10\)</span>.</p>
+<p>A combination of Newton’s method and gradient descent can be formed
+in a format of a penalized ridge regression</p>
+<p><span class="math display">\[(\nabla^2 f(x_k)+\lambda I)S_k = -\nabla
+f(x)\]</span> where <span class="math inline">\(\lambda\)</span> can be
+<span class="math inline">\(\{\lambda_k\}\rightarrow 0\)</span>,
+e.g. <span class="math inline">\(\lambda = \lambda/10\)</span>.</p>
 <hr />
 <center>
 <h3>
@@ -452,41 +556,76 @@ Constrained Optimization
 </div>
 <div id="definition-1" class="section level4">
 <h4>1. Definition</h4>
-<p><span class="math display">\[\text{min}_{x \in \Omega  \subseteq \mathbb{R}^p} f(x)\]</span> where <span class="math inline">\(\Omega\)</span> is called the feasible set.</p>
+<p><span class="math display">\[\text{min}_{x \in \Omega  \subseteq
+\mathbb{R}^p} f(x)\]</span> where <span
+class="math inline">\(\Omega\)</span> is called the feasible set.</p>
 </div>
 <div id="types-of-constraints." class="section level4">
 <h4>2. Types of constraints.</h4>
 <ul>
-<li><p>Box constraints: <span class="math inline">\(l_i \leq x_i \leq u_i\)</span></p>
-<p>We can try to find a transformation <span class="math inline">\(y= T(x)\)</span>. E.g. Take <span class="math inline">\(t_i = 2 \frac{x_i - l_i}{u_i - l_i} - 1\)</span>, and then <span class="math inline">\(y_i = \log (\frac{1+t_i}{1-t_i})\)</span>. And we see that <span class="math inline">\(\Omega_y = \mathbb{R}^p\)</span>. But has to be careful that eht solution is not closed to the boundary. Another way is to do the projection. <span class="math inline">\(\text{Proj}(x_i) = \text{median}(l_i, u_i, x_i)\)</span></p></li>
-<li><p>Linear equality constraints: <span class="math inline">\(\Omega = \{x|Ax = b\}\)</span></p></li>
-<li><p>Linear inequality constraints:<span class="math inline">\(\Omega = \{x|Ax - b \leq 0\}\)</span></p></li>
-<li><p>Nonlinear equality or inequality <span class="math inline">\(h_j(x) = 0\)</span> or <span class="math inline">\(g_j(x)\leq 0\)</span></p></li>
+<li><p>Box constraints: <span class="math inline">\(l_i \leq x_i \leq
+u_i\)</span></p>
+<p>We can try to find a transformation <span class="math inline">\(y=
+T(x)\)</span>. E.g. Take <span class="math inline">\(t_i = 2 \frac{x_i -
+l_i}{u_i - l_i} - 1\)</span>, and then <span class="math inline">\(y_i =
+\log (\frac{1+t_i}{1-t_i})\)</span>. And we see that <span
+class="math inline">\(\Omega_y = \mathbb{R}^p\)</span>. But has to be
+careful that eht solution is not closed to the boundary. Another way is
+to do the projection. <span class="math inline">\(\text{Proj}(x_i) =
+\text{median}(l_i, u_i, x_i)\)</span></p></li>
+<li><p>Linear equality constraints: <span class="math inline">\(\Omega =
+\{x|Ax = b\}\)</span></p></li>
+<li><p>Linear inequality constraints:<span class="math inline">\(\Omega
+= \{x|Ax - b \leq 0\}\)</span></p></li>
+<li><p>Nonlinear equality or inequality <span
+class="math inline">\(h_j(x) = 0\)</span> or <span
+class="math inline">\(g_j(x)\leq 0\)</span></p></li>
 </ul>
 </div>
 <div id="newtons-method-with-constraints." class="section level4">
 <h4>3. Newton’s method with constraints.</h4>
-<p><span class="math inline">\(\text{min} f(x)\)</span> such that <span class="math inline">\(Ax = b\)</span>.</p>
-<p>The lagrangian is <span class="math inline">\(L(x) = f(x)+ \lambda^T()Ax-b)\)</span>, and we want <span class="math inline">\(\nabla L(x) = \nabla f(x) +A^T \lambda = 0\)</span>.</p>
-<p>The first order optimality condition is (<span class="math inline">\(S_k\)</span> is the current step):</p>
-<p><span class="math display">\[\begin{cases} \nabla f(x) +A^T \lambda = 0 \\ AS_k = 0 \end{cases}\]</span></p>
+<p><span class="math inline">\(\text{min} f(x)\)</span> such that <span
+class="math inline">\(Ax = b\)</span>.</p>
+<p>The lagrangian is <span class="math inline">\(L(x) = f(x)+
+\lambda^T()Ax-b)\)</span>, and we want <span
+class="math inline">\(\nabla L(x) = \nabla f(x) +A^T \lambda =
+0\)</span>.</p>
+<p>The first order optimality condition is (<span
+class="math inline">\(S_k\)</span> is the current step):</p>
+<p><span class="math display">\[\begin{cases} \nabla f(x) +A^T \lambda =
+0 \\ AS_k = 0 \end{cases}\]</span></p>
 <p>And we also have</p>
-<p><span class="math display">\[\begin{cases} \nabla f(x+S_k) = \nabla f(x) + \nabla^2 f(x)S_k \\  \nabla f(x+S_k) +A^T \lambda = 0\end{cases}\]</span></p>
+<p><span class="math display">\[\begin{cases} \nabla f(x+S_k) = \nabla
+f(x) + \nabla^2 f(x)S_k \\  \nabla f(x+S_k) +A^T \lambda =
+0\end{cases}\]</span></p>
 <p>Eventually, we have the KKT condition which is</p>
-<p><span class="math display">\[\begin{cases} \nabla f(x) + \nabla^2 f(x)S_k +A^T \lambda = 0\\ AS_k = 0\end{cases}\]</span> with the matrix form</p>
-<p><span class="math display">\[\begin{pmatrix} \nabla^2 f &amp; A^T \\ A &amp; 0 \end{pmatrix} \begin{pmatrix} S_k \\ \lambda\end{pmatrix} = \begin{pmatrix} -\nabla f \\ 0 \end{pmatrix}\]</span></p>
-<p>Solve this to find <span class="math inline">\(\lambda\)</span> and <span class="math inline">\(S_k\)</span>.</p>
+<p><span class="math display">\[\begin{cases} \nabla f(x) + \nabla^2
+f(x)S_k +A^T \lambda = 0\\ AS_k = 0\end{cases}\]</span> with the matrix
+form</p>
+<p><span class="math display">\[\begin{pmatrix} \nabla^2 f &amp; A^T \\
+A &amp; 0 \end{pmatrix} \begin{pmatrix} S_k \\ \lambda\end{pmatrix} =
+\begin{pmatrix} -\nabla f \\ 0 \end{pmatrix}\]</span></p>
+<p>Solve this to find <span class="math inline">\(\lambda\)</span> and
+<span class="math inline">\(S_k\)</span>.</p>
 </div>
 <div id="optimality-on-the-boundary" class="section level4">
 <h4>4. Optimality on the boundary</h4>
 <p><img src="optim_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<p>Apparently, <span class="math inline">\(f(b)\)</span> is the minimum, but <span class="math inline">\(f&#39;(b) = 0\)</span> fails. Instead, we should check</p>
-<p><span class="math display">\[f&#39;&#39;(x^*) (x^* -a)(b - x^*) \geq 0\]</span></p>
+<p>Apparently, <span class="math inline">\(f(b)\)</span> is the minimum,
+but <span class="math inline">\(f&#39;(b) = 0\)</span> fails. Instead,
+we should check</p>
+<p><span class="math display">\[f&#39;&#39;(x^*) (x^* -a)(b - x^*) \geq
+0\]</span></p>
 </div>
 <div id="reduced-hessian" class="section level4">
 <h4>5. Reduced hessian</h4>
-<p><span class="math display">\[[\nabla^2_{\text{R}}f(x)]_{ij} = \begin{cases} \delta_{ij} &amp; \text{   if either i or j constrains is acive} \\ [\nabla^2 f(x)]_{ij} &amp; \text{Otherwise} \end{cases} \]</span></p>
-<p>so that <span class="math display">\[\nabla^2_{\text{R}}f(x) = \begin{pmatrix} \nabla^2 f(x) &amp; 0 \\ 0 &amp; I \end{pmatrix}\]</span></p>
+<p><span class="math display">\[[\nabla^2_{\text{R}}f(x)]_{ij} =
+\begin{cases} \delta_{ij} &amp; \text{   if either i or j constrains is
+acive} \\ [\nabla^2 f(x)]_{ij} &amp; \text{Otherwise} \end{cases}
+\]</span></p>
+<p>so that <span class="math display">\[\nabla^2_{\text{R}}f(x) =
+\begin{pmatrix} \nabla^2 f(x) &amp; 0 \\ 0 &amp; I
+\end{pmatrix}\]</span></p>
 <p>is PSD.</p>
 <hr />
 <center>
@@ -497,58 +636,131 @@ EM Algorithms
 </div>
 <div id="concepts" class="section level4">
 <h4>1. Concepts</h4>
-<p>Consider the data generating model that generates <span class="math inline">\(x = \{y, z \}\)</span>, where <span class="math inline">\(x\)</span> is the full data, <span class="math inline">\(y\)</span> is the observed data, and <span class="math inline">\(z\)</span> is the latent data/missing values, and parameters <span class="math inline">\(\theta\)</span></p>
-<p>Observed density: <span class="math display">\[p(y | \theta) = \int_{x}p(x|\theta)dx = \int_zp(x|\theta) p(z|y, \theta) dz\]</span></p>
-<p>This is often intractbale. Therefore, we consider EM. The complete data likelihood is $L_c() =p(y,z|) $.</p>
+<p>Consider the data generating model that generates <span
+class="math inline">\(x = \{y, z \}\)</span>, where <span
+class="math inline">\(x\)</span> is the full data, <span
+class="math inline">\(y\)</span> is the observed data, and <span
+class="math inline">\(z\)</span> is the latent data/missing values, and
+parameters <span class="math inline">\(\theta\)</span></p>
+<p>Observed density: <span class="math display">\[p(y | \theta) =
+\int_{x}p(x|\theta)dx = \int_zp(x|\theta) p(z|y, \theta) dz\]</span></p>
+<p>This is often intractbale. Therefore, we consider EM. The complete
+data likelihood is $L_c() =p(y,z|) $.</p>
 </div>
 <div id="procedures" class="section level4">
 <h4>2. Procedures</h4>
-<p>E Step: Calculate the expected value of the complete log likelihood with respect to the conditional distribution of <span class="math inline">\(z\)</span> given <span class="math inline">\(y\)</span>, under the <span class="math inline">\(\theta^{(k)}\)</span> from the current iteration <span class="math inline">\(k\)</span>.</p>
-<p><span class="math display">\[ Q(\theta|\theta^{(k)}) = E_{z|y,\theta^{(k)}}(\log L(\theta; y,z)) = \int \log p(y,z|\theta) p(z|y,\theta^{(k)})dz\]</span></p>
-<p>M Step: Find the quantity that maximize the surrogate quantity <span class="math inline">\(Q(\theta | \theta^{(k)})\)</span>.</p>
-<p><span class="math display">\[ \theta^{(k+1)} = \text{argmax}_\theta Q(\theta|\theta^{(k)})\]</span></p>
+<p>E Step: Calculate the expected value of the complete log likelihood
+with respect to the conditional distribution of <span
+class="math inline">\(z\)</span> given <span
+class="math inline">\(y\)</span>, under the <span
+class="math inline">\(\theta^{(k)}\)</span> from the current iteration
+<span class="math inline">\(k\)</span>.</p>
+<p><span class="math display">\[ Q(\theta|\theta^{(k)}) =
+E_{z|y,\theta^{(k)}}(\log L(\theta; y,z)) = \int \log p(y,z|\theta)
+p(z|y,\theta^{(k)})dz\]</span></p>
+<p>M Step: Find the quantity that maximize the surrogate quantity <span
+class="math inline">\(Q(\theta | \theta^{(k)})\)</span>.</p>
+<p><span class="math display">\[ \theta^{(k+1)} = \text{argmax}_\theta
+Q(\theta|\theta^{(k)})\]</span></p>
 </div>
 <div id="generalized-em" class="section level4">
 <h4>3. Generalized EM</h4>
-<p>Instead of finding <span class="math inline">\(\text{argmax}_\theta Q\)</span>, we can find any <span class="math inline">\(\theta\)</span> that increase <span class="math inline">\(Q\)</span>.</p>
+<p>Instead of finding <span class="math inline">\(\text{argmax}_\theta
+Q\)</span>, we can find any <span class="math inline">\(\theta\)</span>
+that increase <span class="math inline">\(Q\)</span>.</p>
 </div>
 <div id="properties" class="section level4">
 <h4>4. Properties</h4>
 <ul>
-<li><p><span class="math inline">\(Q(\theta^{(k+1)}|\theta^{(k)})\geq Q(\theta^{(k)}|\theta^{(k)})\)</span></p></li>
-<li><p>The ascent property of EM: for the observed data likelihood <span class="math inline">\(L(\theta^{(k+1)}) \geq L(\theta^{(k)})\)</span></p></li>
+<li><p><span class="math inline">\(Q(\theta^{(k+1)}|\theta^{(k)})\geq
+Q(\theta^{(k)}|\theta^{(k)})\)</span></p></li>
+<li><p>The ascent property of EM: for the observed data likelihood <span
+class="math inline">\(L(\theta^{(k+1)}) \geq
+L(\theta^{(k)})\)</span></p></li>
 </ul>
 </div>
 <div id="example-1-multinomial" class="section level4">
 <h4>5. Example 1: multinomial</h4>
-<p>We have n = 197 data that fall into the 4 categroies <span class="math inline">\(\mathbb{y} = (y_1, y_2, y_3, y_4) = c(125, 18,25,34)\)</span>, with propability <span class="math inline">\(\mathbf{p} = (\frac{1}{2}+\frac{\theta}{4}, \frac{1}{4}(1-\theta), \frac{1}{4}(1-\theta), \frac{\theta}{4})\)</span>, s.t. <span class="math inline">\(0 \leq \theta \leq 1\)</span>.</p>
-<p>Apparently, we can solve it by MLE. But Let’s consider solving it using EM.</p>
-<p>Notice that the first probability is separatable. Therefore, we can separete <span class="math inline">\(y = (x_1,x_2,x_3,x_4,x_5)\)</span>, such that <span class="math inline">\((x_3, x_4, x_5) = (y_2,y_3,y_4)\)</span> are the observed data, and <span class="math inline">\(z = (x_1,x_2)\)</span> are latent data. We have <span class="math inline">\(x_1+x_2 = y_1\)</span> such that <span class="math inline">\(p(x_1) = \frac{1}{2}\)</span>, <span class="math inline">\(p(x_2) = \frac{\theta}{4}\)</span>.</p>
-<p>The complete data likelihood is <span class="math inline">\(g(x|\theta) = \frac{n!}{\prod_i x_i !} (\frac{1}{2})^{x_1}(\frac{\theta}{4})^{x_2}(\frac{1}{4}(1-\theta))^{x_3+x_4} (\frac{\theta}{4})^{x_5}\)</span></p>
-<p>And the CDLL (complete data log likelihood) is <span class="math display">\[L_c = \log g(x|\theta) \propto (x_2 + x_5)\log \theta + (x_3+x_4)\log (1-\theta)\]</span> The E step is <span class="math display">\[E(L_c) \propto (E(x_2) + x_5)\log \theta + (x_3+x_4)\log (1-\theta)\]</span> where <span class="math inline">\(E(x_2) = n \times \frac{\frac{\theta^{(k)}}{4}}{\frac{1}{2}+\frac{\theta^{(k)}}{4}}\)</span>, and then to maximize it in the M step.</p>
+<p>We have n = 197 data that fall into the 4 categroies <span
+class="math inline">\(\mathbb{y} = (y_1, y_2, y_3, y_4) = c(125,
+18,25,34)\)</span>, with propability <span
+class="math inline">\(\mathbf{p} = (\frac{1}{2}+\frac{\theta}{4},
+\frac{1}{4}(1-\theta), \frac{1}{4}(1-\theta),
+\frac{\theta}{4})\)</span>, s.t. <span class="math inline">\(0 \leq
+\theta \leq 1\)</span>.</p>
+<p>Apparently, we can solve it by MLE. But Let’s consider solving it
+using EM.</p>
+<p>Notice that the first probability is separatable. Therefore, we can
+separete <span class="math inline">\(y = (x_1,x_2,x_3,x_4,x_5)\)</span>,
+such that <span class="math inline">\((x_3, x_4, x_5) =
+(y_2,y_3,y_4)\)</span> are the observed data, and <span
+class="math inline">\(z = (x_1,x_2)\)</span> are latent data. We have
+<span class="math inline">\(x_1+x_2 = y_1\)</span> such that <span
+class="math inline">\(p(x_1) = \frac{1}{2}\)</span>, <span
+class="math inline">\(p(x_2) = \frac{\theta}{4}\)</span>.</p>
+<p>The complete data likelihood is <span
+class="math inline">\(g(x|\theta) = \frac{n!}{\prod_i x_i !}
+(\frac{1}{2})^{x_1}(\frac{\theta}{4})^{x_2}(\frac{1}{4}(1-\theta))^{x_3+x_4}
+(\frac{\theta}{4})^{x_5}\)</span></p>
+<p>And the CDLL (complete data log likelihood) is <span
+class="math display">\[L_c = \log g(x|\theta) \propto (x_2 + x_5)\log
+\theta + (x_3+x_4)\log (1-\theta)\]</span> The E step is <span
+class="math display">\[E(L_c) \propto (E(x_2) + x_5)\log \theta +
+(x_3+x_4)\log (1-\theta)\]</span> where <span
+class="math inline">\(E(x_2) = n \times
+\frac{\frac{\theta^{(k)}}{4}}{\frac{1}{2}+\frac{\theta^{(k)}}{4}}\)</span>,
+and then to maximize it in the M step.</p>
 </div>
-<div id="example-2-finite-mixture-of-normal-distribution" class="section level4">
+<div id="example-2-finite-mixture-of-normal-distribution"
+class="section level4">
 <h4>6. Example 2: Finite mixture of normal distribution</h4>
-<p>Consider a mixture model with <span class="math inline">\(g\)</span> univariate Gaussian components, with <span class="math inline">\(\mu = (\mu_1,\dots \mu_g)\)</span>, and common variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Consider a mixture model with <span class="math inline">\(g\)</span>
+univariate Gaussian components, with <span class="math inline">\(\mu =
+(\mu_1,\dots \mu_g)\)</span>, and common variance <span
+class="math inline">\(\sigma^2\)</span>.</p>
 <p>The density is</p>
-<p><span class="math display">\[f(y;\theta) = \sum_{j = 1}^{g}\pi_j f_j(y;\mu_j, \sigma^2)\]</span> where <span class="math inline">\(\theta = (\pi_1,\dots, \pi_g,\mu_1,\dots, \mu_g, \sigma^2)\)</span>.</p>
+<p><span class="math display">\[f(y;\theta) = \sum_{j = 1}^{g}\pi_j
+f_j(y;\mu_j, \sigma^2)\]</span> where <span class="math inline">\(\theta
+= (\pi_1,\dots, \pi_g,\mu_1,\dots, \mu_g, \sigma^2)\)</span>.</p>
 <p>And the observed log likelihood is</p>
-<p><span class="math display">\[L(\theta) = \sum_{i=1}^{n}\log (\sum_{j = 1}^g \pi_j f_j(y_j;\mu_j,\sigma^2))\]</span> such that <span class="math inline">\(\sum_{j}\pi_ = 1\)</span>, <span class="math inline">\(\sigma^2 &gt; 0\)</span>, and <span class="math inline">\(0 \leq \pi_j \leq 1\)</span>. If we directly maximize it, it becomes a constrained problem. But we can solve it using EM.</p>
-<p>Consider the complete data to be <span class="math inline">\(x = c(y,z)\)</span>, where <span class="math inline">\(z\)</span> is defined as</p>
-<p><span class="math display">\[z_{ij} = \begin{cases}1 \quad \text{if } y_i \text{ comes from the ith component} \\ 0 \quad \text{otherwise}\end{cases}\]</span> such that <span class="math inline">\(\pi_j = \frac{\sum_i z_{ij}}{n}\)</span></p>
+<p><span class="math display">\[L(\theta) = \sum_{i=1}^{n}\log (\sum_{j
+= 1}^g \pi_j f_j(y_j;\mu_j,\sigma^2))\]</span> such that <span
+class="math inline">\(\sum_{j}\pi_ = 1\)</span>, <span
+class="math inline">\(\sigma^2 &gt; 0\)</span>, and <span
+class="math inline">\(0 \leq \pi_j \leq 1\)</span>. If we directly
+maximize it, it becomes a constrained problem. But we can solve it using
+EM.</p>
+<p>Consider the complete data to be <span class="math inline">\(x =
+c(y,z)\)</span>, where <span class="math inline">\(z\)</span> is defined
+as</p>
+<p><span class="math display">\[z_{ij} = \begin{cases}1 \quad \text{if }
+y_i \text{ comes from the ith component} \\ 0 \quad
+\text{otherwise}\end{cases}\]</span> such that <span
+class="math inline">\(\pi_j = \frac{\sum_i z_{ij}}{n}\)</span></p>
 <p>The complete data likelihood becomes</p>
-<p><span class="math display">\[l_c(\theta) = \prod_i\prod_j \pi_j^{z_{ij}} f_j(y;\theta)^{z_{ij}}\]</span> with the CDLL</p>
-<p><span class="math display">\[L_c(\theta) = \sum_i\sum_j z_{ij}\log \pi_j + \sum_i\sum_j z_{ij}\log f_j (y_i;\theta)\]</span></p>
+<p><span class="math display">\[l_c(\theta) = \prod_i\prod_j
+\pi_j^{z_{ij}} f_j(y;\theta)^{z_{ij}}\]</span> with the CDLL</p>
+<p><span class="math display">\[L_c(\theta) = \sum_i\sum_j z_{ij}\log
+\pi_j + \sum_i\sum_j z_{ij}\log f_j (y_i;\theta)\]</span></p>
 <p>The expected value is</p>
-<p><span class="math display">\[E(z_{ij}|y, \theta^{(k)}) = p[z_{ij} = 1|y, \theta^{(k)}]\]</span></p>
-<p><span class="math display">\[E(z_{ij}|y, \theta^{(k)}) = \frac{\pi_j^{(k)}f_j(y_i; \mu_j^{(k)}, \sigma^{2 (k)})}{\sum_j\pi_j^{(k)}f_j(y_i; \mu_j^{(k)}, \sigma^{2 (k)})}  = z_{ij}^{(k)}\]</span></p>
-<p>Plug <span class="math inline">\(z_{ij}^{(k)}\)</span> to get the expected value of CDLL and gives the E step. Then do M step, to get</p>
-<p><span class="math display">\[\pi_{j}^{(k+1)} = \frac{1}{n}\sum_{i}z_{ij}^{(k)}\]</span></p>
-<p><span class="math display">\[\mu_j^{(k+1)} = \frac{\sum_i z_{ij}^{(k)}y_i}{\sum_{i}z_{ij}^{(k)}}\]</span></p>
-<p><span class="math display">\[\sigma^{2(k+1)} = \frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2\]</span></p>
+<p><span class="math display">\[E(z_{ij}|y, \theta^{(k)}) = p[z_{ij} =
+1|y, \theta^{(k)}]\]</span></p>
+<p><span class="math display">\[E(z_{ij}|y, \theta^{(k)}) =
+\frac{\pi_j^{(k)}f_j(y_i; \mu_j^{(k)}, \sigma^{2
+(k)})}{\sum_j\pi_j^{(k)}f_j(y_i; \mu_j^{(k)}, \sigma^{2 (k)})}  =
+z_{ij}^{(k)}\]</span></p>
+<p>Plug <span class="math inline">\(z_{ij}^{(k)}\)</span> to get the
+expected value of CDLL and gives the E step. Then do M step, to get</p>
+<p><span class="math display">\[\pi_{j}^{(k+1)} =
+\frac{1}{n}\sum_{i}z_{ij}^{(k)}\]</span></p>
+<p><span class="math display">\[\mu_j^{(k+1)} = \frac{\sum_i
+z_{ij}^{(k)}y_i}{\sum_{i}z_{ij}^{(k)}}\]</span></p>
+<p><span class="math display">\[\sigma^{2(k+1)} =
+\frac{1}{n}\sum_i\sum_j z_{ij}^{(k)}(y_i - \mu_j^{(k)})^2\]</span></p>
 </div>
 <div id="example-r-codes-can-be-seen-here." class="section level4">
-<h4>7. Example R codes can be seen <a href="https://github.com/junruidi/EM-Algorithm">here</a>.</h4>
+<h4>7. Example R codes can be seen <a
+href="https://github.com/junruidi/EM-Algorithm">here</a>.</h4>
 <hr />
 <center>
 <h3>
@@ -558,18 +770,45 @@ Linear Regression Via SVD
 </div>
 <div id="linear-regression-problem-setup" class="section level4">
 <h4>1. Linear regression problem setup</h4>
-<p><span class="math display">\[y = X\beta +\epsilon\]</span> where <span class="math inline">\(y \in \mathbb{R}^{n}\)</span>, <span class="math inline">\(X\in \mathbb{R}^{n\times p}\)</span>, <span class="math inline">\(\beta \in \mathbb{R}^{p}\)</span>, <span class="math inline">\(n&gt;p\)</span>, and <span class="math inline">\(\epsilon \sim N(0,\sigma^2 I)\)</span>. We know that the least square estimator is <span class="math display">\[\hat{\beta}_{ls} = (X&#39;X)^{-1}X&#39;Y\]</span></p>
+<p><span class="math display">\[y = X\beta +\epsilon\]</span> where
+<span class="math inline">\(y \in \mathbb{R}^{n}\)</span>, <span
+class="math inline">\(X\in \mathbb{R}^{n\times p}\)</span>, <span
+class="math inline">\(\beta \in \mathbb{R}^{p}\)</span>, <span
+class="math inline">\(n&gt;p\)</span>, and <span
+class="math inline">\(\epsilon \sim N(0,\sigma^2 I)\)</span>. We know
+that the least square estimator is <span
+class="math display">\[\hat{\beta}_{ls} =
+(X&#39;X)^{-1}X&#39;Y\]</span></p>
 </div>
 <div id="estimation-and-prediction-via-svd" class="section level4">
 <h4>2. Estimation and prediction via SVD</h4>
-<p>Suppose the SVD of <span class="math inline">\(X\)</span> is <span class="math inline">\(X = USV&#39;\)</span> such that <span class="math inline">\(U&#39;U = V&#39;V = I\)</span>, and <span class="math inline">\(S\)</span> is diagonal matrix with ordered singular values on the main diagonal. Then</p>
-<p><span class="math display">\[\hat{\beta}_{ls} = VS^{-1}U&#39;y = \sum_{j = 1}^{p}v_j^{&#39;}\frac{&lt;u_j^{&#39;}, y&gt;}{s_j}\]</span> which means that <span class="math inline">\(\hat{\beta}_{ls} \in L_{span}(v_1^{&#39;},\cdots, v_p^{&#39;})\)</span>.</p>
-<p>And the predicted value <span class="math display">\[\hat{y} = X(X&#39;X)^{-1}X&#39;Y = \sum_{j= 1}^{p} = u_j &lt;u_j^{&#39;},y&gt;\]</span> such that <span class="math inline">\(\hat{y}\in L_{span}(u_1^{&#39;},\cdots, u_p^{&#39;})\)</span>.</p>
+<p>Suppose the SVD of <span class="math inline">\(X\)</span> is <span
+class="math inline">\(X = USV&#39;\)</span> such that <span
+class="math inline">\(U&#39;U = V&#39;V = I\)</span>, and <span
+class="math inline">\(S\)</span> is diagonal matrix with ordered
+singular values on the main diagonal. Then</p>
+<p><span class="math display">\[\hat{\beta}_{ls} = VS^{-1}U&#39;y =
+\sum_{j = 1}^{p}v_j^{&#39;}\frac{&lt;u_j^{&#39;}, y&gt;}{s_j}\]</span>
+which means that <span class="math inline">\(\hat{\beta}_{ls} \in
+L_{span}(v_1^{&#39;},\cdots, v_p^{&#39;})\)</span>.</p>
+<p>And the predicted value <span class="math display">\[\hat{y} =
+X(X&#39;X)^{-1}X&#39;Y = \sum_{j= 1}^{p} = u_j
+&lt;u_j^{&#39;},y&gt;\]</span> such that <span
+class="math inline">\(\hat{y}\in L_{span}(u_1^{&#39;},\cdots,
+u_p^{&#39;})\)</span>.</p>
 </div>
 <div id="linear-regression-with-np" class="section level4">
-<h4>3. Linear regression with <span class="math inline">\(n&lt;p\)</span></h4>
-<p>If <span class="math inline">\(n&lt;p\)</span>, <span class="math inline">\(X&#39;X\)</span> is not full rank and so that is not invertible. But we can consider the generalized inverse <span class="math display">\[X^{-} = VS^{-1}U&#39;\]</span> such that <span class="math inline">\(XX^{-}X = X\)</span>. <span class="math inline">\(\hat{\beta}_{ls} = (X&#39;X)^{-}X&#39;y = VS^{-1}U&#39;y = X^{-}y\)</span>, which is not unique.</p>
-<p>We need to consider other approaches for the estimation, e.g. ridge regression.</p>
+<h4>3. Linear regression with <span
+class="math inline">\(n&lt;p\)</span></h4>
+<p>If <span class="math inline">\(n&lt;p\)</span>, <span
+class="math inline">\(X&#39;X\)</span> is not full rank and so that is
+not invertible. But we can consider the generalized inverse <span
+class="math display">\[X^{-} = VS^{-1}U&#39;\]</span> such that <span
+class="math inline">\(XX^{-}X = X\)</span>. <span
+class="math inline">\(\hat{\beta}_{ls} = (X&#39;X)^{-}X&#39;y =
+VS^{-1}U&#39;y = X^{-}y\)</span>, which is not unique.</p>
+<p>We need to consider other approaches for the estimation, e.g. ridge
+regression.</p>
 <hr />
 <center>
 <h3>
@@ -577,19 +816,35 @@ Ridge Regression
 </h3>
 </center>
 </div>
-<div id="ridge-via-penalization-v.s.-ridge-via-constraints" class="section level4">
+<div id="ridge-via-penalization-v.s.-ridge-via-constraints"
+class="section level4">
 <h4>1. Ridge via penalization v.s. Ridge via constraints</h4>
-<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||^2_2\]</span> which is a convex function (both parts are convex), and</p>
-<p><span class="math display">\[\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||^2_2 \leq S\]</span></p>
+<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda
+||\beta||^2_2\]</span> which is a convex function (both parts are
+convex), and</p>
+<p><span class="math display">\[\text{minimize}_{\beta}
+||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||^2_2 \leq S\]</span></p>
 </div>
 <div id="estimation" class="section level4">
 <h4>2. Estimation</h4>
-<p><span class="math display">\[l(\beta) = (y-X\beta)&#39;(y-X\beta)+\lambda \beta&#39;\beta\]</span> <span class="math display">\[l&#39;(\beta) = -2X&#39;y + 2X&#39;X\beta + 2\lambda \beta&#39; = 0\]</span> So that <span class="math display">\[\hat{\beta}_{rd} = (X&#39;X + \lambda I )^{-1}X&#39;y = \sum_{j=1}^{p} = v_j^{&#39;}\frac{s_j}{s_j+\lambda_j} &lt;y,u_j^{&#39;}&gt;\]</span></p>
+<p><span class="math display">\[l(\beta) =
+(y-X\beta)&#39;(y-X\beta)+\lambda \beta&#39;\beta\]</span> <span
+class="math display">\[l&#39;(\beta) = -2X&#39;y + 2X&#39;X\beta +
+2\lambda \beta&#39; = 0\]</span> So that <span
+class="math display">\[\hat{\beta}_{rd} = (X&#39;X + \lambda I
+)^{-1}X&#39;y = \sum_{j=1}^{p} = v_j^{&#39;}\frac{s_j}{s_j+\lambda_j}
+&lt;y,u_j^{&#39;}&gt;\]</span></p>
 </div>
 <div id="some-properties" class="section level4">
 <h4>3. Some properties</h4>
-<p>If <span class="math inline">\(\lambda = 0\)</span>, then <span class="math inline">\(\hat{\beta}_{rd} = \hat{\beta}_{ls}\)</span>. And we will have</p>
-<p><span class="math display">\[0 \leq \frac{||\hat{\beta}_{rd}||^2_2}{||\hat{\beta}_{ls}||^2_2}\leq 1\]</span> where 0 is corresponding to <span class="math inline">\(\lambda \rightarrow \infty\)</span>, and 1 is corresponding to <span class="math inline">\(\lambda = 0\)</span>.</p>
+<p>If <span class="math inline">\(\lambda = 0\)</span>, then <span
+class="math inline">\(\hat{\beta}_{rd} = \hat{\beta}_{ls}\)</span>. And
+we will have</p>
+<p><span class="math display">\[0 \leq
+\frac{||\hat{\beta}_{rd}||^2_2}{||\hat{\beta}_{ls}||^2_2}\leq 1\]</span>
+where 0 is corresponding to <span class="math inline">\(\lambda
+\rightarrow \infty\)</span>, and 1 is corresponding to <span
+class="math inline">\(\lambda = 0\)</span>.</p>
 </div>
 <div id="space-for-ridge-regression-constraints" class="section level4">
 <h4>4. Space for ridge regression constraints</h4>
@@ -601,27 +856,49 @@ LASSO Regression
 </h3>
 </center>
 </div>
-<div id="lasso-via-penalization-v.s.-ridge-via-constraints" class="section level4">
+<div id="lasso-via-penalization-v.s.-ridge-via-constraints"
+class="section level4">
 <h4>1. LASSO via penalization v.s. Ridge via constraints</h4>
-<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda ||\beta||_1\]</span> which is a convex function (both parts are convecx), and</p>
-<p><span class="math display">\[\text{minimize}_{\beta} ||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||_1 \leq S\]</span></p>
+<p><span class="math display">\[l(\beta) = ||y - X\beta||^2_2 +\lambda
+||\beta||_1\]</span> which is a convex function (both parts are
+convecx), and</p>
+<p><span class="math display">\[\text{minimize}_{\beta}
+||y-X\beta||^2_2, \quad \text{ s.t. }||\beta||_1 \leq S\]</span></p>
 </div>
 <div id="space-for-lasso-regression-constraints" class="section level4">
 <h4>2. Space for LASSO regression constraints</h4>
 <p><img src="optim_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 </div>
-<div id="solution-for-orthonormal-design-xx-ni_p" class="section level4">
-<h4>3. Solution for orthonormal design (<span class="math inline">\(X&#39;X = nI_p\)</span>)</h4>
-<p><span class="math display">\[l(\beta) = \frac{1}{2n}||y-X\beta||^2_2 +\lambda ||\beta||_1\]</span></p>
-<p><span class="math display">\[\propto \frac{1}{n}\sum y&#39;x_j\beta_j + \frac{1}{2}\sum_{j=1}^{p}\beta_j^2 +\sum_{j = 1}^p|\beta_j|\lambda\]</span></p>
-<p>The problem becomes <span class="math display">\[\text{min} l(\beta) = \text{min}_{\beta}\{ \frac{1}{2}\beta^2 -\alpha \beta + \lambda |\beta|\}\]</span></p>
-<p>with <span class="math inline">\(\alpha = \frac{y&#39;x_j}{n}\)</span> which has the solution using the <strong>soft threshold operator</strong></p>
-<p><span class="math display">\[\beta^{*} = \text{sign}(\alpha)(|\alpha|-\lambda)_+ = S_{\lambda}(\alpha)\]</span></p>
+<div id="solution-for-orthonormal-design-xx-ni_p"
+class="section level4">
+<h4>3. Solution for orthonormal design (<span
+class="math inline">\(X&#39;X = nI_p\)</span>)</h4>
+<p><span class="math display">\[l(\beta) = \frac{1}{2n}||y-X\beta||^2_2
++\lambda ||\beta||_1\]</span></p>
+<p><span class="math display">\[\propto \frac{1}{n}\sum y&#39;x_j\beta_j
++ \frac{1}{2}\sum_{j=1}^{p}\beta_j^2 +\sum_{j =
+1}^p|\beta_j|\lambda\]</span></p>
+<p>The problem becomes <span class="math display">\[\text{min} l(\beta)
+= \text{min}_{\beta}\{ \frac{1}{2}\beta^2 -\alpha \beta + \lambda
+|\beta|\}\]</span></p>
+<p>with <span class="math inline">\(\alpha =
+\frac{y&#39;x_j}{n}\)</span> which has the solution using the
+<strong>soft threshold operator</strong></p>
+<p><span class="math display">\[\beta^{*} =
+\text{sign}(\alpha)(|\alpha|-\lambda)_+ =
+S_{\lambda}(\alpha)\]</span></p>
 </div>
-<div id="normality-design-i.e.-textdiagfracxxn-i_p" class="section level4">
-<h4>4. Normality design (i.e. <span class="math inline">\(\text{diag}(\frac{X&#39;X}{n}) = I_p\)</span>)</h4>
-<p>We can use the coordinate descent solution (which converges to global optimal)</p>
-<p><span class="math display">\[\beta_j^{*} = S_\lambda (\frac{r_j^{&#39;} x_j}{n})\]</span> where <span class="math inline">\(r_{ij} = y_i - \sum_{k\neq j }x_{ik}\beta_k\)</span>.</p>
+<div id="normality-design-i.e.-textdiagfracxxn-i_p"
+class="section level4">
+<h4>4. Normality design (i.e. <span
+class="math inline">\(\text{diag}(\frac{X&#39;X}{n}) =
+I_p\)</span>)</h4>
+<p>We can use the coordinate descent solution (which converges to global
+optimal)</p>
+<p><span class="math display">\[\beta_j^{*} = S_\lambda
+(\frac{r_j^{&#39;} x_j}{n})\]</span> where <span
+class="math inline">\(r_{ij} = y_i - \sum_{k\neq j
+}x_{ik}\beta_k\)</span>.</p>
 <hr />
 <center>
 <h3>
@@ -631,7 +908,12 @@ Optimization Problems for Convex Functions
 </div>
 <div id="definition-2" class="section level4">
 <h4>1. Definition</h4>
-<p><span class="math inline">\(f(\lambda): \mathbb{R}^p \rightarrow \mathbb{R}\)</span> is convex if <span class="math inline">\(\forall x,y\in \mathbb{R}^p\)</span>, and <span class="math inline">\(\forall s \in [0,1]\)</span>, we have <span class="math display">\[f(sx + (1-s)y) \leq sf(x) + (1-s)f(y)\]</span> Or, the region within the function is also a convex set. (Remeber it as a cup with minimum).</p>
+<p><span class="math inline">\(f(\lambda): \mathbb{R}^p \rightarrow
+\mathbb{R}\)</span> is convex if <span class="math inline">\(\forall
+x,y\in \mathbb{R}^p\)</span>, and <span class="math inline">\(\forall s
+\in [0,1]\)</span>, we have <span class="math display">\[f(sx + (1-s)y)
+\leq sf(x) + (1-s)f(y)\]</span> Or, the region within the function is
+also a convex set. (Remeber it as a cup with minimum).</p>
 </div>
 <div id="properties-1" class="section level4">
 <h4>2. Properties</h4>
@@ -639,7 +921,9 @@ Optimization Problems for Convex Functions
 <li><span class="math inline">\(f&#39;&#39;(x)&gt;0\)</span>.</li>
 <li>Any norm is a convex function.</li>
 <li>Nonnegative weighted sum of convex function is also convex.</li>
-<li>If <span class="math inline">\(f_1,f_2, \dots, f_n\)</span> are all convex, then <span class="math inline">\(\text{max}_n\{f_1(x), \dots, f_n(x)\}\)</span> is also convex.</li>
+<li>If <span class="math inline">\(f_1,f_2, \dots, f_n\)</span> are all
+convex, then <span class="math inline">\(\text{max}_n\{f_1(x), \dots,
+f_n(x)\}\)</span> is also convex.</li>
 </ul>
 </div>
 <div id="check-for-convexity" class="section level4">
@@ -647,30 +931,55 @@ Optimization Problems for Convex Functions
 <ul>
 <li>First order definition</li>
 </ul>
-<p><span class="math display">\[f(x)\text{ is convex } \iff f(y)\geq f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p\]</span></p>
+<p><span class="math display">\[f(x)\text{ is convex } \iff f(y)\geq
+f(x)+\nabla f(x)^T (y-x) \quad \forall x,y\in\mathbb{R}^p\]</span></p>
 <ul>
-<li>Second order properties <span class="math display">\[f(x)\text{ is convex } \iff \nabla^2 f(x) \geq 0 \]</span></li>
+<li>Second order properties <span class="math display">\[f(x)\text{ is
+convex } \iff \nabla^2 f(x) \geq 0 \]</span></li>
 </ul>
 </div>
-<div id="optimazation-problem-with-two-sets-of-constraints" class="section level4">
+<div id="optimazation-problem-with-two-sets-of-constraints"
+class="section level4">
 <h4>4. Optimazation problem with two sets of constraints</h4>
-<p><span class="math display">\[\text{min}_x f(x)\]</span> s..t <span class="math display">\[g_j(x)\leq 0 \quad j = 1,\dots, m\]</span> <span class="math display">\[h_k(x) = 0 \quad k = 1,\dots, l\]</span></p>
+<p><span class="math display">\[\text{min}_x f(x)\]</span> s..t <span
+class="math display">\[g_j(x)\leq 0 \quad j = 1,\dots, m\]</span> <span
+class="math display">\[h_k(x) = 0 \quad k = 1,\dots, l\]</span></p>
 <p>which can be formulated as the Lagrangian problem</p>
-<p><span class="math display">\[L(x,\lambda,v) = f(x)+\sum_{j = 1}^{m}\lambda_j g_j(x)+\sum_{k=1}^{l}v_kh_k(x)\]</span></p>
+<p><span class="math display">\[L(x,\lambda,v) = f(x)+\sum_{j =
+1}^{m}\lambda_j g_j(x)+\sum_{k=1}^{l}v_kh_k(x)\]</span></p>
 </div>
 <div id="lagrangian-dual-function" class="section level4">
 <h4>5. Lagrangian dual function</h4>
-<p>Suppose for the previous Lagrangian problem, there is a function <span class="math inline">\(g:\mathbb{R}^m \times \mathbb{R}^l \rightarrow \mathbb{R}\)</span> Property 1. <span class="math inline">\(-g(\lambda, v)\)</span> is convex</p>
-<p>Property 2. If we define <span class="math inline">\(f^{*} = \text{inf}_{\text{feasible } x}f(x)\)</span>, then <span class="math inline">\(\forall \lambda \geq 0\)</span> and <span class="math inline">\(\forall v\)</span>, <span class="math inline">\(g(\lambda, v)\leq f^{*}\)</span>.</p>
+<p>Suppose for the previous Lagrangian problem, there is a function
+<span class="math inline">\(g:\mathbb{R}^m \times \mathbb{R}^l
+\rightarrow \mathbb{R}\)</span> Property 1. <span
+class="math inline">\(-g(\lambda, v)\)</span> is convex</p>
+<p>Property 2. If we define <span class="math inline">\(f^{*} =
+\text{inf}_{\text{feasible } x}f(x)\)</span>, then <span
+class="math inline">\(\forall \lambda \geq 0\)</span> and <span
+class="math inline">\(\forall v\)</span>, <span
+class="math inline">\(g(\lambda, v)\leq f^{*}\)</span>.</p>
 </div>
 <div id="kkt-conditions" class="section level4">
 <h4>6. KKT conditions</h4>
-<p>Now all assume <span class="math inline">\(f\)</span>, <span class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span> are all differentiable and convex, then if <span class="math inline">\(x^{*}\)</span> and <span class="math inline">\((\lambda^*, v^*)\)</span> are primal and optimal, we have the following conditions</p>
+<p>Now all assume <span class="math inline">\(f\)</span>, <span
+class="math inline">\(g\)</span>, <span class="math inline">\(h\)</span>
+are all differentiable and convex, then if <span
+class="math inline">\(x^{*}\)</span> and <span
+class="math inline">\((\lambda^*, v^*)\)</span> are primal and optimal,
+we have the following conditions</p>
 <ul>
-<li><p><span class="math inline">\(\nabla f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*) =0\)</span></p></li>
-<li><p><span class="math inline">\(x^*\)</span> is feasible, i.e. <span class="math inline">\(g_j(x^*)\leq 0\)</span> and <span class="math inline">\(h_k(x^*)=0\)</span></p></li>
+<li><p><span class="math inline">\(\nabla
+f(x^*)+\sum_{k}\lambda_j^*\nabla g_j(x^*)+\sum_k v_k^* \nabla h_k(x^*)
+=0\)</span></p></li>
+<li><p><span class="math inline">\(x^*\)</span> is feasible, i.e. <span
+class="math inline">\(g_j(x^*)\leq 0\)</span> and <span
+class="math inline">\(h_k(x^*)=0\)</span></p></li>
 <li><p><span class="math inline">\(\lambda_j \geq 0\)</span></p></li>
-<li><p><span class="math inline">\(\sum_j \lambda_j^* g_j(x^*) = 0\)</span>, then <span class="math inline">\(\forall j\)</span>, either <span class="math inline">\(\lambda_j^* = 0\)</span> or <span class="math inline">\(g_j = 0\)</span>.</p></li>
+<li><p><span class="math inline">\(\sum_j \lambda_j^* g_j(x^*) =
+0\)</span>, then <span class="math inline">\(\forall j\)</span>, either
+<span class="math inline">\(\lambda_j^* = 0\)</span> or <span
+class="math inline">\(g_j = 0\)</span>.</p></li>
 </ul>
 </div>
 </div>

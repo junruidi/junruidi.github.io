@@ -44,16 +44,27 @@ A large variety of statistical problems are essentially solutions to optimizatio
 
 ---
 
-<center> <h3>Elements of Statistical Learning</h3> </center>
+<!-- <center> <h3>Elements of Statistical Learning</h3> </center> -->
 
-[Notes on ESL](https://github.com/junruidi/ESL/blob/main/ESL.pdf)
+<!-- [Notes on ESL](https://github.com/junruidi/ESL/blob/main/ESL.pdf) -->
 
 
-[_Elements of Statistical Learning, Data Mining, Inference, and Prediction (2nd Ed)_](https://web.stanford.edu/~hastie/ElemStatLearn/) is my all-time favorite textbook on statistical learning (or other people may call it machine learning). I read this book from time to time to always keep up with the fundamentals of statistical learning. Here are my study notes to summarize the important messages delivered by the book and to also incorporate some of my thoughts and experience using them. Another book that I find fairly useful for implementing ML techniques in R is [_Hands-On Machine Learning with R_](https://bradleyboehmke.github.io/HOML/) which has R implementation practice for all commonly used ML models.  
+<!-- [_Elements of Statistical Learning, Data Mining, Inference, and Prediction (2nd Ed)_](https://web.stanford.edu/~hastie/ElemStatLearn/) is my all-time favorite textbook on statistical learning (or other people may call it machine learning). I read this book from time to time to always keep up with the fundamentals of statistical learning. Here are my study notes to summarize the important messages delivered by the book and to also incorporate some of my thoughts and experience using them. Another book that I find fairly useful for implementing ML techniques in R is [_Hands-On Machine Learning with R_](https://bradleyboehmke.github.io/HOML/) which has R implementation practice for all commonly used ML models.   -->
 
----
-<center> <h3>R Programming with `tidyverse` and `tidymodel`</h3> </center>
+<!-- --- -->
+<!-- <center> <h3>R Programming with `tidyverse` and `tidymodel`</h3> </center> -->
 
-[Notes on `tidymodel`](https://junruidi.github.io/AdvancedR/tidymodel.html)
+<!-- [Notes on `tidymodel`](https://junruidi.github.io/AdvancedR/tidymodel.html) -->
+
+<!-- The tidyverse is a collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. As a modern-time R programmer, there is no reason for us not to use it. I have gradually changed my coding habits and switched to `tidy` way of programming. Here are some of the most fundamental skills in this domain.  -->
+
+
+<center> <h3>Machine Learning and Statistical Modeling in `tidyverse` and `tidymodels`</h3> </center>
+
+[Notes on Statistical Modeling and Machine Learning in R](https://junruidi.github.io/RMachineLearning/R-for-Machine-Learning.html)
 
 The tidyverse is a collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. As a modern-time R programmer, there is no reason for us not to use it. I have gradually changed my coding habits and switched to `tidy` way of programming. Here are some of the most fundamental skills in this domain. 
+The `tidyverse` is a collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. As a modern-time R programmer, there is no reason for us not to use it. 
+
+Specifically, the `tidyverse` and `tidymodel` frames make model training, prediction, interpretation more streamlined. Moreover `tidymodel` and `caret` provided model training and prediction APIs. This notes contains tutorials with R codes to fully take advantages of the `tidyverse` and `tidymodel` frameworks for statistical models and machine learning. 
+

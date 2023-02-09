@@ -13,7 +13,7 @@
 
 <title>Publications</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -59,6 +59,7 @@ if (window.hljs) {
 
 
 
+
 <link rel="stylesheet" href="style2.css" type="text/css" />
 
 
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -235,7 +243,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -308,27 +316,79 @@ $(document).ready(function () {
 
 </script>
 <p><br> <br></p>
-<div id="selected-publications-on-wearablesdigital-measurements" class="section level4">
+<div id="selected-publications-on-wearablesdigital-measurements"
+class="section level4">
 <h4>Selected Publications on Wearables/Digital Measurements</h4>
 <ul>
-<li><strong>Di, J.</strong>, Demanuele, C., Kettermann, A., Karahanoglu., FI., Capperlleri, JC., Potter, A., Bury, D., Cedarbaum, J., Byrom, B.. <a href="https://www.sciencedirect.com/science/article/pii/S1551714421003979">Considerations to address missing data when deriving clinical trial endpoints from digital health technologies (DHTs)</a>. <em>Contemporary Clinical Trials</em>. 2021.</li>
-<li>Kuo, PL., <strong>Di, J.</strong>, Ferrucci L., and Lin, FR.. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2778845">Analysis of hearing loss and physical activity among US adults, 60 - 69 ears</a>. <em>JAMA Network Open</em>. 2021.</li>
-<li>Mahadevan, N., Christakis, Y., <strong>Di, J.</strong>, Bruno, J., Zhang Y., Dorsey, ER., Pigeon, WR., Beck, LA., Thomas, K., Liu, Y., Wicker, M., Brooks, C., Kabiri, NS., Bhangu, J., Northcott, C., and Patel, S.. <a href="https://www.nature.com/articles/s41746-021-00402-x">Development of digital measures for nighttime scratch and sleep using wrist-worn wearable devices</a>. <em>Nature npj Digital Medicine</em>. 2021. Behind the paper blog post: <a href="https://go.nature.com/3e2M4TH">Wearable sensors can tell you more than just step count: measuring nighttime scratching and sleep</a>.</li>
-<li>Wanigatunga, A., <strong>Di, J.</strong>, Zipunnikov, V., Urbanek, J., Kuo, P., Simonsick, EM., Ferrucci, L., and Schrack, J.. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2752084">Association of total daily physical activity and fragmented physical activity with mortality in older adults</a>. <em>JAMA Network Open</em>. 2019.</li>
-<li><strong>Di, J.</strong>, Spira, A., Bai, J., Urbanek, J., Leroux, A., Wu, M., Resnik, S., Simonsick, E., Ferrucci, L., Schrack, J., and Zipunnikov, V.. <a href="https://link.springer.com/article/10.1007/s12561-019-09236-4">Joint and individual representation of domains of physical activity, sleep, and circadian rhythmicity</a>. <em>Statistics in Biosciences</em>. 2019.</li>
-<li>Leroux, A., <strong>Di, J.</strong>, Smirnova, E., Mcguffey, E., Cao, Q., Bayatmokhtari, E., Tabacu, L., Zipunnikov, V., Urbanek, J., Crainiceanu, C.. <a href="https://link.springer.com/article/10.1007/s12561-018-09229-9">Organizing and analyzing the activity data in NHANES</a>. <em>Statistics in Biosciences</em>. 2019.</li>
-<li>Varma, V., Dey D., Leroux A., <strong>Di, J.</strong>, Urbanek, J., Xiao, L., and Zipunnikov, V.. <a href="http://www.sciencedirect.com/science/article/pii/S0091743517301949">Re-evaluating the effect of age on physical activity over the lifespan</a>. <em>Preventive Medicine</em>. 2017.</li>
+<li><strong>Di, J.</strong>, Demanuele, C., Kettermann, A.,
+Karahanoglu., FI., Capperlleri, JC., Potter, A., Bury, D., Cedarbaum,
+J., Byrom, B.. <a
+href="https://www.sciencedirect.com/science/article/pii/S1551714421003979">Considerations
+to address missing data when deriving clinical trial endpoints from
+digital health technologies (DHTs)</a>. <em>Contemporary Clinical
+Trials</em>. 2021.</li>
+<li>Kuo, PL., <strong>Di, J.</strong>, Ferrucci L., and Lin, FR.. <a
+href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2778845">Analysis
+of hearing loss and physical activity among US adults, 60 - 69 ears</a>.
+<em>JAMA Network Open</em>. 2021.</li>
+<li>Mahadevan, N., Christakis, Y., <strong>Di, J.</strong>, Bruno, J.,
+Zhang Y., Dorsey, ER., Pigeon, WR., Beck, LA., Thomas, K., Liu, Y.,
+Wicker, M., Brooks, C., Kabiri, NS., Bhangu, J., Northcott, C., and
+Patel, S.. <a
+href="https://www.nature.com/articles/s41746-021-00402-x">Development of
+digital measures for nighttime scratch and sleep using wrist-worn
+wearable devices</a>. <em>Nature npj Digital Medicine</em>. 2021. Behind
+the paper blog post: <a href="https://go.nature.com/3e2M4TH">Wearable
+sensors can tell you more than just step count: measuring nighttime
+scratching and sleep</a>.</li>
+<li>Wanigatunga, A., <strong>Di, J.</strong>, Zipunnikov, V., Urbanek,
+J., Kuo, P., Simonsick, EM., Ferrucci, L., and Schrack, J.. <a
+href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2752084">Association
+of total daily physical activity and fragmented physical activity with
+mortality in older adults</a>. <em>JAMA Network Open</em>. 2019.</li>
+<li><strong>Di, J.</strong>, Spira, A., Bai, J., Urbanek, J., Leroux,
+A., Wu, M., Resnik, S., Simonsick, E., Ferrucci, L., Schrack, J., and
+Zipunnikov, V.. <a
+href="https://link.springer.com/article/10.1007/s12561-019-09236-4">Joint
+and individual representation of domains of physical activity, sleep,
+and circadian rhythmicity</a>. <em>Statistics in Biosciences</em>.
+2019.</li>
+<li>Leroux, A., <strong>Di, J.</strong>, Smirnova, E., Mcguffey, E.,
+Cao, Q., Bayatmokhtari, E., Tabacu, L., Zipunnikov, V., Urbanek, J.,
+Crainiceanu, C.. <a
+href="https://link.springer.com/article/10.1007/s12561-018-09229-9">Organizing
+and analyzing the activity data in NHANES</a>. <em>Statistics in
+Biosciences</em>. 2019.</li>
+<li>Varma, V., Dey D., Leroux A., <strong>Di, J.</strong>, Urbanek, J.,
+Xiao, L., and Zipunnikov, V.. <a
+href="http://www.sciencedirect.com/science/article/pii/S0091743517301949">Re-evaluating
+the effect of age on physical activity over the lifespan</a>.
+<em>Preventive Medicine</em>. 2017.</li>
 </ul>
 <p><br></p>
-<p>A full list of my publications can be found on my <a href="https://scholar.google.com/citations?user=9YSnIL4AAAAJ&amp;hl=en">Google Scholar page</a>. <br> <br></p>
+<p>A full list of my publications can be found on my <a
+href="https://scholar.google.com/citations?user=9YSnIL4AAAAJ&amp;hl=en">Google
+Scholar page</a>. <br> <br></p>
 </div>
 <div id="softwares" class="section level4">
 <h4>Softwares</h4>
 <ol style="list-style-type: decimal">
-<li><strong>cdHOTS</strong>. (R package). Construct and decompose higher order tensorian statistics.[<a href="https://github.com/junruidi/cdHOTS">Github</a>]</li>
-<li><strong>actigraphy-profiles</strong>. (R Shiny App). A visualization tool for displaying minute-level actigraphy profiles (More features to be online). [<a href="https://github.com/junruidi/actigraphy-profiles">Github</a>]</li>
-<li><strong>ActFrag</strong>. (R package). Activity fragmentation metrics extraced from minute level actigraphy data. [<a href="https://github.com/junruidi/ActFrag">Github</a>] [<a href="https://cran.r-project.org/web/packages/ActFrag/index.html">CRAN</a>] [<a href="https://oslerinhealth.org/package/ActFrag">Osler</a>]</li>
-<li><strong>ActCR</strong>. (R package). Extract circadian rhythms metrics from actigraphy data. [<a href="https://github.com/junruidi/ActCR">Github</a>][<a href="https://cran.r-project.org/web/packages/ActCR/index.html">CRAN</a>]</li>
+<li><strong>cdHOTS</strong>. (R package). Construct and decompose higher
+order tensorian statistics.[<a
+href="https://github.com/junruidi/cdHOTS">Github</a>]</li>
+<li><strong>actigraphy-profiles</strong>. (R Shiny App). A visualization
+tool for displaying minute-level actigraphy profiles (More features to
+be online). [<a
+href="https://github.com/junruidi/actigraphy-profiles">Github</a>]</li>
+<li><strong>ActFrag</strong>. (R package). Activity fragmentation
+metrics extraced from minute level actigraphy data. [<a
+href="https://github.com/junruidi/ActFrag">Github</a>] [<a
+href="https://cran.r-project.org/web/packages/ActFrag/index.html">CRAN</a>]
+[<a href="https://oslerinhealth.org/package/ActFrag">Osler</a>]</li>
+<li><strong>ActCR</strong>. (R package). Extract circadian rhythms
+metrics from actigraphy data. [<a
+href="https://github.com/junruidi/ActCR">Github</a>][<a
+href="https://cran.r-project.org/web/packages/ActCR/index.html">CRAN</a>]</li>
 </ol>
 </div>
 
